@@ -201,6 +201,160 @@
     });
   }
 
+  /* ----------------------------------------------- Globo ------
+     Esfera de puntos girando, en canvas 2D y sin librerías.
+     Los vecinos se calculan UNA vez: la esfera es rígida, así que las
+     parejas de puntos cercanos no cambian al rotar. Por fotograma sólo
+     queda proyectar, que es barato.
+     Se detiene si sale de pantalla o si la pestaña pasa a segundo
+     plano — un bucle infinito invisible sólo gasta batería. */
+  function initGlobe () {
+    var cv = $("[data-globe]");
+    if (!cv || !cv.getContext) return;
+    var ctx = cv.getContext("2d", { alpha: true });
+    if (!ctx) return;
+
+    var small = matchMedia("(max-width: 899px)").matches;
+    var N = small ? 230 : 380;
+    var LINK = small ? 0.30 : 0.26;      // radio de vecindad (esfera unitaria)
+    var MAX_LINKS = 900;
+    var TILT = -0.38;
+    var SPEED = 0.00016;                 // rad/ms — una vuelta ≈ 11 min
+
+    // Distribución de Fibonacci: reparte los puntos parejo, sin
+    // acumularlos en los polos como haría una malla lat/lon.
+    var pts = [];
+    var GA = Math.PI * (3 - Math.sqrt(5));
+    for (var i = 0; i < N; i++) {
+      var y = 1 - (i / (N - 1)) * 2;
+      var r = Math.sqrt(Math.max(0, 1 - y * y));
+      var th = i * GA;
+      pts.push({ x: Math.cos(th) * r, y: y, z: Math.sin(th) * r });
+    }
+
+    var links = [];
+    var lim2 = LINK * LINK;
+    for (var a = 0; a < pts.length && links.length < MAX_LINKS; a++) {
+      for (var b = a + 1; b < pts.length; b++) {
+        var dx = pts[a].x - pts[b].x, dy = pts[a].y - pts[b].y, dz = pts[a].z - pts[b].z;
+        if (dx * dx + dy * dy + dz * dz < lim2) {
+          links.push(a, b);
+          if (links.length >= MAX_LINKS * 2) break;
+        }
+      }
+    }
+
+    var dpr = 1, W = 0, H = 0, R = 0, cx = 0, cy = 0;
+    function resize () {
+      var box = cv.getBoundingClientRect();
+      if (!box.width) return false;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = Math.round(box.width * dpr);
+      H = Math.round(box.height * dpr);
+      cv.width = W; cv.height = H;
+      cx = W / 2; cy = H / 2;
+      R = Math.min(W, H) * 0.40;
+      return true;
+    }
+    if (!resize()) return;
+
+    var mx = 0, my = 0, tmx = 0, tmy = 0;
+    if (matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      window.addEventListener("mousemove", function (e) {
+        tmx = (e.clientX / window.innerWidth - 0.5) * 26;
+        tmy = (e.clientY / window.innerHeight - 0.5) * 18;
+      }, { passive: true });
+    }
+
+    var st = Math.sin(TILT), ct = Math.cos(TILT);
+    var px = new Float32Array(N), py = new Float32Array(N), pf = new Float32Array(N);
+
+    function draw (ang) {
+      var cs = Math.cos(ang), sn = Math.sin(ang);
+      mx += (tmx - mx) * 0.05;
+      my += (tmy - my) * 0.05;
+
+      ctx.clearRect(0, 0, W, H);
+
+      for (var i = 0; i < N; i++) {
+        var p = pts[i];
+        var x1 = p.x * cs - p.z * sn;
+        var z1 = p.x * sn + p.z * cs;
+        var y2 = p.y * ct - z1 * st;
+        var z2 = p.y * st + z1 * ct;
+
+        var k = 2.7 / (2.7 + z2);
+        px[i] = cx + x1 * R * k + mx * dpr;
+        py[i] = cy + y2 * R * k + my * dpr;
+        pf[i] = (1 - z2) / 2;                 // 1 = al frente, 0 = al fondo
+      }
+
+      ctx.lineWidth = Math.max(1, 0.7 * dpr);
+      for (var l = 0; l < links.length; l += 2) {
+        var i1 = links[l], i2 = links[l + 1];
+        var f = (pf[i1] + pf[i2]) / 2;
+        if (f < 0.18) continue;               // no dibujar la cara trasera
+        ctx.strokeStyle = "rgba(255,167,36," + (0.035 + f * f * 0.16).toFixed(3) + ")";
+        ctx.beginPath();
+        ctx.moveTo(px[i1], py[i1]);
+        ctx.lineTo(px[i2], py[i2]);
+        ctx.stroke();
+      }
+
+      for (var j = 0; j < N; j++) {
+        var fr = pf[j];
+        var rad = (0.5 + fr * 1.5) * dpr;
+        ctx.fillStyle = fr > 0.72
+          ? "rgba(255,196,107," + (0.20 + fr * 0.55).toFixed(3) + ")"
+          : "rgba(255,167,36," + (0.07 + fr * 0.34).toFixed(3) + ")";
+        ctx.beginPath();
+        ctx.arc(px[j], py[j], rad, 0, 6.2832);
+        ctx.fill();
+      }
+    }
+
+    cv.classList.add("is-on");
+
+    if (reduced) { draw(0.6); return; }       // un fotograma fijo, sin bucle
+
+    var raf = null, last = 0, ang = 0, onScreen = true;
+
+    function loop (t) {
+      if (last) ang += (t - last) * SPEED;
+      last = t;
+      draw(ang);
+      raf = requestAnimationFrame(loop);
+    }
+    function start () {
+      if (raf || !onScreen || document.hidden) return;
+      last = 0;
+      raf = requestAnimationFrame(loop);
+    }
+    function stop () {
+      if (!raf) return;
+      cancelAnimationFrame(raf);
+      raf = null;
+    }
+
+    if (typeof IntersectionObserver !== "undefined") {
+      new IntersectionObserver(function (es) {
+        onScreen = es[0].isIntersecting;
+        onScreen ? start() : stop();
+      }, { threshold: 0 }).observe(cv);
+    }
+    document.addEventListener("visibilitychange", function () {
+      document.hidden ? stop() : start();
+    });
+
+    var rt = null;
+    window.addEventListener("resize", function () {
+      clearTimeout(rt);
+      rt = setTimeout(function () { if (resize()) draw(ang); }, 180);
+    }, { passive: true });
+
+    start();
+  }
+
   /* ------------------------------------------------- Año ------ */
   function initYear () {
     var el = $("[data-year]");
@@ -213,6 +367,7 @@
     safe(initReveals, "initReveals");
     safe(initDecode, "initDecode");
     safe(initStatusbar, "initStatusbar");
+    safe(initGlobe, "initGlobe");
     safe(initSmoothScroll, "initSmoothScroll");
     safe(initYear, "initYear");
     document.documentElement.classList.add("is-ready");

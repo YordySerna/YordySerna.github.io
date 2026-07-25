@@ -239,7 +239,45 @@ table { border-collapse: collapse; width: 100%; }
   position: relative;
 }
 
-.hero-grid { display: grid; gap: 3rem; align-items: end; flex: 1 1 auto; align-content: end; }
+/* Globo de fósforo. Dibujado a mano en canvas 2D: la alternativa era
+   Three.js + Vanta (~700 KB) para un fondo decorativo, justo lo que el
+   sitio dice no hacer. Se enmascara en los bordes para que muera en el
+   fondo en vez de cortarse. */
+.hero-globe {
+  position: absolute;
+  top: 50%; right: -26%;
+  width: min(86vh, 860px);
+  aspect-ratio: 1;
+  transform: translateY(-54%);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.6s var(--ease);
+  /* El centro de la esfera queda fuera de pantalla a propósito: se ve
+     el limbo, que es un arco de puntos, y no la "bola de red" de
+     siempre. De paso deja respirar la ficha de datos. */
+  -webkit-mask-image: radial-gradient(closest-side, #000 52%, transparent 88%);
+          mask-image: radial-gradient(closest-side, #000 52%, transparent 88%);
+}
+.hero-globe.is-on { opacity: .62; }
+
+@media (max-width: 899px) {
+  /* En vertical el texto ocupa casi todo el ancho, así que el globo
+     se sube al margen superior derecho y baja de intensidad: es fondo,
+     no puede pelearle al nombre. */
+  .hero-globe {
+    top: 22%; right: -38%;
+    width: min(92vw, 520px);
+    opacity: 0;
+  }
+  .hero-globe.is-on { opacity: .48; }
+}
+
+.hero-grid {
+  position: relative; z-index: 1;
+  display: grid; gap: 3rem; align-items: end; flex: 1 1 auto; align-content: end;
+}
+.hero-rule { position: relative; z-index: 1; }
 
 .hero-name {
   font-family: var(--serif);
@@ -253,6 +291,31 @@ table { border-collapse: collapse; width: 100%; }
 /* La Y abre hacia la izquierda, así que la S necesita un empujón
    mínimo para alinear ópticamente. Más que esto se lee como sangría. */
 .hero-name .line:last-child { padding-left: .03em; }
+
+/* Mismo principio que el "video through text": el relleno de las letras
+   es un degradado en movimiento, no un color. Acá el degradado imita la
+   persistencia del fósforo cruzando la pantalla.
+   Va dentro de @supports porque sin recorte al texto el color queda
+   transparente y el nombre desaparecería. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero-name .line {
+    background-image: linear-gradient(
+      100deg,
+      var(--bone) 0%, var(--bone) 34%,
+      var(--amber-2) 47%, #FFE0A8 51%, var(--amber-2) 55%,
+      var(--bone) 68%, var(--bone) 100%
+    );
+    background-size: 320% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: phosphorSweep 11s linear infinite;
+  }
+  .hero-name .line:last-child { animation-delay: -5.5s; }
+}
+@keyframes phosphorSweep { to { background-position: -220% 0; } }
 
 /* El eslogan ya no es serif itálica. Grotesca con peso y algo de
    condensación: tensa, moderna, y contrasta de verdad con el nombre
