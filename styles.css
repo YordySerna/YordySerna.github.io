@@ -24,9 +24,13 @@
   --line:      rgba(232,228,220,.11);
   --line-soft: rgba(232,228,220,.055);
 
-  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  /* Instrument Serif: display de contraste alto y serifas afiladas.
+     Bricolage Grotesque: variable con ejes de ancho y tamaño óptico —
+     es la que carga el carácter, y por eso hace de eslogan Y de cuerpo.
+     IBM Plex Mono: sólo datos. */
+  --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
   --mono:  "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --sans:  "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 
   --ease:   cubic-bezier(.16, 1, .3, 1);
   --ease-io:cubic-bezier(.65, 0, .35, 1);
@@ -119,14 +123,16 @@ table { border-collapse: collapse; width: 100%; }
 
 .h2 {
   font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(1.85rem, 4.4vw, 3.1rem);
-  line-height: 1.1;
-  letter-spacing: -.012em;
+  font-weight: 400;
+  font-size: clamp(2rem, 4.8vw, 3.4rem);
+  line-height: 1.06;
+  letter-spacing: -.018em;
   max-width: 19ch;
   text-wrap: balance;
 }
-.h2 em, .closing-h em, .hero-role em {
+/* La itálica queda sólo en los titulares de sección y el cierre,
+   donde es acento editorial y no muletilla. */
+.h2 em, .closing-h em {
   font-style: italic;
   color: var(--amber-2);
 }
@@ -237,23 +243,34 @@ table { border-collapse: collapse; width: 100%; }
 
 .hero-name {
   font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(3.4rem, 15vw, 9.5rem);
-  line-height: .86;
-  letter-spacing: -.035em;
-  margin-bottom: 1.5rem;
+  font-weight: 400;
+  font-size: clamp(3.6rem, 16vw, 10.5rem);
+  line-height: .84;
+  letter-spacing: -.028em;
+  margin-bottom: 1.7rem;
 }
 .hero-name .line { display: block; }
-.hero-name .line:last-child { padding-left: .08em; }
+/* La Y abre hacia la izquierda, así que la S necesita un empujón
+   mínimo para alinear ópticamente. Más que esto se lee como sangría. */
+.hero-name .line:last-child { padding-left: .03em; }
 
+/* El eslogan ya no es serif itálica. Grotesca con peso y algo de
+   condensación: tensa, moderna, y contrasta de verdad con el nombre
+   en serif en vez de repetir su misma voz. */
 .hero-role {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-size: clamp(1.15rem, 2.6vw, 1.7rem);
-  line-height: 1.35;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-variation-settings: "opsz" 48, "wdth" 90;
+  font-size: clamp(1.28rem, 3vw, 2.05rem);
+  line-height: 1.16;
+  letter-spacing: -.028em;
   color: var(--bone);
-  max-width: 24ch;
-  margin-bottom: 1.4rem;
+  max-width: 19ch;
+  margin-bottom: 1.6rem;
+}
+.hero-role em {
+  font-style: normal;
+  color: var(--amber-2);
 }
 
 .hero-lead { color: var(--bone-2); max-width: 46ch; font-size: 1rem; }
@@ -310,10 +327,14 @@ table { border-collapse: collapse; width: 100%; }
   letter-spacing: .12em; color: var(--amber);
   padding-top: .45rem;
 }
+/* Regla del sistema: la serif nombra (personas, proyectos, secciones);
+   la grotesca afirma (eslóganes y principios). Por eso estos van en
+   grotesca y no en serif. */
 .tenet h3 {
-  font-family: var(--serif); font-weight: 400;
-  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
-  line-height: 1.2; letter-spacing: -.01em;
+  font-family: var(--sans); font-weight: 600;
+  font-variation-settings: "opsz" 32, "wdth" 92;
+  font-size: clamp(1.18rem, 2.2vw, 1.5rem);
+  line-height: 1.15; letter-spacing: -.022em;
 }
 .tenet p { color: var(--bone-2); max-width: 62ch; font-size: .96rem; }
 
@@ -445,9 +466,9 @@ table { border-collapse: collapse; width: 100%; }
 /* --------------------------------------------- 11. Contacto ---- */
 .closing { text-align: left; }
 .closing-h {
-  font-family: var(--serif); font-weight: 300;
-  font-size: clamp(2rem, 6vw, 4.2rem);
-  line-height: 1.06; letter-spacing: -.02em;
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(2.15rem, 6.4vw, 4.6rem);
+  line-height: 1.02; letter-spacing: -.026em;
   max-width: 16ch;
   margin-bottom: 1.6rem;
 }
@@ -456,9 +477,9 @@ table { border-collapse: collapse; width: 100%; }
 .mailto {
   display: inline-block;
   font-family: var(--serif);
-  font-size: clamp(1.3rem, 4.6vw, 2.6rem);
-  font-weight: 300;
-  letter-spacing: -.015em;
+  font-size: clamp(1.35rem, 4.8vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: -.02em;
   color: var(--amber-2);
   position: relative;
   padding-bottom: .18em;
