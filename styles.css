@@ -623,3 +623,41 @@ table { border-collapse: collapse; width: 100%; }
   .pip { animation: none; }
   .grain { display: none; }
 }
+
+/* ===================== FILTROS DE PROYECTOS ===================== */
+.filtros{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  margin-block:1.6rem 2.2rem;
+}
+.filtro{
+  font-family:'IBM Plex Mono', ui-monospace, monospace;
+  font-size:.72rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:.55rem 1rem;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:transparent;
+  color:var(--bone);
+  opacity:.6;
+  cursor:pointer;
+  transition:opacity .25s, border-color .25s, background-color .25s, color .25s;
+}
+.filtro:hover{ opacity:1; border-color:var(--amber); }
+.filtro.is-on{
+  opacity:1;
+  background:var(--amber);
+  border-color:var(--amber);
+  color:#0A0B0D;
+}
+.filtro:focus-visible{ outline:2px solid var(--amber); outline-offset:3px; }
+
+/* El atributo hidden tiene que ganarle a cualquier display de .entry */
+.entry[hidden]{ display:none !important; }
+
+@media (max-width:560px){
+  .filtros{ gap:.4rem; }
+  .filtro{ font-size:.66rem; padding:.45rem .8rem; }
+}
