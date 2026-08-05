@@ -421,6 +421,7 @@ table { border-collapse: collapse; width: 100%; }
 .entry[data-tone="fw"] { --tone: #E4A85A; }
 .entry[data-tone="cc"] { --tone: #46A67F; }
 .entry[data-tone="cf"] { --tone: #8FD14F; }
+.entry[data-tone="ch"] { --tone: #C8551E; }
 
 .entry::before {
   content: ""; position: absolute; left: 0; top: -1px; bottom: -1px; width: 2px;
