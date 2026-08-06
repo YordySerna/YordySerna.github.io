@@ -1,5 +1,6 @@
 param(
-  [string]$Root = "C:\dev\Landing pages\Vonn Kraus\von-krauss-web",
+  # por defecto sirve la carpeta donde está este mismo script
+  [string]$Root = $PSScriptRoot,
   [int]$Port = 8765
 )
 
