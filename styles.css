@@ -428,6 +428,7 @@ table { border-collapse: collapse; width: 100%; }
 .entry[data-tone="fr"] { --tone: #C9600F; }
 .entry[data-tone="ct"] { --tone: #57B86B; }
 .entry[data-tone="mj"] { --tone: #D9924E; }
+.entry[data-tone="pt"] { --tone: #B33A2B; } /* greda y ají de la cazuela del Pitín */
 
 .entry::before {
   content: ""; position: absolute; left: 0; top: -1px; bottom: -1px; width: 2px;
