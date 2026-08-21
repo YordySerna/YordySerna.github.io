@@ -35,6 +35,16 @@ while ($listener.IsListening) {
       $res.AddHeader("Accept-Ranges", "bytes")
       $bytes = [System.IO.File]::ReadAllBytes($path)
 
+      # Una petición HEAD pide sólo las cabeceras. Si igual se le escribe el
+      # cuerpo, HttpListener lanza "los bytes que se van a escribir sobrepasan
+      # el Content-Length" en cada sondeo y llena el log de errores.
+      if ($req.HttpMethod -eq "HEAD") {
+        $res.StatusCode = 200
+        $res.ContentLength64 = $bytes.Length
+        $res.OutputStream.Close()
+        continue
+      }
+
       $range = $req.Headers["Range"]
       if ($range -and $range -match 'bytes=(\d+)-(\d*)') {
         $start = [int]$Matches[1]
