@@ -437,6 +437,9 @@ table { border-collapse: collapse; width: 100%; }
    distinguiría. Es el único rojo frío de la lista — los otros dos (pt, ch)
    tiran a ladrillo y a naranja. */
 .entry[data-tone="bb"] { --tone: #C6485F; }
+/* El prado de enero. Más claro y más amarillo que el verde de Von Krauss
+   (#A9BC82), que es el único otro verde de pasto de la lista. */
+.entry[data-tone="pv"] { --tone: #C2D18A; }
 
 .entry::before {
   content: ""; position: absolute; left: 0; top: -1px; bottom: -1px; width: 2px;
