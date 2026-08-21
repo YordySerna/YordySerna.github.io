@@ -432,6 +432,11 @@ table { border-collapse: collapse; width: 100%; }
 .entry[data-tone="cs"] { --tone: #C97C3F; } /* cobre bruñido del centro automotriz */
 .entry[data-tone="lr"] { --tone: #D8B463; } /* bronce viejo de muelle, de Los Reales */
 .entry[data-tone="ad"] { --tone: #CE7C3C; } /* la olla de cobre del comedor de Adkantú */
+/* El burdeos del rótulo de Bogotá, subido de luz: el original (#6B1F2E) es
+   la letra de una placa de esmalte clara y sobre este fondo casi negro no se
+   distinguiría. Es el único rojo frío de la lista — los otros dos (pt, ch)
+   tiran a ladrillo y a naranja. */
+.entry[data-tone="bb"] { --tone: #C6485F; }
 
 .entry::before {
   content: ""; position: absolute; left: 0; top: -1px; bottom: -1px; width: 2px;
