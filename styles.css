@@ -425,7 +425,7 @@ table { border-collapse: collapse; width: 100%; }
 .entry[data-tone="tt"] { --tone: #C9A227; }
 .entry[data-tone="la"] { --tone: #7C8F5A; }
 .entry[data-tone="ps"] { --tone: #3FA9C4; }
-.entry[data-tone="fr"] { --tone: #C9600F; }
+.entry[data-tone="fr"] { --tone: #E1701A; } /* el naranja real de la maquinaria — sube de 4,8:1 a 6,2:1 sobre el fondo */
 .entry[data-tone="ct"] { --tone: #57B86B; }
 .entry[data-tone="mj"] { --tone: #D9924E; }
 .entry[data-tone="pt"] { --tone: #B33A2B; } /* greda y ají de la cazuela del Pitín */
