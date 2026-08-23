@@ -441,6 +441,12 @@ table { border-collapse: collapse; width: 100%; }
    (#A9BC82), que es el único otro verde de pasto de la lista. */
 .entry[data-tone="pv"] { --tone: #C2D18A; }
 
+/* El azul de cota del plano de ekla. Es el primer tono frío del dossier: los
+   dieciocho anteriores son verdes, dorados, cobres y rojos, y en fila
+   empezaban a parecerse entre ellos. Este separa la entrada de un golpe de
+   vista, que es justo lo que tiene que hacer un dossier. */
+.entry[data-tone="ek"] { --tone: #62B4EE; }
+
 .entry::before {
   content: ""; position: absolute; left: 0; top: -1px; bottom: -1px; width: 2px;
   background: var(--tone);
