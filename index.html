@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" />
 
-<link rel="stylesheet" href="styles.css?v=20260821a" />
+<link rel="stylesheet" href="styles.css?v=20260824a" />
 <script>
 /* La clase .js activa los estados ocultos previos a cada animación.
    Se pone acá (y no en main.js) para que no haya parpadeo de contenido.
@@ -89,6 +89,16 @@
     </div>
 
     <aside class="hero-meta reveal" aria-label="Datos">
+      <!-- La foto va acá arriba y no en Contacto: estos negocios se cierran
+           por confianza y referencia, así que la cara tiene que estar antes
+           de que decidan seguir leyendo, no después. Chica a propósito — el
+           foco de la página son los negocios de los clientes, no yo. -->
+      <figure class="retrato">
+        <img src="assets/yordy-serna.jpg" width="480" height="640"
+             loading="lazy" decoding="async"
+             alt="Yordy Serna, sentado frente a su escritorio de trabajo en Loncoche">
+        <figcaption>Yordy Serna<span>Respondo en el día</span></figcaption>
+      </figure>
       <dl>
         <div><dt>Ubicación</dt><dd>Loncoche, Araucanía · Chile</dd></div>
         <div><dt>Disponibilidad</dt><dd class="dd-live"><span class="pip" aria-hidden="true"></span>Aceptando proyectos</dd></div>
@@ -153,689 +163,419 @@
     </header>
 
     <!-- Los filtros van escritos acá, no generados por JS: si el script
-         no arranca se ven todos los proyectos, que es el estado correcto. -->
+         no arranca se ven todos los proyectos, que es el estado correcto.
+         Recategorizados: "comercio" juntaba nueve de veintiún proyectos
+         —cabañas, gimnasio, barbería, dental y taller en el mismo saco— y
+         había dejado de significar algo. -->
     <div class="filtros reveal" data-filtros role="group" aria-label="Filtrar proyectos por rubro">
       <button type="button" class="filtro is-on" data-filtro="todos" aria-pressed="true">Todos</button>
+      <button type="button" class="filtro" data-filtro="alojamiento" aria-pressed="false">Alojamiento</button>
       <button type="button" class="filtro" data-filtro="gastronomia" aria-pressed="false">Gastronomía</button>
-      <button type="button" class="filtro" data-filtro="comercio" aria-pressed="false">Comercio</button>
-      <button type="button" class="filtro" data-filtro="empresas" aria-pressed="false">Empresas</button>
+      <button type="button" class="filtro" data-filtro="salud" aria-pressed="false">Salud y cuidado</button>
+      <button type="button" class="filtro" data-filtro="oficios" aria-pressed="false">Oficios y obra</button>
       <button type="button" class="filtro" data-filtro="herramientas" aria-pressed="false">Herramientas</button>
+      <!-- Arranca escrito con el total real: sin JS tampoco hay filtro y se
+           ven los 21, así que la cifra sigue siendo cierta. -->
+      <span class="filtros-cuenta" data-cuenta>21 proyectos</span>
     </div>
+      <!-- ══ DESTACADOS ══ Generado por dev/generar-trabajo.ps1 ══ -->
+      <div class="destacados">
+        <article class="dest reveal" data-tone="dp" data-cat="salud">
+          <a class="dest-foto" href="https://yordyserna.github.io/dental-patagonia-pucon/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="assets/capturas/dental-patagonia-pucon-desktop.jpg" width="800" height="562" loading="lazy" decoding="async"
+                 alt="">
+          </a>
+          <div class="dest-txt">
+            <p class="dest-meta"><span class="dest-n">20</span> <span class="sello sello--prop">Propuesta</span> <span class="dest-ciudad">Pucón</span></p>
+            <h3 class="dest-nombre"><a href="https://yordyserna.github.io/dental-patagonia-pucon/" target="_blank" rel="noopener">Clínica Dental Patagonia</a></h3>
+            <p class="dest-gancho">Tres años mandando pacientes a una pantalla en negro que dice «Maintenance mode is on».</p>
+            <p class="dest-pieza"><span>La pieza</span> Carta de precios completa, antes del sillón</p>
+            <p class="entry-links"><a href="https://yordyserna.github.io/dental-patagonia-pucon/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/dental-patagonia-pucon" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </article>
+        <article class="dest reveal" data-tone="ek" data-cat="oficios">
+          <a class="dest-foto" href="https://yordyserna.github.io/constructora-ekla-pitrufquen/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="assets/capturas/constructora-ekla-pitrufquen-desktop.jpg" width="800" height="562" loading="lazy" decoding="async"
+                 alt="">
+          </a>
+          <div class="dest-txt">
+            <p class="dest-meta"><span class="dest-n">19</span> <span class="sello sello--prop">Propuesta</span> <span class="dest-ciudad">Pitrufquén</span></p>
+            <h3 class="dest-nombre"><a href="https://yordyserna.github.io/constructora-ekla-pitrufquen/" target="_blank" rel="noopener">constructora ekla</a></h3>
+            <p class="dest-gancho">Su dominio está pagado y le responde 403 Forbidden a cualquiera que lo escriba.</p>
+            <p class="dest-pieza"><span>La pieza</span> Las 5 etapas de la obra con sus hitos de pago</p>
+            <p class="entry-links"><a href="https://yordyserna.github.io/constructora-ekla-pitrufquen/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/constructora-ekla-pitrufquen" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </article>
+        <article class="dest reveal" data-tone="ad" data-cat="gastronomia">
+          <a class="dest-foto" href="https://yordyserna.github.io/adkantu-conaripe/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="assets/capturas/adkantu-conaripe-desktop.jpg" width="800" height="562" loading="lazy" decoding="async"
+                 alt="">
+          </a>
+          <div class="dest-txt">
+            <p class="dest-meta"><span class="dest-n">16</span> <span class="sello sello--prop">Propuesta</span> <span class="dest-ciudad">Coñaripe</span></p>
+            <h3 class="dest-nombre"><a href="https://yordyserna.github.io/adkantu-conaripe/" target="_blank" rel="noopener">Adkantú</a></h3>
+            <p class="dest-gancho">Tres mil reseñas en Google y su dominio devuelve un aviso de cuenta suspendida.</p>
+            <p class="dest-pieza"><span>La pieza</span> Corte del valle entre el lago y las termas</p>
+            <p class="entry-links"><a href="https://yordyserna.github.io/adkantu-conaripe/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/adkantu-conaripe" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </article>
+        <article class="dest reveal" data-tone="cs" data-cat="oficios">
+          <a class="dest-foto" href="https://yordyserna.github.io/car-service-loncoche/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="assets/capturas/car-service-loncoche-desktop.jpg" width="800" height="562" loading="lazy" decoding="async"
+                 alt="">
+          </a>
+          <div class="dest-txt">
+            <p class="dest-meta"><span class="dest-n">14</span> <span class="sello">Encargo</span> <span class="dest-ciudad">Loncoche</span></p>
+            <h3 class="dest-nombre"><a href="https://yordyserna.github.io/car-service-loncoche/" target="_blank" rel="noopener">Car Service</a></h3>
+            <p class="dest-gancho">Dos locales que el cliente creía dos negocios distintos. Una página, dos puertas.</p>
+            <p class="dest-pieza"><span>La pieza</span> Lámina de alineación dibujada en SVG</p>
+            <p class="entry-links"><a href="https://yordyserna.github.io/car-service-loncoche/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/car-service-loncoche" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </article>
+        <article class="dest reveal" data-tone="fr" data-cat="oficios">
+          <a class="dest-foto" href="https://yordyserna.github.io/forestal-robur/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <img src="assets/capturas/forestal-robur-desktop.jpg" width="800" height="562" loading="lazy" decoding="async"
+                 alt="">
+          </a>
+          <div class="dest-txt">
+            <p class="dest-meta"><span class="dest-n">10</span> <span class="sello">Encargo</span> <span class="dest-ciudad">Loncoche</span></p>
+            <h3 class="dest-nombre"><a href="https://yordyserna.github.io/forestal-robur/" target="_blank" rel="noopener">Forestal Robur SpA</a></h3>
+            <p class="dest-gancho">Un mandante contrata contratistas con los papeles al día. La página es el expediente de faena.</p>
+            <p class="dest-pieza"><span>La pieza</span> Plano de ingeniería con la pendiente acotada</p>
+            <p class="entry-links"><a href="https://yordyserna.github.io/forestal-robur/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/forestal-robur" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </article>
+      </div>
 
-    <div class="dossier" data-dossier>
-
-      <article class="entry reveal" data-tone="vk" data-cat="gastronomia">
-        <a class="entry-hit" href="https://yordyserna.github.io/von-krauss/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">01</span>
-          <span class="entry-name">Von Krauss</span>
-          <span class="entry-kind">RestoBar &amp; Cafetería</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Un local que funciona como tres cosas distintas según la hora. La página lee el
-            reloj del visitante y muestra si está abierto ahora mismo, con la carta y los
-            horarios reales del local.
-          </p>
-          <ul class="chips">
-            <li>Horario en vivo</li><li>Video propio</li><li>Carta real</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/von-krauss/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/von-krauss" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="fw" data-cat="gastronomia">
-        <a class="entry-hit" href="https://yordyserna.github.io/far-west-loncoche/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">02</span>
-          <span class="entry-name">Far West</span>
-          <span class="entry-kind">Bistro &amp; Pub</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Ambiente western, karaoke los viernes y música en vivo. El diseño tenía que sonar
-            fuerte sin volverse ilegible: madera oscura, ámbar y una carta que se lee bien
-            con el bar lleno.
-          </p>
-          <ul class="chips">
-            <li>Parallax</li><li>Carta grabada</li><li>SEO local</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/far-west-loncoche/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/far-west-loncoche" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="cc" data-cat="empresas">
-        <a class="entry-hit" href="https://yordyserna.github.io/certa-chile/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">03</span>
-          <span class="entry-name">Certa Chile S.A.</span>
-          <span class="entry-kind">Maquinaria agrícola</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Importador con quince años en Chile y diez marcas europeas en catálogo. Aquí el
-            problema no era vender: era ordenar mucha ficha técnica para que un agricultor
-            encuentre su máquina rápido.
-          </p>
-          <ul class="chips">
-            <li>Catálogo · 10 marcas</li><li>Ficha por modelo</li><li>Galería técnica</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/certa-chile/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/certa-chile" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="cf" data-cat="herramientas">
-        <a class="entry-hit" href="https://yordyserna.github.io/calibracion-forestal/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">04</span>
-          <span class="entry-name">Calibración Forestal</span>
-          <span class="entry-kind">Herramienta de cubicación</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Suite de seis herramientas para medir madera en terreno desde el celular: metro
-            ruma, JAS, Smalian, árbol en pie, parcela y calibración contra planta. Todo queda
-            en el registro de la faena y sale como reporte a WhatsApp.
-          </p>
-          <ul class="chips">
-            <li>6 herramientas</li><li>Reporte WhatsApp</li><li>Funciona sin señal</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/calibracion-forestal/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/calibracion-forestal" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="rp" data-cat="comercio">
-        <a class="entry-hit" href="https://yordyserna.github.io/repuestos-palma/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">05</span>
-          <span class="entry-name">Repuestos Palma</span>
-          <span class="entry-kind">Repuestos automotrices</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Especialistas en sistema eléctrico y de arranque en Villarrica. El local perdía
-            tiempo respondiendo la misma pregunta de a uno: "¿tienes esta pieza?". El
-            cotizador pregunta marca, modelo y año, y el WhatsApp llega con la ficha escrita.
-          </p>
-          <ul class="chips">
-            <li>Cotizador en 3 pasos</li><li>15 marcas · 100 modelos</li><li>Fondo animado sin librerías</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/repuestos-palma/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/repuestos-palma" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="ch" data-cat="comercio">
-        <a class="entry-hit" href="https://yordyserna.github.io/calor-del-hogar/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">06</span>
-          <span class="entry-name">Calor de Hogar</span>
-          <span class="entry-kind">Hojalatería · Loncoche</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Un taller donde cada cañón y cada campana sale de una plancha plana, doblada a
-            mano. No había ni una foto del negocio en internet. Todo salió del material del
-            local: la paleta son los colores reales de las paredes y las estanterías, y los
-            ocho videos del taller bajaron de 583 MB a 10 MB, sin descargarse hasta que
-            alguien toca play. Tiene su propia página de catálogo con los tipos de pieza, y
-            cierra con la entrevista que le hizo la Municipalidad de Loncoche en el taller.
-          </p>
-          <ul class="chips">
-            <li>8 videos · 583 MB → 10 MB</li><li>Catálogo de piezas</li><li>Cotizador WhatsApp</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/calor-del-hogar/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/calor-del-hogar" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="tt" data-cat="comercio">
-        <a class="entry-hit" href="https://yordyserna.github.io/the-temple-fitness-club/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">07</span>
-          <span class="entry-name">The Temple Fitness Club</span>
-          <span class="entry-kind">Gimnasio · Loncoche</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Un gimnasio que se llama Templo pedía dejar de parecer un gimnasio. Fuera las
-            tarjetas: los tres planes son columnas separadas por hilos finos, con el precio
-            grande para compararlos de un vistazo. El botón de contratar abre un formulario
-            corto y sale a WhatsApp con el plan, el nombre y el teléfono ya redactados; si el
-            JavaScript no carga, ese mismo botón sigue siendo un enlace que llega al chat
-            igual. El titular mezcla una grotesca de peso 900 con una itálica de alto
-            contraste, y se arma letra por letra detrás de una máscara. El cartel de abierto
-            o cerrado no está escrito a mano: se calcula con la hora real de Chile.
-          </p>
-          <ul class="chips">
-            <li>Planes → WhatsApp</li><li>Horario en vivo</li><li>Lenis + GSAP ScrollTrigger</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/the-temple-fitness-club/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/the-temple-fitness-club" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="la" data-cat="comercio">
-        <a class="entry-hit" href="https://yordyserna.github.io/cabana-los-avellanos/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">08</span>
-          <span class="entry-name">Cabaña y Vivero Los Avellanos</span>
-          <span class="entry-kind">Cabañas · Loncoche</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Una cabaña y un vivero en un campo que sigue funcionando, con gallinas
-            sueltas y un letrero pintado a mano en la entrada. Va entero sobre un
-            solo verde de bosque: la profundidad no la da cambiar de color, la dan
-            una foto del campo muy desenfocada que deriva detrás del contenido y
-            una niebla dibujada en un canvas de 200×120 px reales, estirado recién
-            después a pantalla completa. Con las fotos la regla es una sola: si es
-            una pieza que se mira va encapsulada, y entra cayendo de arriba o de un
-            costado, pasándose unos píxeles antes de acomodarse; si la foto es la
-            página, va a sangre con el texto montado encima. El calendario de
-            reservas es propio, arma el mensaje y lo abre directo en WhatsApp.
-          </p>
-          <ul class="chips">
-            <li>Cero librerías</li><li>Niebla en canvas, sin WebGL</li><li>Calendario propio → WhatsApp</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/cabana-los-avellanos/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/cabana-los-avellanos" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="ps" data-cat="comercio">
-        <a class="entry-hit" href="https://yordyserna.github.io/cabanas-puerta-del-sol/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">09</span>
-          <span class="entry-name">Cabañas Puerta del Sol</span>
-          <span class="entry-kind">Cabañas y piscina · Loncoche</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Un recinto con piscina grande, cabañas y camping en el kilómetro 1 del camino a
-            Calafquén. No tenía sitio: existía un flyer y diez fotos sueltas en el teléfono.
-            De ese flyer salió la identidad — el sol en espiral se rehízo en SVG y su naranja
-            quedó como único acento sobre verde bosque y madera. Las ocho fotos del recinto
-            entraron comprimidas de 11,9 MB a 1,6 MB, porque el visitante que importa aquí
-            navega con señal rural. El calendario de reservas es propio: se marcan llegada y
-            salida sobre dos meses, se elige el tipo de estadía y cuántos son, y la consulta
-            sale a WhatsApp ya redactada. Las capas del hero se mueven a velocidades
-            distintas al hacer scroll y las tarjetas de instalaciones encienden un halo que
-            sigue al cursor.
-          </p>
-          <ul class="chips">
-            <li>Next.js + Framer Motion</li><li>Calendario propio → WhatsApp</li><li>Fotos: 11,9 MB → 1,6 MB</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/cabanas-puerta-del-sol/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/cabanas-puerta-del-sol" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="fr" data-cat="empresas">
-        <a class="entry-hit" href="https://yordyserna.github.io/forestal-robur/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">10</span>
-          <span class="entry-name">Forestal Robur SpA</span>
-          <span class="entry-kind">Cosecha forestal · Loncoche</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Cosecha de pino y eucalipto en pendiente sobre 30%: torre de madereo, skidder,
-            excavadora con garra y Bell trineumático. La primera versión fue un expediente
-            de faena, con folios numerados y papel color crema, y la boté entera: leía como
-            panfleto de los ochenta, y una empresa que levanta torres en laderas de treinta
-            grados tiene que hablar de acero y de cable, no de papeleo. Ahora es una ficha
-            técnica de máquina — superficie de acero, condensada de señalética, cifras
-            grandes con la unidad chica y fotos de faena a sangre. La pieza central es un
-            <b>plano de ingeniería</b> dibujado en SVG: la torre en la cancha, el cable
-            tendido hasta el anclaje, el carro subiendo un fuste suspendido y la pendiente
-            acotada. La caída del terreno está calculada para dar sobre 30%, el mismo
-            umbral que el texto declara, y el relieve sale de un generador con semilla
-            fija: es siempre el mismo cerro. Nada afirma lo que no está confirmado — lo que
-            la familia todavía no entrega sale como POR CONFIRMAR — y el formulario arma la
-            solicitud y la abre directo en WhatsApp.
-          </p>
-          <ul class="chips">
-            <li>Plano de ingeniería en SVG</li><li>Cero librerías</li><li>Pendiente acotada de verdad</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/forestal-robur/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/forestal-robur" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="ct" data-cat="herramientas">
-        <a class="entry-hit" href="https://yordyserna.github.io/calibracion-terreno/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">11</span>
-          <span class="entry-name">Calibración JAS</span>
-          <span class="entry-kind">App de cubicación en terreno</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            La tabla de cubicación JAS vive en un Excel que nadie puede abrir arriba de la
-            máquina. Esta app la convierte en un contador de trozos para el celular: se
-            instala desde el navegador en Android o iPhone, funciona sin señal y el volumen
-            sale solo. El día se cierra con un reporte — producción, panas y novedades —
-            que llega a los jefes por WhatsApp o como un Excel de verdad, con el archivo
-            .xlsx armado byte a byte sin ninguna librería.
-          </p>
-          <ul class="chips">
-            <li>App instalable · sin señal</li><li>Excel generado a mano</li><li>Reporte diario a WhatsApp</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/calibracion-terreno/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/calibracion-terreno" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="mj" data-cat="comercio">
-        <a class="entry-hit" href="https://yordyserna.github.io/majoaal-lican-ray/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">12</span>
-          <span class="entry-name">Cabañas &amp; Lodge Majoaal</span>
-          <span class="entry-kind">Alojamiento · Licán Ray</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Cuatro alojamientos sobre el bosque nativo con vista al lago Calafquén. Tienen
-            veintiún mil seguidores en Instagram mandando gente a un subdominio ajeno hecho
-            con plantilla, que reusa las mismas fotos de Booking: no hay dominio propio ni
-            manera de aparecer en Google por su nombre. Esta propuesta se armó para
-            presentársela. La regla acá fue no mentir: capacidad, tarifas, horarios y
-            distancias salen de publicaciones del propio complejo, y todo lo que no está
-            confirmado queda marcado como EJEMPLO a la vista, con borde punteado, para
-            reemplazarlo con sus datos. El fondo son cuatro capas de CSS y nada más —
-            manchas de niebla que derivan, jirones que cruzan la pantalla, ceniza en
-            suspensión y brasas dentro de las zonas oscuras, resueltas con degradados en un
-            solo pseudoelemento en vez de sumar decenas de nodos.
-          </p>
-          <ul class="chips">
-            <li>Cero librerías</li><li>Fondo animado en cuatro capas</li><li>Cotizador → WhatsApp</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/majoaal-lican-ray/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/majoaal-lican-ray" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="pt" data-cat="gastronomia">
-        <a class="entry-hit" href="https://yordyserna.github.io/pitin-loncoche/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">13</span>
-          <span class="entry-name">Restaurant Pitín</span>
-          <span class="entry-kind">Picada · Loncoche</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            La mejor picada de La Araucanía 2014 según Sernatur, cocinando desde 1998,
-            y su única presencia en internet era la página de Facebook. La regla fue la
-            misma que en Majoaal: todo lo que el sitio afirma está publicado en alguna
-            parte — el premio, el 4,6 de Google, la historia del fundador —, y lo que
-            no, queda marcado como EJEMPLO con borde punteado. El cartel de abierto o
-            cerrado se calcula con la hora real de Chile, la carta se lee con una mano
-            en el celular con precios en numerales a la antigua, y el fondo es cocina
-            pura: vahos de vapor, especias en suspensión y chispas de leña, todo en
-            CSS sin una librería.
-          </p>
-          <ul class="chips">
-            <li>Cero librerías</li><li>Abierto/cerrado en vivo</li><li>Reserva → WhatsApp</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/pitin-loncoche/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/pitin-loncoche" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="cs" data-cat="comercio">
-        <a class="entry-hit" href="https://yordyserna.github.io/car-service-loncoche/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">14</span>
-          <span class="entry-name">Car Service</span>
-          <span class="entry-kind">Centro automotriz · Loncoche</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Vende el repuesto en un local y lo instala en el otro, y hasta ahora
-            existía sólo en Facebook. El sitio se ordena como una ficha técnica de
-            taller: dos estaciones espejadas —ventas y servicios—, la dirección, el
-            WhatsApp y la lista de trabajos sacados de su propia publicidad, y todo
-            lo que no me consta marcado como EJEMPLO con borde punteado. La pieza
-            central es una lámina de geometría dibujada a mano en SVG —convergencia,
-            caída y avance— con la frase de lo que siente el conductor cuando cada
-            ángulo está corrido: es la forma de explicarle a un cliente por qué paga
-            una alineación. Los fondos fotográficos se desenfocan al hacer scroll
-            cruzando la opacidad de dos capas, nunca animando filter:blur(), que
-            obliga a repintar en cada cuadro; y el video del galpón es el del taller.
-          </p>
-          <ul class="chips">
-            <li>Cero librerías</li><li>Lámina de alineación en SVG</li><li>Hora → WhatsApp</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/car-service-loncoche/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/car-service-loncoche" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="lr" data-cat="comercio">
-        <a class="entry-hit" href="https://yordyserna.github.io/los-reales-siete-lagos/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">15</span>
-          <span class="entry-name">Los Reales de los Siete Lagos</span>
-          <span class="entry-kind">Cabañas y aguas calientes · Licán Ray</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Propuesta preparada antes de la llamada, no un encargo: 4,9 en Google
-            con 271 opiniones y su dominio sigue apareciendo en los resultados sin
-            llevar a ninguna parte, así que la venta se les va por Trivago,
-            Tripadvisor y Hotels. La pieza central son dos boletas dibujadas en SVG
-            que ponen la misma cabaña y la misma noche una al lado de la otra —por
-            un portal y directo por WhatsApp— para mostrar la comisión que se queda
-            en el camino; vende el sitio y de paso le explica al dueño por qué la
-            reserva directa importa. Mirando las fotos que me pasaron apareció lo
-            mejor: su propio logo dice <em>aguas calientes &amp; spa</em> y tienen
-            piscina temperada techada y sauna de barril, algo que no estaba escrito
-            en ninguna parte de internet. Eso pasó a ser el titular. El sitio es de
-            papel —blanco cálido y crema, con la barra de arriba negra de borde a
-            borde— y los fondos son sus mismas fotos desenfocadas, con un piso de
-            luminancia horneado en el archivo y no puesto con un filtro CSS: así lo
-            que se puede medir en el archivo es exactamente lo que se ve en
-            pantalla. Ese piso es lo que separa un texto en 3,6:1 de uno en 5:1, y
-            no hay manera de saberlo mirando.
-          </p>
-          <ul class="chips">
-            <li>Cero librerías</li><li>La cuenta clara en SVG</li><li>Reserva → WhatsApp</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/los-reales-siete-lagos/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/los-reales-siete-lagos" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="ad" data-cat="gastronomia">
-        <a class="entry-hit" href="https://yordyserna.github.io/adkantu-conaripe/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">16</span>
-          <span class="entry-name">Adkantú</span>
-          <span class="entry-kind">Restaurant · Coñaripe</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            4,9 en Google con 3.000 reseñas —el mejor evaluado del eje lacustre— y su
-            dominio abre: lo que muestra es un aviso de «Cuenta suspendida» de la empresa
-            de hosting. Para el que busca dónde almorzar en Coñaripe, eso se lee como que
-            el restaurant cerró. La pieza central es un corte del valle dibujado en SVG,
-            del lago Calafquén al volcán Villarrica, con el punto exacto de donde sale
-            cada grupo de platos y la casa marcada en la plaza. Las fotos publicadas del
-            local sostienen el resto: el comedor va de fondo en la portada bajo dos
-            veladuras, tres bandas a todo el ancho corren su imagen con el scroll dentro
-            del sobrante que el CSS les deja —sin JS quedan centradas y el recorte igual
-            calza—, y los diez platos se abren en un visor hecho con
-            <code>&lt;dialog&gt;</code>, cada uno enlazado a su propia imagen por si el
-            script no llega. Sobre la portada suben brasas: sesenta puntos en un canvas
-            con el brillo dibujado una sola vez, que se apagan cuando la pestaña se va al
-            fondo o cuando el visitante pidió menos movimiento.
-          </p>
-          <ul class="chips">
-            <li>Cero librerías</li><li>Corte del valle en SVG</li><li>Reserva → WhatsApp</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/adkantu-conaripe/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/adkantu-conaripe" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="bb" data-cat="comercio">
-        <a class="entry-hit" href="https://yordyserna.github.io/bogota-barber-shop/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">17</span>
-          <span class="entry-name">Bogotá Barber Shop</span>
-          <span class="entry-kind">Barbería · dos locales en Temuco</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Una cadena con marca registrada, dos locales y 390 opiniones en Google
-            que no tiene una casa con su nombre: hoy su marca vive repartida entre
-            un Instagram y una página de AgendaPro con diseño de AgendaPro. Lo que
-            hace que la propuesta se defienda sola es que <em>ya usan AgendaPro</em>,
-            así que los catorce botones de reserva del sitio apuntan a su agenda
-            real y funcionan hoy — la demo no simula la reserva, la hace, y al dueño
-            no se le pide cambiar de sistema ni mantener un segundo calendario. La
-            pieza central es la carta de precios dibujada como un tablero de
-            barbería, con el tiempo de sillón de cada servicio y su propio botón al
-            pie. En la portada el faro gira en dos capas: debajo uno dibujado en CSS
-            que pesa cero y arranca en el primer fotograma, encima el modelo 3D que
-            toma el relevo al terminar de cargar; si WebGL falla o el archivo no
-            llega, el de CSS se queda puesto y no se nota el cambio. Gira sólo el
-            cilindro interior, no el faro entero, con la animación que el propio
-            modelo trae adentro. Sus fotos llegaron comprimidas a 1000 px por
-            WhatsApp, así que van reescaladas con máscara de enfoque y servidas en
-            dos tamaños: el celular baja 1,9 MB donde antes bajaban 4,5.
-          </p>
-          <ul class="chips">
-            <li>Reserva real en AgendaPro</li><li>Tablero de precios</li><li>Faro 3D con respaldo en CSS</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/bogota-barber-shop/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/bogota-barber-shop" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="pv" data-cat="comercio">
-        <a class="entry-hit" href="https://yordyserna.github.io/camping-prado-verde/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">18</span>
-          <span class="entry-name">Camping Prado Verde</span>
-          <span class="entry-kind">Camping y cabañas · Licán Ray</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            4,3 en Google con 358 opiniones y un dominio,
-            <code>campingpradoverde.cl</code>, que dejó de resolver: sigue
-            indexado y no lleva a ninguna parte. La pieza central es el plano del
-            terreno dibujado en SVG, con los sectores marcados, porque un camping
-            se reserva por sitio y no por habitación y esa es justo la pregunta
-            que nadie contesta antes de llegar. Después llegaron treinta fotos del
-            negocio y el trabajo fue no ponerlas todas en la misma tarjeta: la del
-            prado entra desenfocada detrás del titular con un velo graduado —
-            desenfocarla es lo que permite apoyarle texto encima sin pelear por la
-            legibilidad—, otra ocupa un panel a sangre con parallax, la de la
-            cabaña se sale de la caja hasta el borde de la ventana, y los
-            interiores van en un mural y en una tira que se desliza con el dedo.
-            El parallax es CSS ligado al scroll dentro de <code>@supports</code>,
-            sin una línea de librería. Los catorce pies de foto se midieron
-            pintando cada imagen en un canvas y buscando el pixel más claro de la
-            franja del texto: varias tienen blanco puro debajo y el peor caso
-            queda en 7,75:1.
-          </p>
-          <ul class="chips">
-            <li>Cero librerías</li><li>Plano del terreno en SVG</li><li>Seis tratamientos de foto</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/camping-prado-verde/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/camping-prado-verde" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
-      <article class="entry reveal" data-tone="ek" data-cat="empresas">
-        <a class="entry-hit" href="https://yordyserna.github.io/constructora-ekla-pitrufquen/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">19</span>
-          <span class="entry-name">constructora ekla</span>
-          <span class="entry-kind">Constructora · Pitrufquén</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Su dominio está comprado y pagado, y le responde <em>403 Forbidden</em> a
-            cualquiera que lo escriba: un servidor negando la entrada, que es peor que
-            no tener nada, porque el que anda buscando constructora cierra y llama a la
-            siguiente. La dirección se llama «el plano» —azul de plano profundo, gris
-            hormigón y blanco tiza, con líneas de cota y trama técnica como lenguaje
-            gráfico— porque lo que un cliente busca en una constructora chica no es
-            audacia, es la sensación de que los papeles están al día. La pieza que
-            sostiene la página son <strong>las 5 etapas de la obra con el hito de pago
-            de cada una</strong>, dibujadas como plano acotado en SVG propio: contestan
-            por escrito lo que todo el mundo pregunta antes de firmar y casi nadie
-            responde, «¿cómo es el proceso y cuándo pago?». Entre las fotos que mandaron
-            venían cuatro renders 3D de arquitectura, y dos eran el mismo proyecto de día
-            y de noche, así que el servicio de modelado tiene su propio comparador
-            arrastrable: se mueve con el dedo, con un toque y con las flechas del
-            teclado, y con el JavaScript apagado el corte se queda al medio y se ven las
-            dos mitades igual. Su ficha de Google promete «estimaciones en línea» que no
-            existían en ninguna parte; ahora existen, con rango en UF y en pesos,
-            desglose por partidas y el WhatsApp redactado solo. Contando las fotos por
-            tema aparecieron cinco de piscinas de hormigón —una línea de negocio entera
-            que no estaba escrita en ningún lado y que hoy tiene lámina propia—. Las
-            veintidós imágenes bajaron de 8,9 a 4,9 MB sin pérdida visible y la primera
-            carga completa son 282 KB.
-          </p>
-          <ul class="chips">
-            <li>Las 5 etapas con hitos de pago</li><li>Comparador día/noche de los renders</li><li>Estimación en línea en UF</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/constructora-ekla-pitrufquen/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/constructora-ekla-pitrufquen" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-      <article class="entry reveal" data-tone="dp" data-cat="comercio">
-        <a class="entry-hit" href="https://yordyserna.github.io/dental-patagonia-pucon/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">20</span>
-          <span class="entry-name">Clínica Dental Patagonia</span>
-          <span class="entry-kind">Clínica dental · Pucón</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Es la dental mejor evaluada de Pucón —<strong>245 reseñas con 5,0</strong> y
-            atención las 24 horas— y su sitio lleva desde 2023 mostrando una pantalla
-            negra que dice <em>«Maintenance mode is on»</em> y firma <em>© 2023</em>.
-            Tres años de gente recomendándola a la que el enlace de Google la manda a un
-            fondo negro. Acá no había que venderle un dominio: ese ya está comprado y
-            respondiendo. Había que darle algo que colgar. La dirección se llama «hielo
-            patagónico» y salió de su propio logo, que es un diente con el volcán
-            Villarrica nevado adentro: blanco nieve de superficie, azul petróleo de
-            tinta y un glaciar frío racionado, cuidando de no caer en el celeste de
-            clínica genérico que huele a plantilla comprada. Es el primero de la lista
-            con fondo claro dominante y frío entero, y la única nota cálida son las
-            estrellas de Google, que se ganaron el lugar. La pieza que sostiene la
-            página es <strong>la carta clara: doce tratamientos con el precio en pesos,
-            la duración, qué incluye y en cuántas cuotas se paga</strong>, y cada fila
-            con su botón, que además deja ese tratamiento preseleccionado en el
-            formulario de más abajo. El freno del paciente dental nunca fue la aguja,
-            es la cuenta final, y ninguna clínica de la zona publica lo que cobra. La
-            banda de urgencias calcula «Abierto ahora, son las 03:14» con la hora del
-            propio teléfono; si el JavaScript no llega dice «Urgencias 24 horas», que
-            sigue siendo cierto, y la página completa se lee igual: dos mil palabras,
-            nada escondido. La lámina del volcán a sangre cambia a una versión vertical
-            en el celular, porque recortar una foto apaisada a 375 × 715 deja la cumbre
-            fuera de cuadro. Contraste AA medido sobre el DOM vivo a 375 y a 1280 px,
-            sin una falla.
-          </p>
-          <ul class="chips">
-            <li>Carta de precios con cuotas</li><li>Banda de 24 horas calculada</li><li>Reserva por WhatsApp sin apps</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/dental-patagonia-pucon/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/dental-patagonia-pucon" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-      <article class="entry reveal" data-tone="lp" data-cat="comercio">
-        <a class="entry-hit" href="https://yordyserna.github.io/veterinaria-la-poza-pucon/" target="_blank" rel="noopener">
-          <span class="entry-n" aria-hidden="true">21</span>
-          <span class="entry-name">Veterinaria La Poza</span>
-          <span class="entry-kind">Hospital veterinario · Pucón</span>
-          <span class="entry-year">2026</span>
-          <span class="entry-go" aria-hidden="true">↗</span>
-        </a>
-        <div class="entry-body">
-          <p>
-            Aparece como <em>«Patrocinado»</em> al buscar «veterinaria Pucón»: está
-            pagando Google Ads. Y la ficha no tiene sitio web, así que cada clic que
-            paga cae en un mapa con un teléfono. <strong>Le falta dónde aterrizar lo
-            que ya compró.</strong> Tiene además 24 reseñas con 4,8 y las responde
-            todas, una por una: hay alguien cuidando esa reputación, y hoy vive
-            entera dentro de Google, prestada. La paleta salió de su propio logo —un
-            perro, un gato y el Villarrica dentro de un círculo turquesa—: ese
-            cuadrado de color se recortó pixel a pixel para dejar las siluetas
-            sueltas y repintarlas en la tinta de la página, blanco puro de superficie
-            y petróleo de fondo, con un solo coral gastado entero en urgencias. La
-            pieza que sostiene la página es <strong>«el plan de tu mascota»: una
-            línea de vida de cachorro a senior con los controles, vacunas y
-            desparasitaciones que tocan a cada edad, y en cada hito un botón que baja
-            al formulario con ese control ya elegido</strong>. Educa al tutor,
-            demuestra que la clínica piensa a diez años y ninguna veterinaria de la
-            zona lo tiene. Las urgencias no se buscan: hay una barra fija abajo en el
-            celular con llamar y WhatsApp, porque una mascota que no respira no
-            espera a que alguien navegue un sitio. El contraste del texto sobre las
-            fotos se midió dibujándolas en un canvas y calculando el velo píxel a
-            píxel: encontró un titular en 2,33:1 que ninguna revisión a ojo iba a ver.
-          </p>
-          <ul class="chips">
-            <li>Línea de vida con los controles por edad</li><li>Urgencia fija en el celular</li><li>Su logo recortado y repintado</li>
-          </ul>
-          <p class="entry-links">
-            <a href="https://yordyserna.github.io/veterinaria-la-poza-pucon/" target="_blank" rel="noopener">Ver sitio ↗</a>
-            <a class="mut" href="https://github.com/YordySerna/veterinaria-la-poza-pucon" target="_blank" rel="noopener">Código</a>
-          </p>
-        </div>
-      </article>
-
+      <!-- ══ ARCHIVO ══ Filas de un renglon. El texto completo de cada
+           proyecto NO se pierde: vive dentro del <details>, que abre sin
+           JavaScript porque es HTML nativo. ══ -->
+      <div class="archivo" data-dossier>
+        <p class="archivo-cab" aria-hidden="true">
+          <span>N&deg;</span><span>Proyecto</span><span>Donde</span><span>La pieza</span><span>Tipo</span>
+        </p>
+        <details class="fila reveal" data-tone="lp" data-cat="salud">
+          <summary class="fila-cab">
+            <span class="fila-n">21</span>
+            <span class="fila-nombre">Veterinaria La Poza</span>
+            <span class="fila-ciudad">Pucón</span>
+            <span class="fila-pieza">Línea de vida con los controles por edad</span>
+            <span class="sello sello--prop">Propuesta</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>Aparece como «Patrocinado» al buscar «veterinaria Pucón»: está pagando Google Ads. Y la ficha no tiene sitio web, así que cada clic que paga cae en un mapa con un teléfono. Le falta dónde aterrizar lo que ya compró. Tiene además 24 reseñas con 4,8 y las responde todas, una por una: hay alguien cuidando esa reputación, y hoy vive entera dentro de Google, prestada. La paleta salió de su propio logo —un perro, un gato y el Villarrica dentro de un círculo turquesa—: ese cuadrado de color se recortó pixel a pixel para dejar las siluetas sueltas y repintarlas en la tinta de la página, blanco puro de superficie y petróleo de fondo, con un solo coral gastado entero en urgencias. La pieza que sostiene la página es «el plan de tu mascota»: una línea de vida de cachorro a senior con los controles, vacunas y desparasitaciones que tocan a cada edad, y en cada hito un botón que baja al formulario con ese control ya elegido. Educa al tutor, demuestra que la clínica piensa a diez años y ninguna veterinaria de la zona lo tiene. Las urgencias no se buscan: hay una barra fija abajo en el celular con llamar y WhatsApp, porque una mascota que no respira no espera a que alguien navegue un sitio. El contraste del texto sobre las fotos se midió dibujándolas en un canvas y calculando el velo píxel a píxel: encontró un titular en 2,33:1 que ninguna revisión a ojo iba a ver.</p>
+            <ul class="chips"><li>Línea de vida con los controles por edad</li><li>Urgencia fija en el celular</li><li>Su logo recortado y repintado</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/veterinaria-la-poza-pucon/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/veterinaria-la-poza-pucon" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+        <details class="fila reveal" data-tone="pv" data-cat="alojamiento">
+          <summary class="fila-cab">
+            <span class="fila-n">18</span>
+            <span class="fila-nombre">Camping Prado Verde</span>
+            <span class="fila-ciudad">Licán Ray</span>
+            <span class="fila-pieza">Plano del terreno con los sectores marcados</span>
+            <span class="sello sello--prop">Propuesta</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>4,3 en Google con 358 opiniones y un dominio, campingpradoverde.cl, que dejó de resolver: sigue indexado y no lleva a ninguna parte. La pieza central es el plano del terreno dibujado en SVG, con los sectores marcados, porque un camping se reserva por sitio y no por habitación y esa es justo la pregunta que nadie contesta antes de llegar. Después llegaron treinta fotos del negocio y el trabajo fue no ponerlas todas en la misma tarjeta: la del prado entra desenfocada detrás del titular con un velo graduado — desenfocarla es lo que permite apoyarle texto encima sin pelear por la legibilidad—, otra ocupa un panel a sangre con parallax, la de la cabaña se sale de la caja hasta el borde de la ventana, y los interiores van en un mural y en una tira que se desliza con el dedo. El parallax es CSS ligado al scroll dentro de @supports, sin una línea de librería. Los catorce pies de foto se midieron pintando cada imagen en un canvas y buscando el pixel más claro de la franja del texto: varias tienen blanco puro debajo y el peor caso queda en 7,75:1.</p>
+            <ul class="chips"><li>Cero librerías</li><li>Plano del terreno en SVG</li><li>Seis tratamientos de foto</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/camping-prado-verde/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/camping-prado-verde" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+        <details class="fila reveal" data-tone="bb" data-cat="salud">
+          <summary class="fila-cab">
+            <span class="fila-n">17</span>
+            <span class="fila-nombre">Bogotá Barber Shop</span>
+            <span class="fila-ciudad">Temuco</span>
+            <span class="fila-pieza">Tablero de precios y faro 3D con respaldo en CSS</span>
+            <span class="sello sello--prop">Propuesta</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>Una cadena con marca registrada, dos locales y 390 opiniones en Google que no tiene una casa con su nombre: hoy su marca vive repartida entre un Instagram y una página de AgendaPro con diseño de AgendaPro. Lo que hace que la propuesta se defienda sola es que ya usan AgendaPro, así que los catorce botones de reserva del sitio apuntan a su agenda real y funcionan hoy — la demo no simula la reserva, la hace, y al dueño no se le pide cambiar de sistema ni mantener un segundo calendario. La pieza central es la carta de precios dibujada como un tablero de barbería, con el tiempo de sillón de cada servicio y su propio botón al pie. En la portada el faro gira en dos capas: debajo uno dibujado en CSS que pesa cero y arranca en el primer fotograma, encima el modelo 3D que toma el relevo al terminar de cargar; si WebGL falla o el archivo no llega, el de CSS se queda puesto y no se nota el cambio. Gira sólo el cilindro interior, no el faro entero, con la animación que el propio modelo trae adentro. Sus fotos llegaron comprimidas a 1000 px por WhatsApp, así que van reescaladas con máscara de enfoque y servidas en dos tamaños: el celular baja 1,9 MB donde antes bajaban 4,5.</p>
+            <ul class="chips"><li>Reserva real en AgendaPro</li><li>Tablero de precios</li><li>Faro 3D con respaldo en CSS</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/bogota-barber-shop/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/bogota-barber-shop" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+        <details class="fila reveal" data-tone="lr" data-cat="alojamiento">
+          <summary class="fila-cab">
+            <span class="fila-n">15</span>
+            <span class="fila-nombre">Los Reales de los Siete Lagos</span>
+            <span class="fila-ciudad">Licán Ray</span>
+            <span class="fila-pieza">La cuenta clara: portal contra reserva directa</span>
+            <span class="sello sello--prop">Propuesta</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>Propuesta preparada antes de la llamada, no un encargo: 4,9 en Google con 271 opiniones y su dominio sigue apareciendo en los resultados sin llevar a ninguna parte, así que la venta se les va por Trivago, Tripadvisor y Hotels. La pieza central son dos boletas dibujadas en SVG que ponen la misma cabaña y la misma noche una al lado de la otra —por un portal y directo por WhatsApp— para mostrar la comisión que se queda en el camino; vende el sitio y de paso le explica al dueño por qué la reserva directa importa. Mirando las fotos que me pasaron apareció lo mejor: su propio logo dice aguas calientes &amp; spa y tienen piscina temperada techada y sauna de barril, algo que no estaba escrito en ninguna parte de internet. Eso pasó a ser el titular. El sitio es de papel —blanco cálido y crema, con la barra de arriba negra de borde a borde— y los fondos son sus mismas fotos desenfocadas, con un piso de luminancia horneado en el archivo y no puesto con un filtro CSS: así lo que se puede medir en el archivo es exactamente lo que se ve en pantalla. Ese piso es lo que separa un texto en 3,6:1 de uno en 5:1, y no hay manera de saberlo mirando.</p>
+            <ul class="chips"><li>Cero librerías</li><li>La cuenta clara en SVG</li><li>Reserva → WhatsApp</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/los-reales-siete-lagos/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/los-reales-siete-lagos" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+        <details class="fila reveal" data-tone="pt" data-cat="gastronomia">
+          <summary class="fila-cab">
+            <span class="fila-n">13</span>
+            <span class="fila-nombre">Restaurant Pitín</span>
+            <span class="fila-ciudad">Loncoche</span>
+            <span class="fila-pieza">Abierto o cerrado, calculado en vivo</span>
+            <span class="sello">Encargo</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>La mejor picada de La Araucanía 2014 según Sernatur, cocinando desde 1998, y su única presencia en internet era la página de Facebook. La regla fue la misma que en Majoaal: todo lo que el sitio afirma está publicado en alguna parte — el premio, el 4,6 de Google, la historia del fundador —, y lo que no, queda marcado como EJEMPLO con borde punteado. El cartel de abierto o cerrado se calcula con la hora real de Chile, la carta se lee con una mano en el celular con precios en numerales a la antigua, y el fondo es cocina pura: vahos de vapor, especias en suspensión y chispas de leña, todo en CSS sin una librería.</p>
+            <ul class="chips"><li>Cero librerías</li><li>Abierto/cerrado en vivo</li><li>Reserva → WhatsApp</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/pitin-loncoche/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/pitin-loncoche" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+        <details class="fila reveal" data-tone="mj" data-cat="alojamiento">
+          <summary class="fila-cab">
+            <span class="fila-n">12</span>
+            <span class="fila-nombre">Cabañas &amp; Lodge Majoaal</span>
+            <span class="fila-ciudad">Licán Ray</span>
+            <span class="fila-pieza">Fondo animado en cuatro capas</span>
+            <span class="sello sello--prop">Propuesta</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>Cuatro alojamientos sobre el bosque nativo con vista al lago Calafquén. Tienen veintiún mil seguidores en Instagram mandando gente a un subdominio ajeno hecho con plantilla, que reusa las mismas fotos de Booking: no hay dominio propio ni manera de aparecer en Google por su nombre. Esta propuesta se armó para presentársela. La regla acá fue no mentir: capacidad, tarifas, horarios y distancias salen de publicaciones del propio complejo, y todo lo que no está confirmado queda marcado como EJEMPLO a la vista, con borde punteado, para reemplazarlo con sus datos. El fondo son cuatro capas de CSS y nada más — manchas de niebla que derivan, jirones que cruzan la pantalla, ceniza en suspensión y brasas dentro de las zonas oscuras, resueltas con degradados en un solo pseudoelemento en vez de sumar decenas de nodos.</p>
+            <ul class="chips"><li>Cero librerías</li><li>Fondo animado en cuatro capas</li><li>Cotizador → WhatsApp</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/majoaal-lican-ray/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/majoaal-lican-ray" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+        <details class="fila reveal" data-tone="ct" data-cat="herramientas">
+          <summary class="fila-cab">
+            <span class="fila-n">11</span>
+            <span class="fila-nombre">Calibración JAS</span>
+            <span class="fila-ciudad">terreno</span>
+            <span class="fila-pieza">App instalable que trabaja sin señal</span>
+            <span class="sello">Encargo</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>La tabla de cubicación JAS vive en un Excel que nadie puede abrir arriba de la máquina. Esta app la convierte en un contador de trozos para el celular: se instala desde el navegador en Android o iPhone, funciona sin señal y el volumen sale solo. El día se cierra con un reporte — producción, panas y novedades — que llega a los jefes por WhatsApp o como un Excel de verdad, con el archivo .xlsx armado byte a byte sin ninguna librería.</p>
+            <ul class="chips"><li>App instalable · sin señal</li><li>Excel generado a mano</li><li>Reporte diario a WhatsApp</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/calibracion-terreno/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/calibracion-terreno" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+        <details class="fila reveal" data-tone="ps" data-cat="alojamiento">
+          <summary class="fila-cab">
+            <span class="fila-n">09</span>
+            <span class="fila-nombre">Cabañas Puerta del Sol</span>
+            <span class="fila-ciudad">Loncoche</span>
+            <span class="fila-pieza">Calendario de reservas propio</span>
+            <span class="sello">Encargo</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>Un recinto con piscina grande, cabañas y camping en el kilómetro 1 del camino a Calafquén. No tenía sitio: existía un flyer y diez fotos sueltas en el teléfono. De ese flyer salió la identidad — el sol en espiral se rehízo en SVG y su naranja quedó como único acento sobre verde bosque y madera. Las ocho fotos del recinto entraron comprimidas de 11,9 MB a 1,6 MB, porque el visitante que importa aquí navega con señal rural. El calendario de reservas es propio: se marcan llegada y salida sobre dos meses, se elige el tipo de estadía y cuántos son, y la consulta sale a WhatsApp ya redactada. Las capas del hero se mueven a velocidades distintas al hacer scroll y las tarjetas de instalaciones encienden un halo que sigue al cursor.</p>
+            <ul class="chips"><li>Next.js + Framer Motion</li><li>Calendario propio → WhatsApp</li><li>Fotos: 11,9 MB → 1,6 MB</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/cabanas-puerta-del-sol/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/cabanas-puerta-del-sol" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+        <details class="fila reveal" data-tone="la" data-cat="alojamiento">
+          <summary class="fila-cab">
+            <span class="fila-n">08</span>
+            <span class="fila-nombre">Cabaña y Vivero Los Avellanos</span>
+            <span class="fila-ciudad">Loncoche</span>
+            <span class="fila-pieza">Niebla en canvas, sin WebGL</span>
+            <span class="sello">Encargo</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>Una cabaña y un vivero en un campo que sigue funcionando, con gallinas sueltas y un letrero pintado a mano en la entrada. Va entero sobre un solo verde de bosque: la profundidad no la da cambiar de color, la dan una foto del campo muy desenfocada que deriva detrás del contenido y una niebla dibujada en un canvas de 200×120 px reales, estirado recién después a pantalla completa. Con las fotos la regla es una sola: si es una pieza que se mira va encapsulada, y entra cayendo de arriba o de un costado, pasándose unos píxeles antes de acomodarse; si la foto es la página, va a sangre con el texto montado encima. El calendario de reservas es propio, arma el mensaje y lo abre directo en WhatsApp.</p>
+            <ul class="chips"><li>Cero librerías</li><li>Niebla en canvas, sin WebGL</li><li>Calendario propio → WhatsApp</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/cabana-los-avellanos/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/cabana-los-avellanos" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+        <details class="fila reveal" data-tone="tt" data-cat="salud">
+          <summary class="fila-cab">
+            <span class="fila-n">07</span>
+            <span class="fila-nombre">The Temple Fitness Club</span>
+            <span class="fila-ciudad">Loncoche</span>
+            <span class="fila-pieza">Planes que arman el WhatsApp solos</span>
+            <span class="sello">Encargo</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>Un gimnasio que se llama Templo pedía dejar de parecer un gimnasio. Fuera las tarjetas: los tres planes son columnas separadas por hilos finos, con el precio grande para compararlos de un vistazo. El botón de contratar abre un formulario corto y sale a WhatsApp con el plan, el nombre y el teléfono ya redactados; si el JavaScript no carga, ese mismo botón sigue siendo un enlace que llega al chat igual. El titular mezcla una grotesca de peso 900 con una itálica de alto contraste, y se arma letra por letra detrás de una máscara. El cartel de abierto o cerrado no está escrito a mano: se calcula con la hora real de Chile.</p>
+            <ul class="chips"><li>Planes → WhatsApp</li><li>Horario en vivo</li><li>Lenis + GSAP ScrollTrigger</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/the-temple-fitness-club/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/the-temple-fitness-club" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+        <details class="fila reveal" data-tone="ch" data-cat="oficios">
+          <summary class="fila-cab">
+            <span class="fila-n">06</span>
+            <span class="fila-nombre">Calor de Hogar</span>
+            <span class="fila-ciudad">Loncoche</span>
+            <span class="fila-pieza">Catálogo de piezas de hojalatería</span>
+            <span class="sello">Encargo</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>Un taller donde cada cañón y cada campana sale de una plancha plana, doblada a mano. No había ni una foto del negocio en internet. Todo salió del material del local: la paleta son los colores reales de las paredes y las estanterías, y los ocho videos del taller bajaron de 583 MB a 10 MB, sin descargarse hasta que alguien toca play. Tiene su propia página de catálogo con los tipos de pieza, y cierra con la entrevista que le hizo la Municipalidad de Loncoche en el taller.</p>
+            <ul class="chips"><li>8 videos · 583 MB → 10 MB</li><li>Catálogo de piezas</li><li>Cotizador WhatsApp</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/calor-del-hogar/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/calor-del-hogar" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+        <details class="fila reveal" data-tone="rp" data-cat="oficios">
+          <summary class="fila-cab">
+            <span class="fila-n">05</span>
+            <span class="fila-nombre">Repuestos Palma</span>
+            <span class="fila-ciudad">Villarrica</span>
+            <span class="fila-pieza">Cotizador de 3 pasos sobre 100 modelos</span>
+            <span class="sello">Encargo</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>Especialistas en sistema eléctrico y de arranque en Villarrica. El local perdía tiempo respondiendo la misma pregunta de a uno: "¿tienes esta pieza?". El cotizador pregunta marca, modelo y año, y el WhatsApp llega con la ficha escrita.</p>
+            <ul class="chips"><li>Cotizador en 3 pasos</li><li>15 marcas · 100 modelos</li><li>Fondo animado sin librerías</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/repuestos-palma/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/repuestos-palma" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+        <details class="fila reveal" data-tone="cf" data-cat="herramientas">
+          <summary class="fila-cab">
+            <span class="fila-n">04</span>
+            <span class="fila-nombre">Calibración Forestal</span>
+            <span class="fila-ciudad">terreno</span>
+            <span class="fila-pieza">Seis calculadoras que funcionan sin señal</span>
+            <span class="sello">Encargo</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>Suite de seis herramientas para medir madera en terreno desde el celular: metro ruma, JAS, Smalian, árbol en pie, parcela y calibración contra planta. Todo queda en el registro de la faena y sale como reporte a WhatsApp.</p>
+            <ul class="chips"><li>6 herramientas</li><li>Reporte WhatsApp</li><li>Funciona sin señal</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/calibracion-forestal/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/calibracion-forestal" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+        <details class="fila reveal" data-tone="cc" data-cat="oficios">
+          <summary class="fila-cab">
+            <span class="fila-n">03</span>
+            <span class="fila-nombre">Certa Chile S.A.</span>
+            <span class="fila-ciudad">Loncoche</span>
+            <span class="fila-pieza">Catálogo de 10 marcas con ficha por modelo</span>
+            <span class="sello">Encargo</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>Importador con quince años en Chile y diez marcas europeas en catálogo. Aquí el problema no era vender: era ordenar mucha ficha técnica para que un agricultor encuentre su máquina rápido.</p>
+            <ul class="chips"><li>Catálogo · 10 marcas</li><li>Ficha por modelo</li><li>Galería técnica</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/certa-chile/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/certa-chile" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+        <details class="fila reveal" data-tone="fw" data-cat="gastronomia">
+          <summary class="fila-cab">
+            <span class="fila-n">02</span>
+            <span class="fila-nombre">Far West</span>
+            <span class="fila-ciudad">Loncoche</span>
+            <span class="fila-pieza">Carta grabada en la madera del local</span>
+            <span class="sello">Encargo</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>Ambiente western, karaoke los viernes y música en vivo. El diseño tenía que sonar fuerte sin volverse ilegible: madera oscura, ámbar y una carta que se lee bien con el bar lleno.</p>
+            <ul class="chips"><li>Parallax</li><li>Carta grabada</li><li>SEO local</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/far-west-loncoche/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/far-west-loncoche" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+        <details class="fila reveal" data-tone="vk" data-cat="gastronomia">
+          <summary class="fila-cab">
+            <span class="fila-n">01</span>
+            <span class="fila-nombre">Von Krauss</span>
+            <span class="fila-ciudad">Loncoche</span>
+            <span class="fila-pieza">Horario en vivo leyendo el reloj del visitante</span>
+            <span class="sello">Encargo</span>
+          </summary>
+          <div class="fila-cuerpo">
+            <p>Un local que funciona como tres cosas distintas según la hora. La página lee el reloj del visitante y muestra si está abierto ahora mismo, con la carta y los horarios reales del local.</p>
+            <ul class="chips"><li>Horario en vivo</li><li>Video propio</li><li>Carta real</li></ul>
+            <p class="entry-links"><a href="https://yordyserna.github.io/von-krauss/" target="_blank" rel="noopener">Ver sitio &#8599;</a><a class="mut" href="https://github.com/YordySerna/von-krauss" target="_blank" rel="noopener">C&oacute;digo</a></p>
+          </div>
+        </details>
+      </div>
     </div>
   </div>
+</section>
+
+<!-- ============================= LAS PIEZAS ============================= -->
+<!-- Esta sección no existía. La pieza dibujada de cada proyecto —el plano de
+     madereo, el corte del valle, la lámina de alineación, las boletas
+     comparadas— vivía enterrada en el párrafo cuatro de cada ficha, y es
+     justo lo que ningún competidor de la región puede copiar. -->
+<section class="band" id="piezas">
+  <div class="shell">
+    <header class="band-head">
+      <p class="marker scan">03 <span>—</span> Las piezas</p>
+      <h2 class="h2 scan">Cada sitio tiene una <em>pieza dibujada a mano</em>.</h2>
+      <p class="band-lead reveal">
+        No es decoración. Es la respuesta a la pregunta que todo cliente de ese
+        rubro se hace y nadie le contesta por escrito: cómo es el proceso y cuándo
+        pago, dónde voy a quedar, cuánto sale antes de sentarme en el sillón.
+        Se dibujan en SVG, pesan lo que pesa el texto y explican el negocio mejor
+        que tres párrafos.
+      </p>
+    </header>
+
+      <!-- ══ LAS PIEZAS ══ Generado por dev/generar-trabajo.ps1 ══ -->
+      <ul class="piezas">
+        <li class="pieza reveal" data-tone="lp">
+          <a href="https://yordyserna.github.io/veterinaria-la-poza-pucon/" target="_blank" rel="noopener">
+            <img src="assets/capturas/veterinaria-la-poza-pucon-movil.jpg" width="390" height="844" loading="lazy" decoding="async" alt="">
+            <span class="pieza-neg">Veterinaria La Poza</span>
+            <span class="pieza-txt">Línea de vida con los controles por edad</span>
+          </a>
+        </li>
+        <li class="pieza reveal" data-tone="dp">
+          <a href="https://yordyserna.github.io/dental-patagonia-pucon/" target="_blank" rel="noopener">
+            <img src="assets/capturas/dental-patagonia-pucon-movil.jpg" width="390" height="844" loading="lazy" decoding="async" alt="">
+            <span class="pieza-neg">Clínica Dental Patagonia</span>
+            <span class="pieza-txt">Carta de precios completa, antes del sillón</span>
+          </a>
+        </li>
+        <li class="pieza reveal" data-tone="ek">
+          <a href="https://yordyserna.github.io/constructora-ekla-pitrufquen/" target="_blank" rel="noopener">
+            <img src="assets/capturas/constructora-ekla-pitrufquen-movil.jpg" width="390" height="844" loading="lazy" decoding="async" alt="">
+            <span class="pieza-neg">constructora ekla</span>
+            <span class="pieza-txt">Las 5 etapas de la obra con sus hitos de pago</span>
+          </a>
+        </li>
+        <li class="pieza reveal" data-tone="pv">
+          <a href="https://yordyserna.github.io/camping-prado-verde/" target="_blank" rel="noopener">
+            <img src="assets/capturas/camping-prado-verde-movil.jpg" width="390" height="844" loading="lazy" decoding="async" alt="">
+            <span class="pieza-neg">Camping Prado Verde</span>
+            <span class="pieza-txt">Plano del terreno con los sectores marcados</span>
+          </a>
+        </li>
+        <li class="pieza reveal" data-tone="bb">
+          <a href="https://yordyserna.github.io/bogota-barber-shop/" target="_blank" rel="noopener">
+            <img src="assets/capturas/bogota-barber-shop-movil.jpg" width="390" height="844" loading="lazy" decoding="async" alt="">
+            <span class="pieza-neg">Bogotá Barber Shop</span>
+            <span class="pieza-txt">Tablero de precios y faro 3D con respaldo en CSS</span>
+          </a>
+        </li>
+        <li class="pieza reveal" data-tone="ad">
+          <a href="https://yordyserna.github.io/adkantu-conaripe/" target="_blank" rel="noopener">
+            <img src="assets/capturas/adkantu-conaripe-movil.jpg" width="390" height="844" loading="lazy" decoding="async" alt="">
+            <span class="pieza-neg">Adkantú</span>
+            <span class="pieza-txt">Corte del valle entre el lago y las termas</span>
+          </a>
+        </li>
+        <li class="pieza reveal" data-tone="lr">
+          <a href="https://yordyserna.github.io/los-reales-siete-lagos/" target="_blank" rel="noopener">
+            <img src="assets/capturas/los-reales-siete-lagos-movil.jpg" width="390" height="844" loading="lazy" decoding="async" alt="">
+            <span class="pieza-neg">Los Reales de los Siete Lagos</span>
+            <span class="pieza-txt">La cuenta clara: portal contra reserva directa</span>
+          </a>
+        </li>
+        <li class="pieza reveal" data-tone="cs">
+          <a href="https://yordyserna.github.io/car-service-loncoche/" target="_blank" rel="noopener">
+            <img src="assets/capturas/car-service-loncoche-movil.jpg" width="390" height="844" loading="lazy" decoding="async" alt="">
+            <span class="pieza-neg">Car Service</span>
+            <span class="pieza-txt">Lámina de alineación dibujada en SVG</span>
+          </a>
+        </li>
+        <li class="pieza reveal" data-tone="fr">
+          <a href="https://yordyserna.github.io/forestal-robur/" target="_blank" rel="noopener">
+            <img src="assets/capturas/forestal-robur-movil.jpg" width="390" height="844" loading="lazy" decoding="async" alt="">
+            <span class="pieza-neg">Forestal Robur SpA</span>
+            <span class="pieza-txt">Plano de ingeniería con la pendiente acotada</span>
+          </a>
+        </li>
+        <li class="pieza reveal" data-tone="la">
+          <a href="https://yordyserna.github.io/cabana-los-avellanos/" target="_blank" rel="noopener">
+            <img src="assets/capturas/cabana-los-avellanos-movil.jpg" width="390" height="844" loading="lazy" decoding="async" alt="">
+            <span class="pieza-neg">Cabaña y Vivero Los Avellanos</span>
+            <span class="pieza-txt">Niebla en canvas, sin WebGL</span>
+          </a>
+        </li>
+      </ul>
+    </div>
 </section>
 
 <!-- ============================== OFICIO ============================== -->
@@ -854,7 +594,10 @@
     <table class="spec reveal">
       <caption class="sr-only">Herramientas y contexto</caption>
       <tbody>
-        <tr><th scope="row">Base</th><td>HTML · CSS · JavaScript sin framework</td></tr>
+        <!-- Antes decía "sin framework" a secas, y el pie prometía "sin frameworks"
+             mientras Cabañas Puerta del Sol declara Next.js y Framer Motion.
+             Es criterio, no dogma. -->
+        <tr><th scope="row">Base</th><td>HTML · CSS · JavaScript — sin framework por defecto, con framework cuando el proyecto lo pide</td></tr>
         <tr><th scope="row">Movimiento</th><td>GSAP · IntersectionObserver · CSS</td></tr>
         <tr><th scope="row">Entrega</th><td>Estático · GitHub Pages · Hostinger</td></tr>
         <tr><th scope="row">Control</th><td>Git · GitHub</td></tr>
@@ -889,7 +632,7 @@
 <footer class="footer">
   <div class="shell footer-inner">
     <p>© <span data-year>2026</span> Yordy Serna · Loncoche, Chile</p>
-    <p class="mut">Hecho a mano. Sin plantillas, sin frameworks, sin build.</p>
+    <p class="mut">Hecho a mano. Sin plantillas, sin panel de administración, sin mensualidad.</p>
   </div>
 </footer>
 
@@ -919,7 +662,13 @@
   var lista = document.querySelector('[data-dossier]');
   if (!barra || !lista) return;
 
-  var fichas  = Array.prototype.slice.call(lista.querySelectorAll('.entry'));
+  /* El filtro recorre los dos niveles: los destacados y las filas del
+     archivo. Antes sólo existía .entry, que ya no está. El número NO se
+     renumera al filtrar: es el identificador del proyecto, no su posición,
+     y renumerarlo hacía que el mismo proyecto cambiara de número según el
+     filtro activo. */
+  var fichas  = Array.prototype.slice.call(document.querySelectorAll('.dest, .fila'));
+  var cuenta  = document.querySelector('[data-cuenta]');
   var botones = Array.prototype.slice.call(barra.querySelectorAll('.filtro'));
 
   function aplicar(cat) {
@@ -929,8 +678,6 @@
       f.hidden = !calza;
       if (calza) {
         n++;
-        var num = f.querySelector('.entry-n');
-        if (num) num.textContent = (n < 10 ? '0' : '') + n;
       }
     });
     botones.forEach(function (b) {
@@ -938,6 +685,7 @@
       b.classList.toggle('is-on', on);
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
+    if (cuenta) cuenta.textContent = n + (n === 1 ? ' proyecto' : ' proyectos');
   }
 
   botones.forEach(function (b) {

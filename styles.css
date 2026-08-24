@@ -13,7 +13,11 @@
 
   --bone:     #E8E4DC;
   --bone-2:   #9E9A92;
-  --bone-3:   #605D57;
+  /* Subido de #605D57 (3,0:1) a #828079 (4,98:1). El valor anterior no pasaba
+     AA en texto chico, y no era culpa del rediseño: las etiquetas UBICACIÓN y
+     DISPONIBILIDAD del perfil ya fallaban desde antes. Es el cambio mínimo que
+     cruza el umbral sin dejar de leerse como texto apagado. */
+  --bone-3:   #828079;
 
   --amber:    #FFA724;
   --amber-2:  #FFC46B;
@@ -687,4 +691,178 @@ table { border-collapse: collapse; width: 100%; }
 @media (max-width:560px){
   .filtros{ gap:.4rem; }
   .filtro{ font-size:.66rem; padding:.45rem .8rem; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   REDISEÑO — retrato, destacados, archivo y piezas
+   El sistema de acentos por proyecto (--tone) se conserva tal cual: cada
+   proyecto ya tenía su color calibrado contra el fondo, y esos comentarios
+   de contraste costaron trabajo. Acá sólo se reutiliza.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ── Retrato ─────────────────────────────────────────────────────────
+   Va dentro del bloque de datos del hero. Chico y en 3:4: la foto se
+   compuso contra --panel para que la silueta se lea sin necesidad de
+   borde ni sombra. */
+.retrato{
+  margin: 0 0 1.6rem;
+  display: flex; align-items: center; gap: .9rem;
+}
+.retrato img{
+  width: 76px; height: 100px;
+  object-fit: cover; object-position: 50% 22%;   /* encuadra la cara, no el torso */
+  border-radius: 3px;
+  border: 1px solid var(--line);
+  display: block;
+}
+.retrato figcaption{
+  font-family: var(--mono); font-size: .74rem; line-height: 1.5;
+  color: var(--bone); display: flex; flex-direction: column;
+}
+.retrato figcaption span{
+  color: var(--live); font-size: .66rem; letter-spacing: .04em; margin-top: .2rem;
+}
+
+/* ── Sello ENCARGO / PROPUESTA ───────────────────────────────────────
+   El defecto era que sólo se sabía leyendo el párrafo entero. Ahora se ve
+   de un vistazo. Que ocho de veintiuno sean propuestas no se esconde: es
+   honesto y además vende — muestra cómo se prepara una llamada. */
+.sello{
+  font-family: var(--mono); font-size: .58rem; letter-spacing: .12em;
+  text-transform: uppercase; white-space: nowrap;
+  padding: .2rem .5rem; border: 1px solid var(--line);
+  color: var(--bone-2); border-radius: 2px;
+}
+.sello--prop{ color: var(--amber); border-color: rgba(255,167,36,.35); }
+
+/* ── Destacados ──────────────────────────────────────────────────────
+   Cinco, con captura grande. La imagen alterna de lado para que la lista
+   no se lea como un formulario. */
+.destacados{ display: grid; gap: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: clamp(3.5rem, 7vw, 6rem); }
+.dest{ --tone: var(--amber); display: grid; gap: 1.6rem; align-items: center; }
+@media (min-width: 860px){
+  .dest{ grid-template-columns: 1.15fr .85fr; gap: 3rem; }
+  .dest:nth-child(even) .dest-foto{ order: 2; }
+}
+.dest-foto{
+  display: block; border: 1px solid var(--line); border-radius: 4px;
+  overflow: hidden; background: var(--panel);
+  transition: border-color .45s var(--ease), transform .45s var(--ease);
+}
+.dest-foto img{ display: block; width: 100%; height: auto; }
+.dest:hover .dest-foto{ border-color: var(--tone); transform: translateY(-3px); }
+
+.dest-meta{ display: flex; align-items: center; gap: .7rem; margin: 0 0 .7rem; }
+.dest-n{ font-family: var(--mono); font-size: .8rem; color: var(--tone); }
+.dest-ciudad{ font-family: var(--mono); font-size: .68rem; color: var(--bone-3); letter-spacing: .05em; }
+.dest-nombre{ font-family: var(--sans); font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.1rem); line-height: 1.1; margin: 0 0 .8rem; letter-spacing: -.02em; }
+.dest-nombre a{ color: var(--bone); text-decoration: none; }
+.dest:hover .dest-nombre a{ color: var(--tone); }
+.dest-gancho{ color: var(--bone-2); font-size: 1.02rem; line-height: 1.65; max-width: 46ch; margin: 0 0 1.1rem; }
+.dest-pieza{
+  font-size: .87rem; color: var(--bone-2); margin: 0 0 1.2rem;
+  padding-left: .9rem; border-left: 2px solid var(--tone);
+}
+.dest-pieza span{
+  display: block; font-family: var(--mono); font-size: .6rem;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--bone-3); margin-bottom: .2rem;
+}
+
+/* ── Archivo ─────────────────────────────────────────────────────────
+   Filas de un renglón. El texto largo NO se perdió: vive dentro del
+   <details>, que abre sin JavaScript porque es HTML nativo. Así el
+   archivo aguanta cincuenta proyectos sin que la página crezca. */
+.archivo{ border-top: 1px solid var(--line); }
+.archivo-cab{
+  display: none;
+  font-family: var(--mono); font-size: .58rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--bone-3);
+  padding: .8rem 0 .7rem; margin: 0; border-bottom: 1px solid var(--line);
+}
+@media (min-width: 880px){
+  .archivo-cab{ display: grid; grid-template-columns: 2.6rem 1fr 8rem 1.2fr 6rem; gap: 1rem; }
+}
+
+.fila{ --tone: var(--amber); border-bottom: 1px solid var(--line); position: relative; }
+.fila::before{
+  content: ""; position: absolute; left: 0; top: -1px; bottom: -1px; width: 2px;
+  background: var(--tone); transform: scaleY(0); transform-origin: top;
+  transition: transform .45s var(--ease);
+}
+.fila:hover::before, .fila[open]::before, .fila:focus-within::before{ transform: scaleY(1); }
+.fila:hover, .fila:focus-within{ background: rgba(232,228,220,.022); }
+
+.fila-cab{
+  display: grid; grid-template-columns: 2.6rem 1fr auto; gap: .3rem 1rem;
+  align-items: baseline; padding: .95rem .4rem .95rem 0;
+  cursor: pointer; list-style: none;
+}
+.fila-cab::-webkit-details-marker{ display: none; }
+.fila-cab:focus-visible{ outline: 2px solid var(--amber); outline-offset: -2px; }
+@media (min-width: 880px){
+  .fila-cab{ grid-template-columns: 2.6rem 1fr 8rem 1.2fr 6rem; align-items: center; }
+}
+.fila-n{ font-family: var(--mono); font-size: .78rem; color: var(--bone-3); }
+.fila:hover .fila-n, .fila[open] .fila-n{ color: var(--tone); }
+.fila-nombre{ font-family: var(--sans); font-size: 1.02rem; color: var(--bone); letter-spacing: -.01em; }
+.fila:hover .fila-nombre, .fila[open] .fila-nombre{ color: var(--tone); }
+.fila-ciudad{ font-family: var(--mono); font-size: .7rem; color: var(--bone-3); }
+.fila-pieza{ font-size: .84rem; color: var(--bone-2); }
+/* En móvil, ciudad y pieza pasan bajo el nombre en vez de desaparecer:
+   son justamente lo que hace escaneable la lista. */
+@media (max-width: 879px){
+  .fila-ciudad, .fila-pieza{ grid-column: 2; }
+  .fila-cab .sello{ grid-row: 1; grid-column: 3; }
+}
+
+.fila-cuerpo{ padding: 0 0 1.7rem 2.6rem; }
+.fila-cuerpo > p{ color: var(--bone-2); font-size: .95rem; max-width: 62ch; margin: 0; }
+@media (max-width: 560px){ .fila-cuerpo{ padding-left: 1rem; } }
+
+/* ── Las piezas ──────────────────────────────────────────────────────
+   Grilla de capturas de móvil: la pieza dibujada de cada proyecto suele
+   verse mejor en vertical, y de paso las capturas de 390 px son las más
+   livianas que hay. */
+.band-lead{ color: var(--bone-2); max-width: 62ch; margin: 1.2rem 0 0; font-size: .98rem; line-height: 1.7; }
+.piezas{
+  list-style: none; padding: 0; margin: clamp(2.5rem,5vw,4rem) 0 0;
+  display: grid; gap: 1.6rem;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+}
+.pieza{ --tone: var(--amber); }
+.pieza a{
+  display: block; text-decoration: none; color: inherit;
+  border: 1px solid var(--line); border-radius: 4px; overflow: hidden;
+  background: var(--panel);
+  transition: border-color .4s var(--ease), transform .4s var(--ease);
+}
+.pieza a:hover, .pieza a:focus-visible{ border-color: var(--tone); transform: translateY(-3px); }
+.pieza a:focus-visible{ outline: 2px solid var(--amber); outline-offset: 3px; }
+.pieza img{
+  display: block; width: 100%; height: 230px;
+  object-fit: cover; object-position: 50% 0;   /* la portada, que es donde vive la pieza */
+  border-bottom: 1px solid var(--line);
+}
+.pieza-neg{
+  display: block; font-family: var(--sans); font-size: .92rem;
+  color: var(--bone); padding: .8rem .9rem .2rem; letter-spacing: -.01em;
+}
+.pieza a:hover .pieza-neg{ color: var(--tone); }
+.pieza-txt{ display: block; font-size: .78rem; color: var(--bone-2); padding: 0 .9rem 1rem; line-height: 1.5; }
+
+/* El filtro tiene que ocultar tanto destacados como filas del archivo */
+.dest[hidden], .fila[hidden]{ display: none !important; }
+
+/* Contador de proyectos, al final de la barra de filtros */
+.filtros-cuenta{
+  font-family: var(--mono); font-size: .68rem; letter-spacing: .06em;
+  color: var(--bone-3); margin-left: auto; align-self: center;
+}
+@media (max-width: 700px){ .filtros-cuenta{ margin-left: 0; width: 100%; margin-top: .4rem; } }
+
+/* En móvil los filtros medían 33 px de alto: un dedo falla a esa altura.
+   44 px es el mínimo que se acierta sin pelear. */
+@media (max-width: 700px){
+  .filtro{ min-height: 44px; display: inline-flex; align-items: center; }
+  .fila-cab{ min-height: 48px; }
 }
