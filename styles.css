@@ -447,6 +447,7 @@ table { border-collapse: collapse; width: 100%; }
    vista, que es justo lo que tiene que hacer un dossier. */
 .entry[data-tone="ek"] { --tone: #62B4EE; }
 .entry[data-tone="dp"] { --tone: #7FE0E8; } /* glaciar de Dental Patagonia — más verde que el ek y más claro que el ps, para que no se confundan */
+.entry[data-tone="lp"] { --tone: #4ED8C4; } /* turquesa de La Poza — deliberadamente más verde que el dp y que el ek: son tres azules seguidos y en la lista tienen que distinguirse */
 
 .entry::before {
   content: ""; position: absolute; left: 0; top: -1px; bottom: -1px; width: 2px;
