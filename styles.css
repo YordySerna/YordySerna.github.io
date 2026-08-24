@@ -452,6 +452,7 @@ table { border-collapse: collapse; width: 100%; }
 .entry[data-tone="ek"] { --tone: #62B4EE; }
 .entry[data-tone="dp"] { --tone: #7FE0E8; } /* glaciar de Dental Patagonia — más verde que el ek y más claro que el ps, para que no se confundan */
 .entry[data-tone="lp"] { --tone: #4ED8C4; } /* turquesa de La Poza — deliberadamente más verde que el dp y que el ek: son tres azules seguidos y en la lista tienen que distinguirse */
+.entry[data-tone="sm"] { --tone: #E0CBA8; } /* la madera de pino de SM — pálida y desaturada a propósito: los cobres que ya hay (ad, cs, mj, lr) son naranjas saturados y de lejos se confunden entre ellos */
 
 .entry::before {
   content: ""; position: absolute; left: 0; top: -1px; bottom: -1px; width: 2px;
@@ -884,7 +885,7 @@ table { border-collapse: collapse; width: 100%; }
 .ficha[data-tone="cs"]{ --tone:#C97C3F } .ficha[data-tone="lr"]{ --tone:#D8B463 }
 .ficha[data-tone="ad"]{ --tone:#CE7C3C } .ficha[data-tone="bb"]{ --tone:#C6485F }
 .ficha[data-tone="pv"]{ --tone:#C2D18A } .ficha[data-tone="ek"]{ --tone:#62B4EE }
-.ficha[data-tone="dp"]{ --tone:#7FE0E8 } .ficha[data-tone="lp"]{ --tone:#4ED8C4 }
+.ficha[data-tone="dp"]{ --tone:#7FE0E8 } .ficha[data-tone="lp"]{ --tone:#4ED8C4 } .ficha[data-tone="sm"]{ --tone:#E0CBA8 }
 .ficha{ --tone: var(--amber); }
 
 /* La cabecera arranca bajo el nav fijo, no debajo de un hero de pantalla
