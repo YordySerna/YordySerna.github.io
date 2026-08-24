@@ -866,3 +866,106 @@ table { border-collapse: collapse; width: 100%; }
   .filtro{ min-height: 44px; display: inline-flex; align-items: center; }
   .fila-cab{ min-height: 48px; }
 }
+
+/* ══════════════════════════════════════════════════════════════════════
+   FICHAS DE PROYECTO (proyecto/*.html)
+   Reusan todo el sistema del índice: mismos tokens, mismo acento por
+   proyecto, mismas bandas. Sólo se agrega lo específico del case study.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* El acento del proyecto se declara en el <body>, así toda la ficha lo
+   hereda sin repetirlo elemento por elemento. */
+.ficha[data-tone="vk"]{ --tone:#A9BC82 } .ficha[data-tone="fw"]{ --tone:#E4A85A }
+.ficha[data-tone="cc"]{ --tone:#46A67F } .ficha[data-tone="cf"]{ --tone:#8FD14F }
+.ficha[data-tone="ch"]{ --tone:#C8551E } .ficha[data-tone="tt"]{ --tone:#C9A227 }
+.ficha[data-tone="la"]{ --tone:#7C8F5A } .ficha[data-tone="ps"]{ --tone:#3FA9C4 }
+.ficha[data-tone="fr"]{ --tone:#E1701A } .ficha[data-tone="ct"]{ --tone:#57B86B }
+.ficha[data-tone="mj"]{ --tone:#D9924E } .ficha[data-tone="pt"]{ --tone:#B33A2B }
+.ficha[data-tone="cs"]{ --tone:#C97C3F } .ficha[data-tone="lr"]{ --tone:#D8B463 }
+.ficha[data-tone="ad"]{ --tone:#CE7C3C } .ficha[data-tone="bb"]{ --tone:#C6485F }
+.ficha[data-tone="pv"]{ --tone:#C2D18A } .ficha[data-tone="ek"]{ --tone:#62B4EE }
+.ficha[data-tone="dp"]{ --tone:#7FE0E8 } .ficha[data-tone="lp"]{ --tone:#4ED8C4 }
+.ficha{ --tone: var(--amber); }
+
+/* La cabecera arranca bajo el nav fijo, no debajo de un hero de pantalla
+   completa: en una ficha el visitante ya decidió entrar, no hay que
+   volver a convencerlo con una portada. */
+.ficha-cab{ padding-top: calc(var(--nav-h) + clamp(2.5rem,6vw,4.5rem)); }
+.ficha-h1{
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1.02;
+  letter-spacing: -.02em; margin: 0 0 1rem; color: var(--bone);
+}
+.ficha-sub{ display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; margin: 0 0 1.6rem; }
+.ficha-sub span{ font-family: var(--mono); font-size: .78rem; color: var(--bone-2); letter-spacing: .03em; }
+.ficha-gancho{
+  font-size: clamp(1.1rem, 1rem + .8vw, 1.45rem); line-height: 1.55;
+  color: var(--bone); max-width: 34ch; margin: 0;
+  padding-left: 1.1rem; border-left: 3px solid var(--tone);
+}
+
+/* La captura va a sangre y pegada al borde superior de su banda: es lo
+   primero que el visitante quiere ver de un sitio web. */
+.ficha-shot{ margin: 0; border-block: 1px solid var(--line); background: var(--panel); }
+.ficha-shot img{ width: 100%; height: auto; display: block; }
+
+.ficha-h2{
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--tone); font-weight: 500;
+  margin: 0 0 1.4rem;
+}
+.ficha-cuerpo{ display: grid; gap: 2.5rem; }
+@media (min-width: 900px){ .ficha-cuerpo{ grid-template-columns: 1.4fr .9fr; gap: 4rem; align-items: start; } }
+.ficha-texto p{ color: var(--bone-2); font-size: 1.02rem; line-height: 1.75; max-width: 62ch; margin: 0; }
+
+/* "Lo que había cuando llegué": la evidencia de lo que se encontró. Es el
+   activo más fuerte de una propuesta —dominio en 403, cuenta suspendida,
+   modo mantención desde 2023— y va en tono factual, sin burla. */
+.antes{
+  border: 1px solid var(--line); border-left: 3px solid var(--tone);
+  background: var(--panel); padding: 1.5rem 1.6rem; border-radius: 3px;
+}
+.antes-eti{
+  font-family: var(--mono); font-size: .62rem; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--bone-3); margin: 0 0 .8rem;
+}
+.antes-txt{ color: var(--bone); font-size: .98rem; line-height: 1.6; margin: 0 0 .9rem; }
+.antes-pie{ color: var(--bone-3); font-size: .8rem; line-height: 1.5; margin: 0; }
+
+.ficha-pieza{
+  font-family: var(--serif); font-size: clamp(1.5rem,1.2rem + 1.4vw,2.2rem);
+  line-height: 1.2; color: var(--bone); max-width: 24ch; margin: 0 0 1rem;
+}
+.ficha-pieza-nota{ color: var(--bone-2); font-size: .95rem; max-width: 52ch; margin: 0 0 2.5rem; }
+
+.ficha-movil{ margin: 0; max-width: 320px; }
+.ficha-movil img{
+  width: 100%; height: auto; display: block;
+  border: 1px solid var(--line); border-radius: 6px; background: var(--panel);
+}
+.ficha-movil figcaption{
+  font-family: var(--mono); font-size: .7rem; color: var(--bone-3);
+  margin-top: .8rem; line-height: 1.5;
+}
+
+.ficha-acciones{ display: flex; flex-wrap: wrap; gap: .8rem; margin: 2rem 0 0; }
+
+/* El enlace a la ficha, dentro de cada destacado del índice */
+.dest-ficha{
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-family: var(--mono); font-size: .74rem; letter-spacing: .04em;
+  color: var(--tone); margin-right: 1.2rem;
+  border-bottom: 1px solid transparent; padding-bottom: .15rem;
+  transition: border-color .3s var(--ease);
+}
+.dest-ficha:hover{ border-bottom-color: var(--tone); }
+
+/* Intro de la seccion Trabajo: explica que es una propuesta. Va antes de los
+   filtros porque el visitante tiene que leerlo antes de ver el sello
+   Propuesta veinte veces. */
+.trabajo-intro{
+  color: var(--bone-2); font-size: 1rem; line-height: 1.7;
+  max-width: 62ch; margin: 1.6rem 0 2.4rem;
+}
+.trabajo-intro em{ color: var(--bone); font-style: italic; }
+.trabajo-intro .sello{ margin-inline: .15rem; }
