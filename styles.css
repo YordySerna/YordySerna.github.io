@@ -453,6 +453,7 @@ table { border-collapse: collapse; width: 100%; }
 .entry[data-tone="dp"] { --tone: #7FE0E8; } /* glaciar de Dental Patagonia — más verde que el ek y más claro que el ps, para que no se confundan */
 .entry[data-tone="lp"] { --tone: #4ED8C4; } /* turquesa de La Poza — deliberadamente más verde que el dp y que el ek: son tres azules seguidos y en la lista tienen que distinguirse */
 .entry[data-tone="sm"] { --tone: #E0CBA8; } /* la madera de pino de SM — pálida y desaturada a propósito: los cobres que ya hay (ad, cs, mj, lr) son naranjas saturados y de lejos se confunden entre ellos */
+.entry[data-tone="vs"] { --tone: #E7A0B6; } /* la frambuesa de Sevilla — el único rosa de la lista: los tonos que ya hay son ámbar, turquesa, verde y cobre, y ninguno se le parece de lejos */
 
 .entry::before {
   content: ""; position: absolute; left: 0; top: -1px; bottom: -1px; width: 2px;
