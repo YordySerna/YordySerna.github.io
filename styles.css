@@ -455,6 +455,16 @@ table { border-collapse: collapse; width: 100%; }
 .entry[data-tone="sm"] { --tone: #E0CBA8; } /* la madera de pino de SM — pálida y desaturada a propósito: los cobres que ya hay (ad, cs, mj, lr) son naranjas saturados y de lejos se confunden entre ellos */
 .entry[data-tone="vs"] { --tone: #E7A0B6; } /* la frambuesa de Sevilla — el único rosa de la lista: los tonos que ya hay son ámbar, turquesa, verde y cobre, y ninguno se le parece de lejos */
 
+/* ── P4, agosto de 2026 ── Seis tonos nuevos, elegidos por familias que
+   la lista NO tenia: en veintidos proyectos habia nueve ambares y cinco
+   verdes claros, y ni un gris, ni un azul franco, ni un oliva oscuro. */
+.entry[data-tone="vc"] { --tone: #5E6B3A; } /* el oliva del potrero de Veterinaria Central — el unico verde OSCURO: vk y la son verdes claros y pv es lima */
+.entry[data-tone="qm"] { --tone: #2E8B84; } /* el agua jabonosa de Que Monada — teal profundo, mas verde que ps y mas oscuro que lp */
+.entry[data-tone="tr"] { --tone: #8C6B3F; } /* el kraft de Transportes Rojas — cafe OSCURO: los cobres que hay (cs, ad, mj) son naranjas claros */
+.entry[data-tone="cp"] { --tone: #A8A49C; } /* el hormigon de Constructora Pozas — el unico gris de la lista, y por eso el mas facil de reconocer */
+.entry[data-tone="mk"] { --tone: #2C7FD4; } /* el azul de jaba de Matekila — azul FRANCO: ek es celeste y ps es cian */
+.entry[data-tone="br"] { --tone: #C08A3C; } /* la corteza de Blas Reyes — el mas cercano a cs y ad, y se distingue por ser mas amarillo y menos rojo */
+
 .entry::before {
   content: ""; position: absolute; left: 0; top: -1px; bottom: -1px; width: 2px;
   background: var(--tone);
@@ -887,6 +897,9 @@ table { border-collapse: collapse; width: 100%; }
 .ficha[data-tone="ad"]{ --tone:#CE7C3C } .ficha[data-tone="bb"]{ --tone:#C6485F }
 .ficha[data-tone="pv"]{ --tone:#C2D18A } .ficha[data-tone="ek"]{ --tone:#62B4EE }
 .ficha[data-tone="dp"]{ --tone:#7FE0E8 } .ficha[data-tone="lp"]{ --tone:#4ED8C4 } .ficha[data-tone="sm"]{ --tone:#E0CBA8 }
+/* P4 · las mismas seis de arriba, para la vista de ficha */
+.ficha[data-tone="vc"]{ --tone:#8CA05A } .ficha[data-tone="qm"]{ --tone:#4FC2B8 } .ficha[data-tone="tr"]{ --tone:#C69A5E }
+.ficha[data-tone="cp"]{ --tone:#C9C5BC } .ficha[data-tone="mk"]{ --tone:#5AA9F0 } .ficha[data-tone="br"]{ --tone:#DCA855 }
 .ficha{ --tone: var(--amber); }
 
 /* La cabecera arranca bajo el nav fijo, no debajo de un hero de pantalla
