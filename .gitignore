@@ -5,3 +5,6 @@
 # publica, pero el sitio servido no depende de ellas — GitHub Pages sirve
 # HTML, CSS, JS y las imágenes ya procesadas, nada más.
 dev/
+
+# El informe de seguridad es interno: nunca se publica.
+informe-seguridad-*.md

@@ -464,6 +464,14 @@ table { border-collapse: collapse; width: 100%; }
 .entry[data-tone="cp"] { --tone: #A8A49C; } /* el hormigon de Constructora Pozas — el unico gris de la lista, y por eso el mas facil de reconocer */
 .entry[data-tone="mk"] { --tone: #2C7FD4; } /* el azul de jaba de Matekila — azul FRANCO: ek es celeste y ps es cian */
 .entry[data-tone="br"] { --tone: #C08A3C; } /* la corteza de Blas Reyes — el mas cercano a cs y ad, y se distingue por ser mas amarillo y menos rojo */
+.entry[data-tone="em"] { --tone: #8E6FD4; } /* el violeta del logo de Estacion Mascotas — el UNICO violeta del registro */
+.entry[data-tone="ph"] { --tone: #7A4E32; } /* el pelaje de Pehuen — mas oscuro y mas rojo que tr, que es el otro cafe */
+.entry[data-tone="vp"] { --tone: #3B4FC4; } /* el azul de lapicera de Vet Pitrufquen — indigo, mas violaceo que mk */
+.entry[data-tone="da"] { --tone: #B65C9A; } /* Dental Araucaria — el UNICO magenta; ni vs ni bb llegan a este matiz */
+.entry[data-tone="is"] { --tone: #7D9A2E; } /* IntegraSur — oliva saturado, contra la#7C8F5A que es apagado */
+.entry[data-tone="kk"] { --tone: #6E5A2A; } /* el dorado viejo de King of Kings — mas oscuro que tt y lr */
+.entry[data-tone="hs"] { --tone: #A05C6B; } /* el palo rosa de House Salon — entre vs (claro) y bb (fuerte) */
+.entry[data-tone="sc"] { --tone: #2E5A8C; } /* el prusia de Schuster — mas profundo y mas gris que mk */
 
 .entry::before {
   content: ""; position: absolute; left: 0; top: -1px; bottom: -1px; width: 2px;
@@ -900,6 +908,8 @@ table { border-collapse: collapse; width: 100%; }
 /* P4 · las mismas seis de arriba, para la vista de ficha */
 .ficha[data-tone="vc"]{ --tone:#8CA05A } .ficha[data-tone="qm"]{ --tone:#4FC2B8 } .ficha[data-tone="tr"]{ --tone:#C69A5E }
 .ficha[data-tone="cp"]{ --tone:#C9C5BC } .ficha[data-tone="mk"]{ --tone:#5AA9F0 } .ficha[data-tone="br"]{ --tone:#DCA855 }
+.ficha[data-tone="em"]{ --tone:#A98BE8 } .ficha[data-tone="ph"]{ --tone:#A8734E } .ficha[data-tone="vp"]{ --tone:#7285E8 } .ficha[data-tone="da"]{ --tone:#D081B4 }
+.ficha[data-tone="is"]{ --tone:#A3C24A } .ficha[data-tone="kk"]{ --tone:#B99C4E } .ficha[data-tone="hs"]{ --tone:#C98C99 } .ficha[data-tone="sc"]{ --tone:#6A94C4 }
 .ficha{ --tone: var(--amber); }
 
 /* La cabecera arranca bajo el nav fijo, no debajo de un hero de pantalla
