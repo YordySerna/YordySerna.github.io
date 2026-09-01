@@ -472,6 +472,7 @@ table { border-collapse: collapse; width: 100%; }
 .entry[data-tone="kk"] { --tone: #6E5A2A; } /* el dorado viejo de King of Kings — mas oscuro que tt y lr */
 .entry[data-tone="hs"] { --tone: #A05C6B; } /* el palo rosa de House Salon — entre vs (claro) y bb (fuerte) */
 .entry[data-tone="sc"] { --tone: #2E5A8C; } /* el prusia de Schuster — mas profundo y mas gris que mk */
+.entry[data-tone="ky"] { --tone: #8FA6BF; } /* el plata de noche de Kuyen — el UNICO gris AZULADO; cp es gris calido */
 
 .entry::before {
   content: ""; position: absolute; left: 0; top: -1px; bottom: -1px; width: 2px;
@@ -909,7 +910,7 @@ table { border-collapse: collapse; width: 100%; }
 .ficha[data-tone="vc"]{ --tone:#8CA05A } .ficha[data-tone="qm"]{ --tone:#4FC2B8 } .ficha[data-tone="tr"]{ --tone:#C69A5E }
 .ficha[data-tone="cp"]{ --tone:#C9C5BC } .ficha[data-tone="mk"]{ --tone:#5AA9F0 } .ficha[data-tone="br"]{ --tone:#DCA855 }
 .ficha[data-tone="em"]{ --tone:#A98BE8 } .ficha[data-tone="ph"]{ --tone:#A8734E } .ficha[data-tone="vp"]{ --tone:#7285E8 } .ficha[data-tone="da"]{ --tone:#D081B4 }
-.ficha[data-tone="is"]{ --tone:#A3C24A } .ficha[data-tone="kk"]{ --tone:#B99C4E } .ficha[data-tone="hs"]{ --tone:#C98C99 } .ficha[data-tone="sc"]{ --tone:#6A94C4 }
+.ficha[data-tone="is"]{ --tone:#A3C24A } .ficha[data-tone="kk"]{ --tone:#B99C4E } .ficha[data-tone="hs"]{ --tone:#C98C99 } .ficha[data-tone="sc"]{ --tone:#6A94C4 } .ficha[data-tone="ky"]{ --tone:#AFC2D6 }
 .ficha{ --tone: var(--amber); }
 
 /* La cabecera arranca bajo el nav fijo, no debajo de un hero de pantalla
