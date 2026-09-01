@@ -475,6 +475,11 @@ table { border-collapse: collapse; width: 100%; }
 .entry[data-tone="ky"] { --tone: #8FA6BF; } /* el plata de noche de Kuyen — el UNICO gris AZULADO; cp es gris calido */
 .entry[data-tone="gs"] { --tone: #3E7E9C; } /* el frio de Geo Salud — azul acero: sc es mas oscuro, ps mas cian */
 .entry[data-tone="kd"] { --tone: #D6202A; } /* el segundero de KDT — el UNICO rojo puro; pt es terracota y bb es rosa */
+.entry[data-tone="df"] { --tone: #1F6E8C; } /* el azul petroleo de Dental Frontera — mas verde que sc y que vp */
+.entry[data-tone="fg"] { --tone: #566B85; } /* la mezclilla de Felipe Garrido — gris azulado OSCURO; ky es el claro */
+.entry[data-tone="yk"] { --tone: #8E2B22; } /* el disco de Yakuza — rojo ladrillo: kd es rojo puro y pt es terracota */
+.entry[data-tone="dr"] { --tone: #A66A12; } /* la madera fresca de DyR — ambar saturado, contra los cafes apagados */
+.entry[data-tone="ms"] { --tone: #B24A08; } /* el naranjo quemado de Motosierras — fr y ch son mas claros */
 
 .entry::before {
   content: ""; position: absolute; left: 0; top: -1px; bottom: -1px; width: 2px;
@@ -914,6 +919,8 @@ table { border-collapse: collapse; width: 100%; }
 .ficha[data-tone="em"]{ --tone:#A98BE8 } .ficha[data-tone="ph"]{ --tone:#A8734E } .ficha[data-tone="vp"]{ --tone:#7285E8 } .ficha[data-tone="da"]{ --tone:#D081B4 }
 .ficha[data-tone="is"]{ --tone:#A3C24A } .ficha[data-tone="kk"]{ --tone:#B99C4E } .ficha[data-tone="hs"]{ --tone:#C98C99 } .ficha[data-tone="sc"]{ --tone:#6A94C4 } .ficha[data-tone="ky"]{ --tone:#AFC2D6 }
 .ficha[data-tone="gs"]{ --tone:#6FA6C0 } .ficha[data-tone="kd"]{ --tone:#F2555C }
+.ficha[data-tone="df"]{ --tone:#4E9DB5 } .ficha[data-tone="fg"]{ --tone:#8AA0BA } .ficha[data-tone="yk"]{ --tone:#C4544A }
+.ficha[data-tone="dr"]{ --tone:#D19A3E } .ficha[data-tone="ms"]{ --tone:#E0763A }
 .ficha{ --tone: var(--amber); }
 
 /* La cabecera arranca bajo el nav fijo, no debajo de un hero de pantalla
