@@ -187,3 +187,11 @@ a:focus-visible,
 @media (max-width: 520px) {
   .lista { grid-template-columns: 1fr; }
 }
+
+/* ── Blancos de toque ─────────────────────────────────────────────
+   Regla de la casa: nada que se toque puede medir menos de 44 px de
+   alto. Medidos a 375 px, el nombre del negocio quedaba en 23 px y los
+   dos enlaces del pie en 17 y 39. Se les da caja propia sin cambiar
+   cómo se ven. */
+.demo__nom a,
+.pie a { display: inline-flex; align-items: center; min-height: 44px; }
