@@ -1005,3 +1005,77 @@ table { border-collapse: collapse; width: 100%; }
 }
 .trabajo-intro em{ color: var(--bone); font-style: italic; }
 .trabajo-intro .sello{ margin-inline: .15rem; }
+
+/* ══ LOS LAGOS ═════════════════════════════════════════════════════
+   Sección 03: la tanda de trece propuestas de Puerto Montt y Puerto
+   Varas. Acá va sólo la entrada —un bloque grande que abre la muestra
+   y los trece enlaces sueltos—; la muestra completa es una página
+   aparte con su propia hoja (los-lagos/lagos.css). Se hizo así para no
+   sumarle trece tarjetas más a un index que ya carga cuarenta y cuatro. */
+
+.lagos-cta{
+  display: grid; gap: 0;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: stretch;
+  margin: 2.2rem 0 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  text-decoration: none; color: inherit;
+  overflow: hidden;
+  transition: border-color .3s var(--ease), background .3s var(--ease);
+}
+.lagos-cta:hover{ border-color: rgba(255,167,36,.45); background: var(--panel-2); }
+
+/* Tres capturas superpuestas: dicen «son varias» sin gastar tres filas. */
+.lagos-cta__fotos{ position: relative; display: block; min-height: 220px; overflow: hidden; }
+.lagos-cta__fotos img{
+  position: absolute; top: 0; left: 0;
+  width: 62%; height: 100%; object-fit: cover; object-position: left top;
+  border-right: 1px solid var(--line);
+  transition: transform .5s var(--ease);
+}
+.lagos-cta__fotos img:nth-child(2){ left: 19%; opacity: .94; }
+.lagos-cta__fotos img:nth-child(3){ left: 38%; opacity: .88; }
+.lagos-cta:hover .lagos-cta__fotos img:nth-child(1){ transform: translateX(-4px); }
+.lagos-cta:hover .lagos-cta__fotos img:nth-child(3){ transform: translateX(4px); }
+
+.lagos-cta__txt{ display: flex; flex-direction: column; gap: .5rem; padding: 1.5rem 1.6rem; }
+.lagos-cta__k{
+  font-family: var(--mono); font-size: .74rem; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--amber);
+}
+.lagos-cta__t{ font-family: var(--serif); font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem); line-height: 1.15; }
+.lagos-cta__t b{ color: var(--amber); font-weight: 400; }
+.lagos-cta__p{ color: var(--bone-2); font-size: .94rem; max-width: 40ch; }
+
+.lagos-lista{
+  list-style: none; margin: 1.4rem 0 0; padding: 0;
+  display: grid; gap: 2px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+.lagos-lista a{
+  display: flex; flex-direction: column; justify-content: center; gap: .1rem;
+  min-height: 56px; padding: .6rem .9rem;
+  background: var(--panel); border: 1px solid var(--line-soft);
+  text-decoration: none; color: var(--bone); font-size: .95rem;
+  transition: background .25s var(--ease), border-color .25s var(--ease);
+}
+.lagos-lista a:hover{ background: var(--panel-2); border-color: rgba(255,167,36,.35); color: var(--amber); }
+.lagos-lista span{
+  font-family: var(--mono); font-size: .68rem; letter-spacing: .06em;
+  color: var(--bone-3); text-transform: uppercase;
+}
+.lagos-lista a:hover span{ color: var(--bone-2); }
+
+.lagos-nota{
+  margin: 1.4rem 0 0; max-width: 74ch;
+  color: var(--bone-3); font-size: .9rem; line-height: 1.7;
+}
+.lagos-nota .sello{ margin-right: .35rem; }
+
+@media (max-width: 780px){
+  .lagos-cta{ grid-template-columns: 1fr; }
+  .lagos-cta__fotos{ min-height: 180px; border-bottom: 1px solid var(--line); }
+  .lagos-cta__fotos img{ border-right: 0; }
+}

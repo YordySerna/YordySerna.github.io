@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es-CL" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cirus Bar — Puerto Montt</title>
+<meta name="description" content="Picada de Puerto Montt desde 1962. Sesenta años de barrio Miraflores contados por escrito: la línea del tiempo, la carta y los cantores.">
+
+<!-- Política de seguridad de contenido: el navegador sólo puede cargar
+     archivos de este mismo sitio. Sin CDN, sin librerías, sin rastreadores. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'self'; form-action 'self'; base-uri 'none'; frame-src 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- Rescate de la clase .js (regla 2 de la casa). En archivo, sin defer:
+     inline lo bloquearía la CSP. -->
+<script src="js/rescate.js"></script>
+
+<!-- Fuentes propias: cero peticiones a terceros. -->
+<link rel="preload" href="assets/fuentes/sanchez-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fuentes.css">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<div class="propuesta">
+  <p class="propuesta__que">Propuesta de sitio web — preparada para <b>Cirus Bar</b> por CristalWeb</p>
+  <p class="propuesta__gancho">Sesenta años de historia, cantores populares y el título de mejor picada de Chile en disputa — y en internet, un Wix gratuito con dirección prestada. La historia que tiene este local no cabe en una plantilla.</p>
+</div>
+
+<header class="cab" id="cab">
+  <a class="cab__marca" href="#portada">
+    <span class="vaso" aria-hidden="true"><i></i></span>
+    <span class="cab__nombre">Cirus Bar<span class="cab__desde">desde 1962</span></span>
+  </a>
+  <nav class="cab__nav" aria-label="Secciones">
+    <a href="#linea">Los 60 años</a>
+    <a href="#carta">La carta</a>
+    <a href="#barrio">El barrio</a>
+    <a href="#llegar">Cómo llegar</a>
+  </nav>
+  <a class="cab__tel" href="tel:+56962317070">
+    <span class="cab__tel-rot">Reservar mesa</span>
+    <span class="cab__tel-num">9 6231 7070</span>
+  </a>
+</header>
+
+<main>
+
+<!-- ═══════════ PORTADA ═══════════
+     Foto a 2560 px, nítida. Se disuelve hacia el titular con un
+     gradiente lateral (mask-image) y un velo escrito entero en rgba:
+     un var() dentro del gradiente lo pintaría de punta a punta. -->
+<section class="portada portada--foto" id="portada" aria-labelledby="t-portada">
+  <div class="portada__foto" aria-hidden="true">
+    <img src="imagenes/port-01.jpg" width="2560" height="1707"
+         decoding="async" fetchpriority="high" alt="">
+  </div>
+
+  <!-- ═══════ ESCENA DE PORTADA · «el vapor que sube» ═══════
+       movimiento-web, ficha «Restaurante / picada». Verbo: SE ENCIENDE.
+       Escalón 1: SVG dibujado a mano + @keyframes, cero JS y cero KB de
+       librería. Vive sobre la mitad NÍTIDA de la foto —la parrilla de la
+       derecha—, nunca sobre el titular. Es el ÚNICO reposo de la página. -->
+  <div class="escena escena--picada" aria-hidden="true">
+    <svg class="escena__svg" viewBox="0 0 320 560" width="320" height="560"
+         focusable="false" role="presentation">
+      <defs>
+        <!-- El vapor ES borroso: acá el desenfoque no es adorno. stdDeviation
+             9 es el equivalente de un filter: blur(18px). La región del filtro
+             se agranda a mano o el navegador corta el desenfoque en seco. -->
+        <filter id="vapor" x="-60%" y="-60%" width="220%" height="220%"
+                color-interpolation-filters="sRGB">
+          <feGaussianBlur stdDeviation="9"/>
+        </filter>
+      </defs>
+      <g class="escena__humo" filter="url(#vapor)">
+        <ellipse class="jiron" cx="120" cy="340" rx="16" ry="78"/>
+        <ellipse class="jiron" cx="154" cy="362" rx="22" ry="96"/>
+        <ellipse class="jiron" cx="188" cy="346" rx="15" ry="70"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="portada__texto">
+    <p class="portada__sobre">Miraflores 1177 · Puerto Montt</p>
+    <h1 class="portada__titulo" id="t-portada">
+      <span>Acá se come</span>
+      <span>desde 1962.</span>
+    </h1>
+    <p class="portada__bajada">
+      Sesenta y cuatro años en la misma esquina del barrio Chorrillos.
+      Guatitas picantes, ajiaco, cazuelas y carnes a la parrilla, con
+      cantores en las mesas del fondo cuando la noche se pone buena.
+    </p>
+    <div class="portada__acciones">
+      <a class="boton" href="#carta">Ver la carta</a>
+      <a class="boton boton--linea" href="#linea">Los 60 años</a>
+    </div>
+  </div>
+
+  <ul class="cifras" aria-label="Datos del local">
+    <li><b>1962</b><span>el año que abrió</span></li>
+    <li><b data-cuenta="80">80</b><span>personas al día, en promedio</span></li>
+    <li><b>1</b><span>de las dos finalistas a mejor picada de Chile</span></li>
+  </ul>
+</section>
+
+
+<!-- ═══════════ PIEZA FIRMA · LA LÍNEA DE LOS 60 AÑOS ═══════════ -->
+<section class="linea" id="linea" aria-labelledby="t-linea">
+  <div class="ancho">
+    <p class="rotulo">La pieza que ningún competidor puede copiar</p>
+    <h2 class="titulo" id="t-linea">Sesenta y cuatro años en la misma esquina.</h2>
+    <p class="entradilla">
+      Ningún restaurante nuevo de Puerto Montt puede mostrar esto, y es
+      exactamente lo que hace que alguien elija esta mesa y no otra. Los
+      hitos marcados como <b>ejemplo</b> los completa el dueño: son las
+      preguntas que hay que hacerle en la primera conversación.
+    </p>
+  </div>
+
+  <ol class="hitos" aria-label="Línea de tiempo del local">
+    <li class="hito hito--real">
+      <p class="hito__anio">1962</p>
+      <h3 class="hito__que">Abre en Miraflores</h3>
+      <p class="hito__txt">El local parte en calle Miraflores, en el barrio
+        Chorrillos-Miraflores, con la idea de darle de comer al que trabaja
+        en el puerto.</p>
+    </li>
+
+    <li class="hito ej" data-ejemplo="ejemplo">
+      <p class="hito__anio">19__</p>
+      <h3 class="hito__que">Llega la vitrola</h3>
+      <p class="hito__txt">¿Qué año fue? ¿Quién la trajo? Este hito está
+        vacío a propósito: la respuesta la tiene el dueño y vale más que
+        cualquier texto que pudiéramos inventar.</p>
+    </li>
+
+    <li class="hito ej" data-ejemplo="ejemplo">
+      <p class="hito__anio">19__</p>
+      <h3 class="hito__que">El primer cantor</h3>
+      <p class="hito__txt">Los cantores populares son parte del local. El
+        primero que se subió a cantar tiene nombre, y ese nombre es la
+        mejor línea de esta página.</p>
+    </li>
+
+    <li class="hito ej" data-ejemplo="ejemplo">
+      <p class="hito__anio">19__</p>
+      <h3 class="hito__que">La segunda generación</h3>
+      <p class="hito__txt">Un local de sesenta años cambió de manos al
+        menos una vez. Cuándo y a quién es media historia.</p>
+    </li>
+
+    <li class="hito hito--real hito--hoy">
+      <p class="hito__anio">Hoy</p>
+      <h3 class="hito__que">Finalista a mejor picada de Chile</h3>
+      <p class="hito__txt">Cirus Bar y La Campesina de Osorno compitieron
+        por el título nacional de las picadas, en la convocatoria del
+        Ministerio de las Culturas, las Artes y el Patrimonio.</p>
+      <p class="hito__fuente">Publicado en cultura.gob.cl</p>
+    </li>
+  </ol>
+
+  <p class="ancho nota-ej">
+    Los años en blanco no son un descuido: son la entrevista pendiente.
+    Cada uno que se llene hace la página más difícil de copiar.
+  </p>
+</section>
+
+
+<!-- ═══════════ TAJO · los cantores ═══════════ -->
+<figure class="tajo" aria-labelledby="t-tajo">
+  <img src="imagenes/tajo-01.jpg" width="2200" height="1469" loading="lazy" decoding="async" alt="">
+  <figcaption class="tajo__txt">
+    <h2 id="t-tajo">Cuando alguien saca la guitarra, nadie pide la cuenta.</h2>
+    <p>Es lo que separa una picada de un restaurante. No se agenda ni se
+      promete: pasa.</p>
+  </figcaption>
+</figure>
+
+
+<!-- ═══════════ LA CARTA ═══════════ -->
+<section class="carta" id="carta" aria-labelledby="t-carta">
+  <div class="ancho">
+    <p class="rotulo">La carta</p>
+    <h2 class="titulo" id="t-carta">Cocina criolla, de las que ya casi no quedan.</h2>
+    <p class="entradilla">
+      Los platos de abajo son los que la prensa nombra cuando escribe
+      sobre Cirus Bar. <b>Los precios van como ejemplo</b> hasta que el
+      dueño los confirme: son referencia de picada, no su carta real.
+    </p>
+
+    <ul class="platos">
+      <li class="plato">
+        <h3 class="plato__nom">Guatitas picantes</h3>
+        <p class="plato__txt">El plato con el que la nombran en todas
+          partes. Picante de verdad, no de adorno.</p>
+        <p class="plato__precio ej" data-ejemplo="ejemplo">$8.500</p>
+      </li>
+      <li class="plato">
+        <h3 class="plato__nom">Ajiaco</h3>
+        <p class="plato__txt">Caldo de carne, papa y huevo. El plato del
+          día siguiente, y acá se sirve todo el año.</p>
+        <p class="plato__precio ej" data-ejemplo="ejemplo">$7.900</p>
+      </li>
+      <li class="plato">
+        <h3 class="plato__nom">Cazuela</h3>
+        <p class="plato__txt">De vacuno o de ave según el día. Se pregunta
+          al llegar, como corresponde.</p>
+        <p class="plato__precio ej" data-ejemplo="ejemplo">$8.200</p>
+      </li>
+      <li class="plato">
+        <h3 class="plato__nom">Carnes a la parrilla</h3>
+        <p class="plato__txt">A la brasa, con lo que la acompañe ese día.
+          El corte lo canta el mesero.</p>
+        <p class="plato__precio ej" data-ejemplo="ejemplo">$11.500</p>
+      </li>
+    </ul>
+
+    <p class="carta__pie">
+      <span class="marca-ej">ejemplo</span> Todo lo marcado así se
+      reemplaza con la carta real del local. Los nombres de los platos
+      salen de notas de prensa; los valores, no.
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════ EL BARRIO · con telón ═══════════ -->
+<section class="barrio con-telon" id="barrio" aria-labelledby="t-barrio">
+  <div class="telon" aria-hidden="true">
+    <img src="imagenes/telon-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="">
+  </div>
+  <div class="ancho">
+    <p class="rotulo">Chorrillos-Miraflores</p>
+    <h2 class="titulo" id="t-barrio">Un local de barrio, no un local de centro.</h2>
+    <div class="barrio__cols">
+      <p>
+        Miraflores 1177 no es la costanera ni el mall. Es el barrio
+        tradicional de Puerto Montt, y eso cambia quién entra: vecinos que
+        vienen hace años, gente del puerto, y el que llegó preguntando por
+        una picada de verdad.
+      </p>
+      <p>
+        Un promedio de <b>ochenta personas al día</b> pasan por estas
+        mesas. La mayoría no llega por internet — llega porque alguien se
+        lo dijo. Esta página es para el otro: el que escuchó el nombre y
+        lo buscó en el teléfono antes de decidir.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ CITA ═══════════ -->
+<figure class="cita" aria-label="Sobre el local">
+  <img src="imagenes/cita-01.jpg" width="2200" height="1467" loading="lazy" decoding="async" alt="">
+  <blockquote class="cita__txt">
+    <p>«Sesenta y cuatro años sirviendo a la misma calle. Eso no se abre:
+       se hereda.»</p>
+  </blockquote>
+</figure>
+
+
+<!-- ═══════════ MOSAICO ═══════════ -->
+<section class="mos" aria-labelledby="t-mos">
+  <div class="ancho">
+    <p class="rotulo">La mesa</p>
+    <h2 class="titulo" id="t-mos">Lo que sale de la cocina.</h2>
+  </div>
+  <div class="mos__grilla">
+    <figure class="mos__p"><img src="imagenes/mos1-01.jpg" width="1200" height="788" loading="lazy" decoding="async" alt="Carne a la parrilla sobre el carbón"></figure>
+    <figure class="mos__p"><img src="imagenes/mos2-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Olla hirviendo en la cocina"></figure>
+    <figure class="mos__p"><img src="imagenes/mos3-01.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="Plato de guiso servido"></figure>
+    <figure class="mos__p"><img src="imagenes/mos4-01.jpg" width="1200" height="801" loading="lazy" decoding="async" alt="Brasas del asador"></figure>
+    <figure class="mos__p"><img src="imagenes/mos5-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Tocadiscos antiguo"></figure>
+    <figure class="mos__p"><img src="imagenes/mos6-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Mesa servida del comedor"></figure>
+  </div>
+</section>
+
+
+<!-- ═══════════ CÓMO LLEGAR ═══════════ -->
+<section class="llegar" id="llegar" aria-labelledby="t-llegar">
+  <div class="ancho llegar__cols">
+    <div>
+      <p class="rotulo">Dónde y cuándo</p>
+      <h2 class="titulo" id="t-llegar">Miraflores 1177, Puerto Montt.</h2>
+      <p class="entradilla">
+        Cierra domingos y festivos. El resto de la semana está abierto —
+        el horario exacto lo confirma el dueño y va acá arriba, grande,
+        porque es lo que más se busca.
+      </p>
+      <dl class="datos">
+        <div><dt>Dirección</dt><dd>Miraflores 1177, barrio Chorrillos-Miraflores</dd></div>
+        <div><dt>Teléfono</dt><dd><a href="tel:+56962317070">9 6231 7070</a></dd></div>
+        <div><dt>Correo</dt><dd><a href="mailto:cirusbarrestaurant@gmail.com">cirusbarrestaurant@gmail.com</a></dd></div>
+        <div><dt>Cierra</dt><dd>Domingos y festivos</dd></div>
+        <div class="ej" data-ejemplo="ejemplo"><dt>Horario</dt><dd>Lunes a sábado, 12:00 a 23:00</dd></div>
+      </dl>
+    </div>
+
+    <div class="reserva">
+      <h3 class="reserva__t">Reservar una mesa</h3>
+      <p class="reserva__p">
+        Complete los cuatro datos y el mensaje queda armado. Se copia con
+        un botón y se manda por donde usted prefiera.
+      </p>
+      <form class="form" id="form-reserva" autocomplete="on">
+        <label>Nombre
+          <input type="text" name="nombre" id="f-nombre" required>
+        </label>
+        <label>Día y hora
+          <input type="text" name="cuando" id="f-cuando" placeholder="viernes 20:30" required>
+        </label>
+        <label>Cuántas personas
+          <input type="number" name="personas" id="f-personas" min="1" max="30" value="2" required>
+        </label>
+        <label>Algo que avisar
+          <input type="text" name="nota" id="f-nota" placeholder="opcional">
+        </label>
+        <p class="form__salida" id="salida" aria-live="polite"></p>
+        <div class="form__acciones">
+          <button class="boton" type="button" id="btn-copiar">Copiar el mensaje</button>
+          <a class="boton boton--linea" href="tel:+56962317070">Llamar</a>
+        </div>
+      </form>
+      <p class="form__sinjs">
+        Sin JavaScript el teléfono de arriba sigue funcionando: es un
+        enlace normal, no un botón.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ PARA EL DUEÑO ═══════════ -->
+<section class="dueno" aria-labelledby="t-dueno">
+  <div class="ancho">
+    <p class="rotulo rotulo--claro">Para el dueño</p>
+    <h2 class="titulo titulo--claro" id="t-dueno">Qué es esto y qué falta.</h2>
+    <div class="dueno__cols">
+      <div>
+        <h3>Qué es</h3>
+        <p>Una propuesta de sitio web hecha por nuestra cuenta. Cirus Bar
+          no la encargó ni la ha revisado. La hicimos con lo que está
+          publicado del local: la dirección, el teléfono, el correo, el
+          año de fundación y la nota de la competencia nacional de
+          picadas.</p>
+      </div>
+      <div>
+        <h3>Qué es ejemplo</h3>
+        <p>Todo lo marcado con borde punteado: los precios, el horario
+          exacto y los años en blanco de la línea de tiempo. No inventamos
+          nada sobre el negocio que no estuviera publicado — lo que no
+          sabemos, queda marcado en vez de rellenado.</p>
+      </div>
+      <div>
+        <h3>Qué cambiaría la página entera</h3>
+        <p>Tres fotos del local de verdad: la fachada, el salón con gente
+          y un plato saliendo de la cocina. Las de acá son del oficio, no
+          del local. Con las suyas, esta página deja de parecerse a
+          cualquier otra.</p>
+      </div>
+    </div>
+    <p class="dueno__cierre">
+      <a class="flecha" href="mailto:cristalwebcl@gmail.com?subject=Sitio%20web%20para%20Cirus%20Bar">Escribirnos por correo <span aria-hidden="true">→</span></a>
+      <a class="flecha" href="https://cristalwebcl.github.io/cristalweb/" rel="noopener">Ver otros trabajos <span aria-hidden="true">→</span></a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <p>Sitio de demostración preparado por CristalWeb. El negocio no lo ha
+     encargado ni ha revisado su contenido. Los precios, el horario y los
+     hitos sin año son ejemplos marcados como tales.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

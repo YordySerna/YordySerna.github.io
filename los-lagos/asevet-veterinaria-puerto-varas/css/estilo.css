@@ -1,0 +1,423 @@
+/* ══════════════════════════════════════════════════════════════════
+   ASEVET · Clínica veterinaria, Puerto Varas — demo CristalWeb
+   ------------------------------------------------------------------
+   DIRECCIÓN: «TABLERO DE LA SEMANA». La página está construida sobre
+   siete columnas —los siete días que la clínica atiende— y ése es a la
+   vez el motivo gráfico y el argumento de venta. Fondo de tablero de
+   zarpes: casi negro, con un solo naranjo de aviso.
+
+   Deslinde escrito:
+     · 45-urgencia-dental es lo más parecido del registro (grafito
+       `#1A1D23` + hueso + coral `#E0654A`): allá el color es ALARMA de
+       una urgencia dental y tira a rojo. Acá el fondo es más cálido y
+       el naranjo es SEÑALÉTICA DE HORARIO, no alarma — vive en los
+       días y en las horas, no en el peligro.
+     · 46-integravet ya tomó el ámbar de guardia sobre página oscura:
+       por eso acá NO se usa ámbar.
+     · De las dieciséis veterinarias del registro, ninguna se organiza
+       por la semana ni usa naranjo. Turquesa, verde, teja, violeta,
+       índigo, malva, oliva, ámbar, orquídea, granate, rojo, mostaza y
+       rosa ya están tomados.
+
+   TRÍO
+     Display · Red Hat Display — nueva en el registro (existen Red Hat
+       Text y Red Hat Mono, que son familias distintas en Google Fonts).
+     Cuerpo  · Sen — segunda aparición (53-aridos-las-camelias).
+     Dato    · Share Tech Mono — cuarta aparición, a propósito: es la
+       que mejor imita el tablero de horarios, y acá la página ES un
+       tablero.
+   ══════════════════════════════════════════════════════════════════ */
+
+:root {
+  --noche:   #121417;
+  --noche-2: #1A1E22;
+  --noche-3: #232830;
+  --sal:     #EFF1F0;
+  --sal-2:   #A5ADB2;   /* 7,4:1 sobre noche */
+  --aviso:   #F0873E;   /* 6,3:1 sobre noche */
+  --aviso-f: #C25F1E;   /* relleno; blanco encima 5,1:1 */
+  --linea:   rgba(239,241,240,.14);
+
+  --display: 'Red Hat Display', 'Segoe UI', sans-serif;
+  --cuerpo:  'Sen', 'Segoe UI', system-ui, sans-serif;
+  --mono:    'Share Tech Mono', 'Consolas', ui-monospace, monospace;
+
+  --p--1: clamp(.8rem, .77rem + .12vw, .88rem);
+  --p-0:  clamp(1rem, .96rem + .2vw, 1.1rem);
+  --p-1:  clamp(1.15rem, 1.08rem + .3vw, 1.35rem);
+  --p-2:  clamp(1.4rem, 1.25rem + .7vw, 1.9rem);
+  --p-3:  clamp(1.8rem, 1.5rem + 1.4vw, 2.7rem);
+  --p-4:  clamp(2.2rem, 1.6rem + 2.7vw, 4rem);
+
+  --aire:  clamp(3.5rem, 2.2rem + 5vw, 7rem);
+  --ancho: min(100% - 2.5rem, 1160px);
+  --salida: cubic-bezier(.16, 1, .3, 1);
+  --suave:  ease-in-out;   /* reposo y bucles lentos (movimiento-web) */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body { margin: 0; background: var(--noche); color: var(--sal); font-family: var(--cuerpo); font-size: var(--p-0); line-height: 1.62; }
+img { max-width: 100%; height: auto; }
+a { color: var(--aviso); }
+:focus-visible { outline: 3px solid var(--aviso); outline-offset: 2px; }
+.ancho { width: var(--ancho); margin-inline: auto; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.14; margin: 0; }
+
+.rotulo { font-family: var(--mono); font-size: var(--p--1); letter-spacing: .14em; text-transform: uppercase; color: var(--aviso); margin: 0 0 .8rem; }
+.rotulo--claro { color: var(--aviso); }
+.titulo { font-size: var(--p-3); max-width: 24ch; margin-bottom: 1rem; }
+.titulo--claro { color: var(--sal); }
+.entradilla { max-width: 60ch; color: var(--sal-2); font-size: var(--p-1); margin: 0 0 2rem; }
+.entradilla b { color: var(--sal); font-weight: 700; }
+.nota { margin-top: 1.6rem; font-size: var(--p--1); color: var(--sal-2); max-width: 66ch; }
+.nota--fuerte { border-left: 3px solid var(--aviso-f); padding-left: 1rem; }
+.nota b { color: var(--sal); }
+.sobre { font-family: var(--mono); font-size: var(--p--1); letter-spacing: .12em; text-transform: uppercase; color: var(--aviso); margin: 0 0 1rem; }
+
+/* ── Dato de ejemplo ───────────────────────────────────────────── */
+.ej { position: relative; border: 1px dashed rgba(240,135,62,.5); border-radius: 3px; }
+.ej::after {
+  content: attr(data-ejemplo); position: absolute; top: -.62rem; right: .6rem;
+  font-family: var(--mono); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--aviso); background: var(--noche); padding: 0 .35rem;
+}
+
+/* ── Botones ───────────────────────────────────────────────────── */
+.boton {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: .8rem 1.5rem;
+  border: 1px solid var(--aviso-f); border-radius: 3px;
+  background: var(--aviso-f); color: #FFFFFF;
+  font-family: var(--cuerpo); font-size: var(--p-0); font-weight: 700;
+  text-decoration: none; cursor: pointer;
+  transition: transform .16s ease-out, background-color .16s;
+}
+.boton:hover { background: #A85018; transform: translateY(-2px); }
+.boton:active { transform: translateY(0); }
+.boton--linea { background: transparent; color: var(--aviso); border-color: rgba(240,135,62,.5); }
+.boton--linea:hover { background: rgba(240,135,62,.12); }
+.boton--chico { min-height: 40px; padding: .5rem 1rem; font-size: var(--p--1); }
+
+/* ── Propuesta ─────────────────────────────────────────────────── */
+.propuesta { background: var(--noche-2); color: var(--sal); padding: .85rem clamp(1.2rem, 5vw, 3rem); border-bottom: 3px solid var(--aviso-f); }
+.propuesta__que { margin: 0 0 .3rem; font-size: var(--p--1); font-family: var(--mono); }
+.propuesta__que b { color: var(--aviso); }
+.propuesta__gancho { margin: 0; font-size: var(--p--1); color: var(--sal-2); max-width: 96ch; line-height: 1.5; }
+
+/* ── Cabecera ──────────────────────────────────────────────────── */
+.cab { position: sticky; top: 0; z-index: 40; display: flex; align-items: center; gap: 1rem; padding: .7rem clamp(1rem, 4vw, 2.4rem); background: rgba(18,20,23,.92); border-bottom: 1px solid var(--linea); transition: box-shadow .2s, background-color .2s; }
+.cab--flota { box-shadow: 0 8px 26px -18px #000; background: rgba(18,20,23,.99); }
+.cab__marca { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--sal); }
+/* Siete barras: el emblema ES la semana. La séptima —el domingo— va en
+   naranjo, que es todo el argumento del negocio. Cero bytes. */
+.siete { display: flex; gap: 2px; align-items: flex-end; height: 20px; flex: none; }
+.siete i { width: 3px; height: 12px; background: var(--sal-2); display: block; }
+.siete i:last-child { height: 20px; background: var(--aviso); }
+.cab__nombre { font-family: var(--display); font-size: var(--p-1); line-height: 1; }
+.cab__sub { display: block; font-family: var(--mono); font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; color: var(--aviso); margin-top: .25rem; font-weight: 400; }
+.cab__nav { display: flex; gap: 1.1rem; margin-left: auto; overflow-x: auto; }
+.cab__nav a { color: var(--sal-2); text-decoration: none; font-size: var(--p--1); white-space: nowrap; padding: .4rem 0; border-bottom: 2px solid transparent; }
+.cab__nav a:hover { color: var(--aviso); border-bottom-color: var(--aviso); }
+.cab__cta { margin-left: .4rem; }
+@media (max-width: 1000px) { .cab__nav { display: none; } .cab__cta { margin-left: auto; } }
+
+/* ── Portada ───────────────────────────────────────────────────── */
+.portada { position: relative; isolation: isolate; min-height: min(86vh, 760px); display: flex; flex-direction: column; justify-content: center; padding: var(--aire) 0 2.5rem; overflow: hidden; }
+.portada__foto { position: absolute; inset: 0; z-index: -1; }
+.portada__foto img {
+  display: block; width: 100%; height: 100%;
+  object-fit: cover; object-position: 70% 44%;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 26%, rgba(0,0,0,.2) 42%, rgba(0,0,0,.7) 60%, #000 76%, #000 100%);
+          mask-image: linear-gradient(90deg, transparent 0%, transparent 26%, rgba(0,0,0,.2) 42%, rgba(0,0,0,.7) 60%, #000 76%, #000 100%);
+}
+/* Velo entero en rgba y terminando en alfa 0. */
+.portada__foto::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg,
+      rgba(18,20,23,1) 0%, rgba(18,20,23,1) 30%,
+      rgba(18,20,23,.76) 46%, rgba(18,20,23,.34) 64%,
+      rgba(18,20,23,.1) 82%, rgba(18,20,23,0) 96%);
+}
+.portada__texto { width: var(--ancho); margin-inline: auto; }
+.portada__titulo { font-size: var(--p-4); max-width: 14ch; font-weight: 900; }
+.portada__titulo span { display: block; }
+.portada__bajada { max-width: 46ch; color: var(--sal-2); font-size: var(--p-1); margin: 1.3rem 0 2rem; }
+.acciones { display: flex; flex-wrap: wrap; gap: .8rem; }
+
+/* ── Escena de portada · las siete barras ──────────────────────────
+   movimiento-web, ficha «Veterinaria» idea A, escalón 1 y CSS puro.
+   Es el emblema de la cabecera en grande: mismo motivo, misma idea, y
+   el mismo que ordena el tablero de la semana. Vive en el lado sin
+   texto. z-index -1 y después de la foto en el HTML: pinta sobre la
+   foto y su velo, y siempre por debajo del texto. */
+.escena { position: absolute; z-index: -1; pointer-events: none; }
+.escena--siete {
+  top: 24%; right: 9%; width: min(34%, 340px); height: 38%;
+  display: grid; place-items: center;
+}
+/* Halo escrito ENTERO en rgba: un var() dentro de un gradiente pinta de
+   punta a punta (bug ya cometido en la casa). */
+.escena__halo {
+  position: absolute; inset: -22%;
+  background: radial-gradient(circle at 50% 50%,
+      rgba(240,135,62,.12), rgba(240,135,62,0) 70%);
+  opacity: .45;
+}
+.escena__barras {
+  position: relative; display: flex; align-items: flex-end;
+  gap: 10px; height: 100%; width: 100%; justify-content: center;
+}
+.escena__barras i {
+  display: block; width: 14px; height: 62%;
+  background: var(--sal-2); border-radius: 2px;
+  transform-origin: 50% 100%;
+}
+/* El domingo: más alto y en el naranjo de la casa. */
+.escena__barras i:last-child { height: 100%; background: var(--aviso); }
+
+/* Entrada en cascada de abajo hacia arriba: scaleY 0 → 1 con el origen
+   en la base. Stagger 60 ms; seis barras son 300 ms, dentro del compás
+   de medio segundo que fija la regla 4. */
+@keyframes barra-sube { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+.js .escena__barras i {
+  animation: barra-sube .5s var(--salida) both;
+  animation-delay: calc(.35s + var(--i, 0) * 60ms);
+}
+.escena__barras i:nth-child(1) { --i: 0; }
+.escena__barras i:nth-child(2) { --i: 1; }
+.escena__barras i:nth-child(3) { --i: 2; }
+.escena__barras i:nth-child(4) { --i: 3; }
+.escena__barras i:nth-child(5) { --i: 4; }
+.escena__barras i:nth-child(6) { --i: 5; }
+
+/* El domingo entra 200 ms DESPUÉS de la sexta y se enciende: sube, y al
+   55 % del recorrido da un destello de 1,2. Todas las etapas escriben la
+   misma lista de funciones para que el navegador interpole limpio y no
+   caiga a matrices. */
+@keyframes domingo-enciende {
+  0%   { transform: scaleY(0) scale(1); }
+  55%  { transform: scaleY(1) scale(1); }
+  75%  { transform: scaleY(1) scale(1.2); }
+  100% { transform: scaleY(1) scale(1); }
+}
+.js .escena__barras i:nth-child(7) {
+  animation: domingo-enciende .95s var(--salida) .85s both;
+}
+
+/* El halo respira: único reposo de la página. */
+@keyframes halo-respira { from { opacity: .35; } to { opacity: .5; } }
+.js .escena__halo { animation: halo-respira 6s var(--suave) infinite alternate; }
+
+/* A 375 px el emblema se va a la única franja libre: los 80 px de foto
+   que quedan sobre el rótulo. Medido: las barras terminan en y 299 y el
+   rótulo empieza en 319. Más abajo cruzarían el titular, y son barras
+   macizas — detrás de texto blanco arruinarían la lectura. */
+
+@media (max-width: 760px) {
+  .escena--siete { top: 0; right: 4%; width: 30%; height: 7%; }
+  .escena__barras { gap: 6px; }
+  .escena__barras i { width: 9px; }
+}
+
+.cifras { list-style: none; margin: var(--aire) auto 0; padding: 1.6rem 0 0; width: var(--ancho); display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); border-top: 1px solid var(--linea); }
+.cifras b { display: block; font-family: var(--display); font-size: var(--p-3); line-height: 1; color: var(--aviso); }
+.cifras span { display: block; font-size: var(--p--1); color: var(--sal-2); margin-top: .35rem; max-width: 26ch; }
+
+/* ── PIEZA FIRMA · el tablero de la semana ─────────────────────── */
+.semana { padding: var(--aire) 0; }
+.tablero {
+  list-style: none; margin: .5rem 0 0; padding: 1rem;
+  display: grid; gap: 2px;
+  grid-template-columns: repeat(7, 1fr);
+  background: var(--noche-2);
+}
+.tablero::after { background: var(--noche); }
+.dia { background: var(--noche-3); padding: 1rem .8rem; display: flex; flex-direction: column; gap: .5rem; }
+.dia__n { margin: 0; font-family: var(--mono); font-size: var(--p-1); letter-spacing: .1em; text-transform: uppercase; color: var(--sal); }
+/* La hora es el dato que se lee de reojo: mono, grande y en color. */
+.dia__h { margin: 0; font-family: var(--mono); font-size: var(--p--1); color: var(--aviso); line-height: 1.4; }
+.dia__h span { display: block; opacity: .5; }
+.dia__q { margin: 0; font-size: .78rem; color: var(--sal-2); line-height: 1.45; }
+.dia--destaca { background: #2E2118; border-top: 3px solid var(--aviso); }
+.dia--destaca .dia__n { color: var(--aviso); }
+@media (max-width: 900px) { .tablero { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 460px) { .tablero { grid-template-columns: 1fr; } }
+
+/* ── Tajo ──────────────────────────────────────────────────────── */
+.tajo { position: relative; margin: 0; isolation: isolate; min-height: min(52vh, 420px); display: flex; align-items: flex-end; overflow: hidden; }
+.tajo img { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; object-position: 50% 46%; }
+.tajo::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(18,20,23,.95) 0%, rgba(18,20,23,.8) 34%, rgba(18,20,23,.34) 62%, rgba(18,20,23,0) 92%); }
+.tajo__txt { width: var(--ancho); margin-inline: auto; padding: 2.5rem 0; }
+.tajo__txt h2 { font-size: var(--p-3); max-width: 22ch; color: var(--sal); }
+.tajo__txt p { max-width: 48ch; color: var(--sal-2); margin: .8rem 0 0; }
+
+/* ── Urgencias ─────────────────────────────────────────────────── */
+.urgencia { padding: var(--aire) 0; background: var(--noche-2); }
+.urg { display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.urg__c { background: var(--noche-3); padding: 1.3rem; border-top: 3px solid var(--linea); }
+.urg__c--ya { border-top-color: var(--aviso); background: #2E2118; }
+.urg__r { margin: 0 0 .8rem; font-family: var(--mono); font-size: var(--p--1); letter-spacing: .12em; text-transform: uppercase; color: var(--aviso); }
+.urg__c ul { margin: 0; padding-left: 1.1rem; }
+.urg__c li { font-size: var(--p--1); color: var(--sal-2); margin-bottom: .45rem; }
+.urg__c--ya li { color: var(--sal); }
+
+/* ── La consulta, con telón ────────────────────────────────────── */
+.consulta { padding: var(--aire) 0; }
+.con-telon { position: relative; isolation: isolate; overflow: hidden; }
+.telon { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+/* Foto NÍTIDA al 15%: telón, no aura. Cero desenfoque. */
+.telon img {
+  display: block; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 46%; opacity: .15;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 74%, transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 74%, transparent 100%);
+}
+.servicios { list-style: none; margin: 0; padding: 1.6rem; display: grid; gap: 1.4rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.servicios h3 { font-size: var(--p-1); margin-bottom: .3rem; color: var(--aviso); }
+.servicios p { margin: 0; font-size: var(--p--1); color: var(--sal-2); }
+
+/* ── Cita ──────────────────────────────────────────────────────── */
+.cita { position: relative; margin: 0; isolation: isolate; min-height: min(50vh, 400px); display: grid; place-items: center; overflow: hidden; }
+.cita img { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+.cita::after { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(18,20,23,.78); }
+.cita__txt { margin: 0; width: var(--ancho); padding: 3rem 0; }
+.cita__txt p { font-family: var(--display); font-size: var(--p-3); color: var(--sal); max-width: 24ch; margin: 0 auto; text-align: center; line-height: 1.24; }
+
+/* ── Mosaico ───────────────────────────────────────────────────── */
+.mos { padding: var(--aire) 0; }
+.mos__grilla { display: grid; gap: 4px; grid-template-columns: repeat(3, 1fr); width: var(--ancho); margin: 2rem auto 0; }
+.mos__p { margin: 0; overflow: hidden; }
+.mos__p:nth-child(1), .mos__p:nth-child(6) { grid-column: span 2; }
+.mos__p img { display: block; width: 100%; height: 100%; aspect-ratio: 3 / 2; object-fit: cover; transition: transform .5s var(--salida); }
+.mos__p:hover img { transform: scale(1.05); }
+@media (max-width: 640px) { .mos__grilla { grid-template-columns: repeat(2, 1fr); } }
+
+/* ── Dónde ─────────────────────────────────────────────────────── */
+.donde { padding: var(--aire) 0; background: var(--noche-2); }
+.donde__cols { display: grid; gap: clamp(2rem, 5vw, 4rem); grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: start; }
+.datos { margin: 0; display: grid; }
+.datos > div { display: grid; grid-template-columns: 10rem 1fr; gap: .6rem; padding: .75rem .6rem; border-bottom: 1px solid var(--linea); }
+.datos dt { font-family: var(--mono); font-size: var(--p--1); letter-spacing: .06em; text-transform: uppercase; color: var(--sal-2); }
+.datos dd { margin: 0; }
+.datos .ej::after { background: var(--noche-2); }
+@media (max-width: 480px) { .datos > div { grid-template-columns: 1fr; } }
+
+.pedir { background: var(--noche-3); border: 1px solid var(--linea); border-radius: 3px; padding: clamp(1.2rem, 3vw, 2rem); }
+.pedir__t { font-size: var(--p-2); margin-bottom: .5rem; }
+.pedir__p { margin: 0 0 1.4rem; color: var(--sal-2); font-size: var(--p--1); }
+.form { display: grid; gap: .9rem; }
+.form label { display: grid; gap: .3rem; font-family: var(--mono); font-size: var(--p--1); letter-spacing: .05em; text-transform: uppercase; color: var(--sal-2); }
+.form input {
+  font-family: var(--cuerpo); font-size: var(--p-0);
+  padding: .7rem .8rem; min-height: 46px;
+  border: 1px solid rgba(239,241,240,.22); border-radius: 3px;
+  background: #14171B; color: var(--sal); text-transform: none;
+}
+.form input:focus-visible { border-color: var(--aviso); }
+.form__salida { font-family: var(--mono); font-size: var(--p--1); background: var(--noche); border-left: 3px solid var(--aviso-f); padding: .7rem .8rem; margin: .2rem 0 0; white-space: pre-wrap; color: var(--sal-2); }
+.form__salida:empty { display: none; }
+.form__acciones { display: flex; flex-wrap: wrap; gap: .7rem; }
+.form__sinjs { margin: 1rem 0 0; font-size: var(--p--1); color: var(--sal-2); }
+
+/* ── Para el dueño ─────────────────────────────────────────────── */
+.dueno { padding: var(--aire) 0; background: var(--noche); border-top: 1px solid var(--linea); }
+.dueno__cols { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 1rem; }
+.dueno__cols h3 { font-size: var(--p-1); color: var(--aviso); margin-bottom: .5rem; }
+.dueno__cols p { margin: 0; color: var(--sal-2); font-size: var(--p--1); }
+.dueno__cols b { color: var(--sal); }
+.dueno__cierre { display: flex; flex-wrap: wrap; gap: 1.6rem; margin: 2.5rem 0 0; }
+.flecha { color: var(--aviso); text-decoration: none; font-weight: 700; border-bottom: 1px solid rgba(240,135,62,.4); padding-bottom: .15rem; }
+.flecha:hover { border-bottom-color: var(--aviso); }
+
+/* ── Pie ───────────────────────────────────────────────────────── */
+.pie { background: #0D0F11; color: #8B9297; padding: 2rem clamp(1.2rem, 5vw, 3rem); }
+.pie p { margin: 0; font-size: var(--p--1); max-width: 92ch; }
+
+/* ══ Animación ═════════════════════════════════════════════════
+   Números de movimiento-web (reglas atómicas): la OPACIDAD salta corta
+   —0,3 s— y es el TRANSFORM el que dura, 0,6 s con la curva de salida. */
+.js .rev { opacity: 0; transform: translateY(22px); }
+.js .rev.ok {
+  opacity: 1; transform: none;
+  transition: opacity .3s ease-out, transform .6s var(--salida);
+}
+.js .portada__texto > * { animation: entra .8s var(--salida) both; }
+.js .sobre           { animation-delay: .05s; }
+.js .portada__titulo { animation-delay: .14s; }
+.js .portada__bajada { animation-delay: .26s; }
+.js .acciones        { animation-delay: .36s; }
+@keyframes entra { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+/* ── Cascadas (regla 4) ────────────────────────────────────────────
+   Los siete días del tablero y las seis fotos del mosaico entran
+   escalonados por CONTENEDOR. Stagger 60 ms: siete días son 360 ms,
+   dentro del compás de medio segundo. A 375 px el tablero ya colapsa a
+   una columna y la cascada se lee en vertical, que es lo mismo. */
+.js .tablero.rev,
+.js .mos__grilla.rev { opacity: 1; transform: none; transition: none; }
+
+.js .tablero.rev > *,
+.js .mos__grilla.rev > * { opacity: 0; transform: translateY(28px); }
+
+.js .tablero.rev.ok > *,
+.js .mos__grilla.rev.ok > * {
+  opacity: 1; transform: none;
+  transition: opacity .3s ease-out, transform .6s var(--salida);
+  transition-delay: calc(var(--i, 0) * 60ms);
+}
+/* El domingo del tablero recibe el mismo destello que el de la portada,
+   una sola vez: entra con los demás y al llegar da el 1,2. */
+.js .tablero.rev.ok > .dia--destaca {
+  /* forwards y NO both: con both el estado inicial del destello
+     (scale(1)) pisa el translateY de la cascada durante el retardo y el
+     domingo entraba sin deslizarse. Con forwards la animación no toca
+     nada hasta que arranca. */
+  animation: dia-destella .45s var(--salida) calc(var(--i, 0) * 60ms + .3s) forwards;
+}
+@keyframes dia-destella {
+  0%   { transform: scale(1); }
+  45%  { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+/* El retardo por índice va acá y no en un style="" del HTML: la CSP lo
+   bloquea sin decir una palabra. */
+.tablero > :nth-child(1), .mos__grilla > :nth-child(1) { --i: 0; }
+.tablero > :nth-child(2), .mos__grilla > :nth-child(2) { --i: 1; }
+.tablero > :nth-child(3), .mos__grilla > :nth-child(3) { --i: 2; }
+.tablero > :nth-child(4), .mos__grilla > :nth-child(4) { --i: 3; }
+.tablero > :nth-child(5), .mos__grilla > :nth-child(5) { --i: 4; }
+.tablero > :nth-child(6), .mos__grilla > :nth-child(6) { --i: 5; }
+.tablero > :nth-child(7) { --i: 6; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .portada__texto > * { animation: none; }
+  .mos__p:hover img { transform: none; }
+  .js .rev { opacity: 1; transform: none; }
+  .js .tablero.rev > *,
+  .js .mos__grilla.rev > * { opacity: 1; transform: none; }
+  .js .tablero.rev.ok > .dia--destaca { animation: none; }
+  /* Las siete barras puestas y el domingo encendido, sin halo animado. */
+  .js .escena__barras i,
+  .js .escena__barras i:nth-child(7) { animation: none; }
+  .js .escena__halo { animation: none; }
+}
+/* ── Blancos de toque ──────────────────────────────────────────────
+   Regla de la casa: nada que se toque puede medir menos de 44 px de
+   alto. Los enlaces sueltos —el teléfono dentro de la ficha de datos
+   y las flechas del cierre— quedaban en 23 y 30 px medidos sobre la
+   página a 375 px. Se les da caja propia sin cambiar cómo se ven. */
+.datos dd a,
+.flecha {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+/* La marca de la cabecera también es un enlace: 44 px mínimos. */
+.cab__marca { min-height: 44px; }
+/* El botón chico de la cabecera es el CTA principal en teléfono:
+   en móvil sube a 44 px como todo lo demás que se toca. */
+@media (max-width: 1060px) { .boton--chico { min-height: 44px; } }

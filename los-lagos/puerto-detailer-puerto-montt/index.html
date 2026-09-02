@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es-CL" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Puerto Detailer — estética automotriz, Puerto Montt</title>
+<meta name="description" content="Estética automotriz y detailing en Puerto Montt. Qué incluye cada nivel de trabajo, cuánto demora y qué se ve antes y después.">
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'self'; form-action 'self'; base-uri 'none'; frame-src 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<script src="js/rescate.js"></script>
+
+<link rel="preload" href="assets/fuentes/tomorrow-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fuentes.css">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<div class="propuesta">
+  <p class="propuesta__que">Propuesta de sitio web — preparada para <b>Puerto Detailer</b> por CristalWeb</p>
+  <p class="propuesta__gancho">Un negocio que vive de cómo se ve un auto no puede mostrarse solo en un Facebook. El 96% de recomendación existe — pero está enterrado donde ningún cliente nuevo lo busca.</p>
+</div>
+
+<header class="cab" id="cab">
+  <a class="cab__marca" href="#portada">
+    <span class="gota" aria-hidden="true"></span>
+    <span class="cab__nombre">Puerto Detailer<span class="cab__sub">Estética automotriz · Puerto Montt</span></span>
+  </a>
+  <nav class="cab__nav" aria-label="Secciones">
+    <a href="#comparador">Antes y después</a>
+    <a href="#niveles">Los niveles</a>
+    <a href="#proceso">El proceso</a>
+    <a href="#agenda">Agendar</a>
+  </nav>
+  <a class="cab__cta boton boton--chico" href="#agenda">Agendar</a>
+</header>
+
+<main>
+
+<!-- ═══════════ PORTADA ═══════════ -->
+<section class="portada" id="portada" aria-labelledby="t-portada">
+  <div class="portada__foto" aria-hidden="true">
+    <img src="imagenes/port-01.jpg" width="2560" height="1707"
+         decoding="async" fetchpriority="high" alt="">
+  </div>
+
+  <!-- ═══════ ESCENA DE PORTADA · «el reflejo que barre» ═══════
+       movimiento-web, ficha «Estética automotriz». Verbo: SE ENCIENDE.
+       Escalón 1, peso 0 KB: la escena ES un gradiente. Una franja de luz
+       diagonal cruza la foto UNA vez al cargar y deja el brillo — que es
+       literalmente lo que vende el negocio. El único reposo es la gota
+       que cae sobre el capó cada 9 s. -->
+  <div class="escena escena--laca" aria-hidden="true">
+    <span class="escena__gota"></span>
+  </div>
+
+  <div class="portada__texto">
+    <p class="sobre">Restauración y renovación de vehículos · Puerto Montt</p>
+    <h1 class="portada__titulo" id="t-portada">
+      <span>La pintura</span>
+      <span>no está muerta.</span>
+      <span>Está opaca.</span>
+    </h1>
+    <p class="portada__bajada">
+      Casi todo auto que parece viejo tiene la pintura entera debajo de
+      una capa de contaminación y micro-rayas. Eso se corrige, no se
+      pinta. Acá está explicado cuánto se puede recuperar y cómo.
+    </p>
+    <div class="acciones">
+      <a class="boton" href="#comparador">Ver antes y después</a>
+      <a class="boton boton--linea" href="#niveles">Los niveles</a>
+    </div>
+  </div>
+
+  <ul class="cifras" aria-label="Datos del negocio">
+    <li><b>96%</b><span>de recomendación en 28 reseñas de Facebook</span></li>
+    <li><b>4</b><span>niveles de trabajo, del lavado al cerámico</span></li>
+    <li><b>0</b><span>páginas web hasta hoy</span></li>
+  </ul>
+</section>
+
+
+<!-- ═══════════ PIEZA FIRMA · COMPARADOR ═══════════
+     Sin JavaScript quedan los dos estados uno al lado del otro, que se
+     leen igual. El JS los superpone y agrega el control deslizante.
+     El corte se hace con clip-path sobre la capa de arriba; OJO: un
+     elemento recortado a área cero jamás dispara IntersectionObserver,
+     por eso el reveal observa el CONTENEDOR y no las capas. -->
+<section class="comparador" id="comparador" aria-labelledby="t-comp">
+  <div class="ancho">
+    <p class="rotulo">La pieza central</p>
+    <h2 class="titulo" id="t-comp">Arrastre y vea la diferencia.</h2>
+    <p class="entradilla">
+      Tres zonas, tres trabajos distintos. Mueva el control y la pintura
+      opaca se vuelve espejo. <b>Es la única forma honesta de vender
+      detailing:</b> mostrándolo, no describiéndolo.
+    </p>
+
+    <p class="aviso-sim ej" data-ejemplo="simulación">
+      Los tres pares de abajo son <b>simulados</b>: la mitad «antes» es
+      la misma foto con el brillo y el color bajados por software. Se
+      reemplazan por pares reales del taller — es la primera cosa que
+      hay que pedirle al dueño, y la que más vende.
+    </p>
+  </div>
+
+  <div class="pares">
+    <figure class="par" data-par="1">
+      <figcaption class="par__t">Capó · corrección de pintura</figcaption>
+      <div class="par__caja">
+        <div class="par__lado par__lado--antes">
+          <img src="imagenes/ad1-01.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="Capó antes del pulido, simulado">
+          <span class="par__rot">Antes</span>
+        </div>
+        <div class="par__lado par__lado--despues">
+          <img src="imagenes/ad1-01.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="Capó después del pulido">
+          <span class="par__rot">Después</span>
+        </div>
+        <span class="par__tirador" aria-hidden="true"></span>
+      </div>
+      <label class="par__control">
+        <span class="vo">Deslizar la comparación del capó</span>
+        <input type="range" min="0" max="100" value="50" step="1">
+      </label>
+    </figure>
+
+    <figure class="par" data-par="2">
+      <figcaption class="par__t">Carrocería · abrillantado</figcaption>
+      <div class="par__caja">
+        <div class="par__lado par__lado--antes">
+          <img src="imagenes/ad2-01.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="Carrocería antes, simulado">
+          <span class="par__rot">Antes</span>
+        </div>
+        <div class="par__lado par__lado--despues">
+          <img src="imagenes/ad2-01.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="Carrocería después">
+          <span class="par__rot">Después</span>
+        </div>
+        <span class="par__tirador" aria-hidden="true"></span>
+      </div>
+      <label class="par__control">
+        <span class="vo">Deslizar la comparación de la carrocería</span>
+        <input type="range" min="0" max="100" value="50" step="1">
+      </label>
+    </figure>
+
+    <figure class="par" data-par="3">
+      <figcaption class="par__t">Descontaminado · antes del pulido</figcaption>
+      <div class="par__caja">
+        <div class="par__lado par__lado--antes">
+          <img src="imagenes/ad3-01.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="Superficie antes del descontaminado, simulado">
+          <span class="par__rot">Antes</span>
+        </div>
+        <div class="par__lado par__lado--despues">
+          <img src="imagenes/ad3-01.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="Superficie después del descontaminado">
+          <span class="par__rot">Después</span>
+        </div>
+        <span class="par__tirador" aria-hidden="true"></span>
+      </div>
+      <label class="par__control">
+        <span class="vo">Deslizar la comparación del descontaminado</span>
+        <input type="range" min="0" max="100" value="50" step="1">
+      </label>
+    </figure>
+  </div>
+</section>
+
+
+<!-- ═══════════ TAJO ═══════════ -->
+<figure class="tajo" aria-labelledby="t-tajo">
+  <img src="imagenes/tajo-01.jpg" width="2200" height="1467" loading="lazy" decoding="async" alt="">
+  <figcaption class="tajo__txt">
+    <h2 id="t-tajo">Un auto bien hecho se reconoce por el reflejo, no por el brillo.</h2>
+    <p>El brillo lo da cualquier cera. El reflejo nítido —donde se ve el
+      borde de las cosas— sólo lo da la corrección.</p>
+  </figcaption>
+</figure>
+
+
+<!-- ═══════════ LOS NIVELES ═══════════ -->
+<section class="niveles" id="niveles" aria-labelledby="t-niv">
+  <div class="ancho">
+    <p class="rotulo">Los niveles</p>
+    <h2 class="titulo" id="t-niv">Cuatro niveles, y qué incluye cada uno.</h2>
+    <p class="entradilla">
+      La confusión más cara del rubro es creer que «pulido» es una sola
+      cosa. Son cuatro trabajos distintos, con tiempos y resultados
+      distintos. <b>Los valores y las horas van como ejemplo</b> hasta
+      que el taller los confirme.
+    </p>
+
+    <ol class="niv">
+      <li class="niv__i">
+        <p class="niv__n">01</p>
+        <h3>Lavado de detalle</h3>
+        <p class="niv__q">Lavado a dos baldes, llantas, pasarruedas, vidrios y secado sin contacto.</p>
+        <p class="niv__r">Deja el auto limpio de verdad. No corrige nada de la pintura.</p>
+        <p class="niv__d ej" data-ejemplo="ejemplo"><b>2–3 h</b> · desde $25.000</p>
+      </li>
+      <li class="niv__i">
+        <p class="niv__n">02</p>
+        <h3>Descontaminado</h3>
+        <p class="niv__q">Barra de arcilla y descontaminante férrico: saca lo que el lavado no saca.</p>
+        <p class="niv__r">La pintura queda lisa al tacto. Es el paso obligatorio antes de pulir.</p>
+        <p class="niv__d ej" data-ejemplo="ejemplo"><b>3–5 h</b> · desde $55.000</p>
+      </li>
+      <li class="niv__i niv__i--destaca">
+        <p class="niv__n">03</p>
+        <h3>Corrección de pintura</h3>
+        <p class="niv__q">Pulido por pasos con máquina: saca micro-rayas, marcas de lavado y opacidad.</p>
+        <p class="niv__r">Es el nivel donde el auto cambia de verdad. Lo que se ve en el comparador de arriba.</p>
+        <p class="niv__d ej" data-ejemplo="ejemplo"><b>1–2 días</b> · desde $150.000</p>
+      </li>
+      <li class="niv__i">
+        <p class="niv__n">04</p>
+        <h3>Sellado cerámico</h3>
+        <p class="niv__q">Capa protectora sobre la pintura ya corregida.</p>
+        <p class="niv__r">Protege el trabajo del nivel 3 y hace que el lavado siguiente sea más fácil. Sin corregir antes, sella el defecto.</p>
+        <p class="niv__d ej" data-ejemplo="ejemplo"><b>1 día extra</b> · desde $180.000</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+
+<!-- ═══════════ PROCESO · con telón ═══════════ -->
+<section class="proceso con-telon" id="proceso" aria-labelledby="t-proc">
+  <div class="telon" aria-hidden="true">
+    <img src="imagenes/telon-01.jpg" width="1200" height="936" loading="lazy" decoding="async" alt="">
+  </div>
+  <div class="ancho">
+    <p class="rotulo">El proceso</p>
+    <h2 class="titulo" id="t-proc">Por qué un pulido bien hecho toma dos días.</h2>
+    <div class="proceso__cols">
+      <p>
+        Un auto entra sucio y sale reflejando. Entre medio hay etapas que
+        no se pueden saltar: si se pule sobre una pintura contaminada, la
+        misma máquina arrastra la suciedad y raya más de lo que corrige.
+      </p>
+      <p>
+        Eso es exactamente lo que separa un trabajo de $30.000 de uno de
+        $150.000, y es lo que ningún cliente entiende hasta que se lo
+        explican por escrito. Escrito acá, deja de ser una discusión de
+        precio.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ CITA ═══════════ -->
+<figure class="cita" aria-label="Sobre el oficio">
+  <img src="imagenes/cita-01.jpg" width="2200" height="1458" loading="lazy" decoding="async" alt="">
+  <blockquote class="cita__txt">
+    <p>«Casi ningún auto necesita pintura. Necesita que alguien le saque
+       lo que tiene encima.»</p>
+  </blockquote>
+</figure>
+
+
+<!-- ═══════════ MOSAICO ═══════════ -->
+<section class="mos" aria-labelledby="t-mos">
+  <div class="ancho">
+    <p class="rotulo">El trabajo</p>
+    <h2 class="titulo" id="t-mos">Detalle por detalle.</h2>
+  </div>
+  <div class="mos__grilla">
+    <figure class="mos__p"><img src="imagenes/mos1-01.jpg" width="1200" height="795" loading="lazy" decoding="async" alt="Pulidora trabajando sobre la pintura"></figure>
+    <figure class="mos__p"><img src="imagenes/mos2-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Reflejo sobre carrocería oscura"></figure>
+    <figure class="mos__p"><img src="imagenes/mos3-01.jpg" width="1200" height="998" loading="lazy" decoding="async" alt="Llanta después del trabajo"></figure>
+    <figure class="mos__p"><img src="imagenes/mos4-01.jpg" width="1200" height="797" loading="lazy" decoding="async" alt="Detalle de llanta cromada"></figure>
+    <figure class="mos__p"><img src="imagenes/mos5-01.jpg" width="1200" height="795" loading="lazy" decoding="async" alt="Rueda y neumático limpios"></figure>
+    <figure class="mos__p"><img src="imagenes/mos6-01.jpg" width="1200" height="674" loading="lazy" decoding="async" alt="Detalle del auto terminado"></figure>
+  </div>
+</section>
+
+
+<!-- ═══════════ AGENDAR ═══════════ -->
+<section class="agenda" id="agenda" aria-labelledby="t-ag">
+  <div class="ancho agenda__cols">
+    <div>
+      <p class="rotulo">Agendar</p>
+      <h2 class="titulo" id="t-ag">Cuatro datos y sabemos qué auto llega.</h2>
+      <p class="entradilla">
+        El detailing se cotiza por auto, no por lista: el color, el
+        tamaño y el estado cambian las horas. Con esto el taller
+        responde con un número, no con «tráigalo y vemos».
+      </p>
+      <dl class="datos">
+        <div><dt>Dónde están</dt><dd>Puerto Montt</dd></div>
+        <div><dt>Reseñas</dt><dd>96% de recomendación en 28 opiniones de Facebook</dd></div>
+        <div class="ej" data-ejemplo="ejemplo"><dt>Horario</dt><dd>Lunes a sábado, con hora reservada</dd></div>
+        <div class="ej" data-ejemplo="ejemplo"><dt>Teléfono</dt><dd>Falta: no está publicado</dd></div>
+      </dl>
+    </div>
+
+    <div class="pedir">
+      <h3 class="pedir__t">Pedir una cotización</h3>
+      <form class="form" id="form-cot" autocomplete="on">
+        <label>Auto (marca, modelo, año)
+          <input type="text" id="f-auto" placeholder="Mazda 3 2016" required>
+        </label>
+        <label>Color
+          <input type="text" id="f-color" placeholder="negro" required>
+        </label>
+        <label>Qué le pasa a la pintura
+          <input type="text" id="f-estado" placeholder="opaca, con marcas de lavado">
+        </label>
+        <label>Nivel que le interesa
+          <select id="f-nivel">
+            <option value="">— no sé, que me recomienden —</option>
+            <option>01 · Lavado de detalle</option>
+            <option>02 · Descontaminado</option>
+            <option>03 · Corrección de pintura</option>
+            <option>04 · Sellado cerámico</option>
+          </select>
+        </label>
+        <p class="form__salida" id="salida" aria-live="polite"></p>
+        <div class="form__acciones">
+          <button class="boton" type="button" id="btn-copiar">Copiar el mensaje</button>
+        </div>
+      </form>
+      <p class="form__sinjs">
+        Sin JavaScript los campos siguen ahí y sirven de guía de qué
+        contar. Lo único que se pierde es que el texto se arme solo.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ PARA EL DUEÑO ═══════════ -->
+<section class="dueno" aria-labelledby="t-dueno">
+  <div class="ancho">
+    <p class="rotulo rotulo--claro">Para el dueño</p>
+    <h2 class="titulo titulo--claro" id="t-dueno">Qué es esto y qué falta.</h2>
+    <div class="dueno__cols">
+      <div>
+        <h3>Qué es</h3>
+        <p>Una propuesta de sitio web hecha por nuestra cuenta. Puerto
+          Detailer no la encargó ni la ha revisado. Lo único que dimos
+          por cierto es lo que ustedes publican: el rubro y el 96% de
+          recomendación con 28 reseñas.</p>
+      </div>
+      <div>
+        <h3>Qué es ejemplo</h3>
+        <p>Los cuatro niveles, sus tiempos y sus valores; el horario; y
+          el teléfono, que no está publicado. Los tres pares del
+          comparador son <b>simulaciones</b> hechas con software y lo
+          dicen en pantalla — no fingimos que son trabajos suyos.</p>
+      </div>
+      <div>
+        <h3>Qué cambiaría la página entera</h3>
+        <p>Tres pares reales de antes y después, tomados desde el mismo
+          punto y con la misma luz. En este rubro esa foto es el
+          producto: con ellas el comparador deja de ser un ejemplo y
+          pasa a ser su portafolio.</p>
+      </div>
+    </div>
+    <p class="dueno__cierre">
+      <a class="flecha" href="mailto:cristalwebcl@gmail.com?subject=Sitio%20web%20para%20Puerto%20Detailer">Escribirnos por correo <span aria-hidden="true">→</span></a>
+      <a class="flecha" href="https://cristalwebcl.github.io/cristalweb/" rel="noopener">Ver otros trabajos <span aria-hidden="true">→</span></a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <p>Sitio de demostración preparado por CristalWeb. El negocio no lo ha
+     encargado ni ha revisado su contenido. Los niveles, tiempos y
+     valores son ejemplos marcados como tales, y los tres comparadores
+     de antes y después son simulaciones declaradas, no trabajos reales
+     del taller.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

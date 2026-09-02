@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es-CL" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Autovald Taller Automotriz — Puerto Montt</title>
+<meta name="description" content="Taller mecánico en el Cardonal, Puerto Montt, con 23 años de oficio. Qué sistema del auto avisa qué, y cuándo conviene revisarlo.">
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'self'; form-action 'self'; base-uri 'none'; frame-src 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<script src="js/rescate.js"></script>
+
+<link rel="preload" href="assets/fuentes/sarpanch-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fuentes.css">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<div class="propuesta">
+  <p class="propuesta__que">Propuesta de sitio web — preparada para <b>Autovald Taller Automotriz</b> por CristalWeb</p>
+  <p class="propuesta__gancho">Veintitrés años arreglando los autos de Puerto Montt y en Google no hay ni una página que lo diga. El que busca «mecánico Puerto Montt» encuentra a cualquiera menos al que lleva más tiempo.</p>
+</div>
+
+<header class="cab" id="cab">
+  <a class="cab__marca" href="#portada">
+    <span class="tuerca" aria-hidden="true"></span>
+    <span class="cab__nombre">Autovald<span class="cab__sub">Taller automotriz · Cardonal</span></span>
+  </a>
+  <nav class="cab__nav" aria-label="Secciones">
+    <a href="#dentro">El auto por dentro</a>
+    <a href="#hace">Qué se hace acá</a>
+    <a href="#anios">23 años</a>
+    <a href="#donde">Dónde estamos</a>
+  </nav>
+  <a class="cab__cta boton boton--chico" href="#donde">Pedir hora</a>
+</header>
+
+<main>
+
+<!-- ═══════════ PORTADA ═══════════ -->
+<section class="portada" id="portada" aria-labelledby="t-portada">
+  <div class="portada__foto" aria-hidden="true">
+    <img src="imagenes/port-01.jpg" width="2560" height="1707"
+         decoding="async" fetchpriority="high" alt="">
+  </div>
+
+  <!-- ═══════ ESCENA DE PORTADA · «el auto que entra» ═══════
+       movimiento-web, ficha «Taller mecánico» + regla 5 (llegada).
+       Verbo: LLEGA. Escalón 1: SVG dibujado a mano y @keyframes, sin
+       librería. El auto entra desde el borde derecho, frena con
+       sobrepaso y queda sobre el alza, que sube 8 px al recibirlo. El
+       único reposo es la luz de inspección, que respira.
+       Va en la mitad derecha, encima de la zona nítida de la foto. -->
+  <div class="escena escena--taller" aria-hidden="true">
+    <span class="escena__luz"></span>
+    <svg class="escena__auto" viewBox="0 0 320 114" width="320" height="114"
+         focusable="false" role="presentation">
+      <!-- Carrocería con los pasarruedas cortados en el mismo trazo: dos
+           arcos de radio 19 con sweep 0, que es el que abomba hacia
+           arriba en el sistema de coordenadas del SVG (con sweep 1 la
+           rueda queda enterrada). -->
+      <path class="escena__carro" d="M20 86 L20 68 C20 62 24 58 31 56 L80 46
+        L112 24 C118 18 128 16 138 16 L206 16 C218 16 226 19 232 25
+        L260 50 L292 57 C302 59 306 63 306 70 L306 86
+        L273 86 A19 19 0 0 0 235 86 L101 86 A19 19 0 0 0 63 86 Z"/>
+      <path class="escena__vidrio" d="M118 50 L140 28 L170 28 L170 50 Z"/>
+      <path class="escena__vidrio" d="M180 50 L180 28 L206 28 C214 28 219 30 223 34 L240 50 Z"/>
+      <circle class="escena__rueda" cx="82"  cy="90" r="19"/>
+      <circle class="escena__rueda" cx="254" cy="90" r="19"/>
+      <circle class="escena__masa"  cx="82"  cy="90" r="7"/>
+      <circle class="escena__masa"  cx="254" cy="90" r="7"/>
+    </svg>
+    <span class="escena__alza"></span>
+  </div>
+
+  <div class="portada__texto">
+    <p class="sobre">Pasaje San Andrés 60 · Sector Cardonal, Puerto Montt</p>
+    <h1 class="portada__titulo" id="t-portada">
+      <span>Veintitrés años</span>
+      <span>bajo el mismo</span>
+      <span>capó.</span>
+    </h1>
+    <p class="portada__bajada">
+      Mecánica general para vehículos livianos. Lo que se hace acá está
+      escrito abajo, sistema por sistema, con la señal que da cada uno
+      cuando empieza a fallar.
+    </p>
+    <div class="acciones">
+      <a class="boton" href="#dentro">Ver el auto por dentro</a>
+      <a class="boton boton--linea" href="#hace">Qué se hace acá</a>
+    </div>
+  </div>
+
+  <ul class="cifras" aria-label="Datos del taller">
+    <li><b>23</b><span>años en el rubro</span></li>
+    <li><b>1</b><span>taller, el mismo, en el Cardonal</span></li>
+    <li><b>0</b><span>páginas web hasta hoy</span></li>
+  </ul>
+</section>
+
+
+<!-- ═══════════ PIEZA FIRMA · EL AUTO POR DENTRO ═══════════
+     El diagrama es SVG dibujado a mano, sin librerías. Los cinco
+     paneles están ESCRITOS en el HTML y visibles: el JS sólo los
+     convierte en pestañas. Sin JavaScript se leen los cinco. -->
+<section class="dentro" id="dentro" aria-labelledby="t-dentro">
+  <div class="ancho">
+    <p class="rotulo">La pieza que ningún taller de la zona tiene</p>
+    <h2 class="titulo" id="t-dentro">El auto por dentro, explicado antes de que falle.</h2>
+    <p class="entradilla">
+      Cinco sistemas, cinco señales. Nadie llega al taller sabiendo qué
+      tiene: llega sabiendo qué <b>escucha</b>, qué <b>siente</b> o qué
+      <b>huele</b>. Esto traduce lo uno en lo otro.
+    </p>
+  </div>
+
+  <div class="auto" id="auto">
+    <div class="auto__dibujo">
+      <svg viewBox="0 0 640 260" role="img" aria-labelledby="svg-t" class="esquema">
+        <title id="svg-t">Esquema lateral de un automóvil con sus cinco sistemas señalados</title>
+
+        <!-- Carrocería: una sola silueta, trazo de plano -->
+        <path class="carro"
+              d="M52 178 L52 150 Q52 140 64 137 L150 120 L212 78 Q222 70 240 69 L392 69 Q412 70 424 80 L474 122 L566 140 Q580 144 580 156 L580 178 Z" />
+        <path class="vidrio" d="M226 118 L262 84 L318 84 L318 118 Z" />
+        <path class="vidrio" d="M336 118 L336 84 L390 84 Q400 85 408 92 L436 118 Z" />
+
+        <!-- Ruedas -->
+        <circle class="rueda" cx="168" cy="178" r="34" />
+        <circle class="rueda-in" cx="168" cy="178" r="15" />
+        <circle class="rueda" cx="470" cy="178" r="34" />
+        <circle class="rueda-in" cx="470" cy="178" r="15" />
+        <line class="suelo" x1="20" y1="212" x2="620" y2="212" />
+
+        <!-- Zonas señaladas -->
+        <g class="zona" data-z="motor">
+          <rect x="474" y="118" width="86" height="34" rx="3" />
+          <text x="517" y="140">MOTOR</text>
+        </g>
+        <g class="zona" data-z="frenos">
+          <rect x="126" y="222" width="84" height="26" rx="3" />
+          <text x="168" y="240">FRENOS</text>
+          <line class="guia" x1="168" y1="212" x2="168" y2="222" />
+        </g>
+        <g class="zona" data-z="suspension">
+          <rect x="252" y="166" width="130" height="26" rx="3" />
+          <text x="317" y="184">SUSPENSIÓN</text>
+        </g>
+        <g class="zona" data-z="embrague">
+          <rect x="378" y="222" width="112" height="26" rx="3" />
+          <text x="434" y="240">EMBRAGUE</text>
+          <line class="guia" x1="434" y1="200" x2="434" y2="222" />
+        </g>
+        <g class="zona" data-z="electrico">
+          <rect x="60" y="118" width="102" height="26" rx="3" />
+          <text x="111" y="136">ELÉCTRICO</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="auto__paneles" id="paneles">
+      <article class="panel" data-z="motor">
+        <h3>Motor</h3>
+        <p class="panel__señal">Qué avisa: humo azul o blanco, pérdida de
+          fuerza en subida, temperatura que sube en cola de auto.</p>
+        <p>Lo primero que se revisa no es el motor: es el nivel y el color
+          del aceite, y si hay pérdidas abajo. Un motor sano ensucia el
+          aceite; uno con problema lo consume o lo mezcla.</p>
+        <p class="panel__cuando"><b>Cuándo traerlo:</b> apenas cambie el
+          color del humo o si tiene que rellenar aceite entre servicios.</p>
+      </article>
+
+      <article class="panel" data-z="frenos">
+        <h3>Frenos</h3>
+        <p class="panel__señal">Qué avisa: chillido metálico al frenar,
+          pedal que se va largo, el auto tira para un lado.</p>
+        <p>Las pastillas avisan antes de romperse: traen una lengüeta que
+          chilla a propósito. Si además el pedal se siente esponjoso, el
+          problema ya no son las pastillas sino el líquido o un aire en
+          el circuito.</p>
+        <p class="panel__cuando"><b>Cuándo traerlo:</b> al primer chillido.
+          Esperar convierte una pastilla en un disco.</p>
+      </article>
+
+      <article class="panel" data-z="suspension">
+        <h3>Suspensión y dirección</h3>
+        <p class="panel__señal">Qué avisa: golpeteo en los lomos de toro,
+          el auto sigue rebotando después del bache, el volante vibra.</p>
+        <p>En caminos de la zona la suspensión trabaja más de lo normal.
+          Un amortiguador cansado no se nota manejando derecho — se nota
+          frenando fuerte, que es cuando importa.</p>
+        <p class="panel__cuando"><b>Cuándo traerlo:</b> si el auto rebota
+          más de una vez al pasar un bache, o si las gomas se están
+          gastando desparejas.</p>
+      </article>
+
+      <article class="panel" data-z="embrague">
+        <h3>Embrague y caja</h3>
+        <p class="panel__señal">Qué avisa: el motor sube de vueltas y el
+          auto no acelera igual, olor a quemado en subida, el pedal
+          engancha muy arriba.</p>
+        <p>El embrague no se rompe de golpe: patina primero, y patinando
+          se gasta más rápido. El punto de enganche subiendo es la señal
+          más temprana y la que casi nadie mira.</p>
+        <p class="panel__cuando"><b>Cuándo traerlo:</b> cuando note que el
+          pedal engancha más arriba que antes.</p>
+      </article>
+
+      <article class="panel" data-z="electrico">
+        <h3>Sistema eléctrico</h3>
+        <p class="panel__señal">Qué avisa: parte lento en la mañana fría,
+          luces que bajan al ralentí, testigo de batería encendido.</p>
+        <p>En Puerto Montt el frío y la humedad matan baterías antes de
+          tiempo. Muchas veces no es la batería: es el alternador que ya
+          no la está cargando, y cambiar la batería sólo compra semanas.</p>
+        <p class="panel__cuando"><b>Cuándo traerlo:</b> a la segunda mañana
+          que le cueste partir.</p>
+      </article>
+    </div>
+  </div>
+
+  <p class="ancho nota">
+    Nada de esto es un diagnóstico: es lo que conviene mirar antes de
+    llamar. El diagnóstico se hace con el auto adelante.
+  </p>
+</section>
+
+
+<!-- ═══════════ TAJO ═══════════ -->
+<figure class="tajo" aria-labelledby="t-tajo">
+  <img src="imagenes/tajo-01.jpg" width="2200" height="1238" loading="lazy" decoding="async" alt="">
+  <figcaption class="tajo__txt">
+    <h2 id="t-tajo">El auto sube al alza y ahí se sabe todo.</h2>
+    <p>La mitad de lo que un taller cobra es mirar. La otra mitad es
+      saber qué está mirando.</p>
+  </figcaption>
+</figure>
+
+
+<!-- ═══════════ QUÉ SE HACE ACÁ ═══════════ -->
+<section class="hace" id="hace" aria-labelledby="t-hace">
+  <div class="ancho">
+    <p class="rotulo">Servicios</p>
+    <h2 class="titulo" id="t-hace">Qué se hace acá.</h2>
+    <p class="entradilla">
+      Esta lista es <b>ejemplo</b> hasta que el taller la confirme. Se
+      arma en cinco minutos con el dueño y es lo primero que un cliente
+      nuevo busca.
+    </p>
+
+    <ul class="servicios ej" data-ejemplo="ejemplo por confirmar">
+      <li><h3>Mecánica general</h3><p>Diagnóstico, mantención por kilometraje y reparación de fallas.</p></li>
+      <li><h3>Frenos</h3><p>Pastillas, discos, líquido y purga del circuito.</p></li>
+      <li><h3>Suspensión</h3><p>Amortiguadores, bujes, rótulas y alineación de dirección.</p></li>
+      <li><h3>Embrague</h3><p>Kit completo, regulación y revisión de caja.</p></li>
+      <li><h3>Distribución</h3><p>Correa o cadena según el motor, con bomba de agua si corresponde.</p></li>
+      <li><h3>Eléctrico</h3><p>Batería, alternador, partida y revisión de cargas.</p></li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ═══════════ 23 AÑOS · con telón ═══════════ -->
+<section class="anios con-telon" id="anios" aria-labelledby="t-anios">
+  <div class="telon" aria-hidden="true">
+    <img src="imagenes/telon-01.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="">
+  </div>
+  <div class="ancho">
+    <p class="rotulo">Desde hace 23 años</p>
+    <h2 class="titulo" id="t-anios">Un taller que lleva más tiempo que la mayoría de los autos que atiende.</h2>
+    <div class="anios__cols">
+      <p>
+        Veintitrés años en el mismo rubro y en el mismo sector significa
+        una cosa muy concreta para el cliente: el taller no se va a
+        desaparecer con el auto adentro, y el que lo atendió la vez
+        pasada sigue ahí.
+      </p>
+      <p>
+        Es el argumento más fuerte que tiene Autovald y hoy no está
+        escrito en ninguna parte. Google no sabe contarlo, Facebook lo
+        muestra una vez y lo entierra. Una página lo deja fijo.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ CITA ═══════════ -->
+<figure class="cita" aria-label="Sobre el oficio">
+  <img src="imagenes/cita-01.jpg" width="2200" height="1238" loading="lazy" decoding="async" alt="">
+  <blockquote class="cita__txt">
+    <p>«Un taller de veintitrés años no se elige por precio. Se elige
+       porque ya sabe cómo anda su auto.»</p>
+  </blockquote>
+</figure>
+
+
+<!-- ═══════════ MOSAICO ═══════════ -->
+<section class="mos" aria-labelledby="t-mos">
+  <div class="ancho">
+    <p class="rotulo">El taller</p>
+    <h2 class="titulo" id="t-mos">Lo que se ve al entrar.</h2>
+  </div>
+  <div class="mos__grilla">
+    <figure class="mos__p"><img src="imagenes/mos1-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Mecánico trabajando en un motor"></figure>
+    <figure class="mos__p"><img src="imagenes/mos2-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Auto sobre el alza del taller"></figure>
+    <figure class="mos__p"><img src="imagenes/mos3-01.jpg" width="1200" height="795" loading="lazy" decoding="async" alt="Herramientas del taller"></figure>
+    <figure class="mos__p"><img src="imagenes/mos4-01.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="Detalle de un motor"></figure>
+    <figure class="mos__p"><img src="imagenes/mos5-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Banco de trabajo con llaves"></figure>
+    <figure class="mos__p"><img src="imagenes/mos6-01.jpg" width="1200" height="773" loading="lazy" decoding="async" alt="Herramienta en uso"></figure>
+  </div>
+</section>
+
+
+<!-- ═══════════ DÓNDE ═══════════ -->
+<section class="donde" id="donde" aria-labelledby="t-donde">
+  <div class="ancho donde__cols">
+    <div>
+      <p class="rotulo">Dónde estamos</p>
+      <h2 class="titulo" id="t-donde">Pasaje San Andrés 60, sector Cardonal.</h2>
+      <p class="entradilla">
+        No es un taller de avenida: es de pasaje, y esa es justamente la
+        dirección que cuesta encontrar sin una página que la diga bien.
+      </p>
+      <dl class="datos">
+        <div><dt>Dirección</dt><dd>Pasaje San Andrés N° 60, sector Cardonal, Puerto Montt</dd></div>
+        <div class="ej" data-ejemplo="ejemplo"><dt>Horario</dt><dd>Lunes a viernes 09:00–18:30 · sábado 09:00–13:00</dd></div>
+        <div class="ej" data-ejemplo="ejemplo"><dt>Teléfono</dt><dd>Falta: no lo publican en ninguna parte</dd></div>
+        <div><dt>Dónde están hoy</dt><dd>Facebook, y nada más</dd></div>
+      </dl>
+      <p class="nota">
+        El teléfono es el dato que más se busca y es justo el que no
+        aparece. Es lo primero que esta página arregla.
+      </p>
+    </div>
+
+    <div class="cotiza">
+      <h3 class="cotiza__t">Contar la falla antes de llegar</h3>
+      <p class="cotiza__p">
+        Con estos cuatro datos el taller sabe si es cosa de una mañana o
+        hay que dejar el auto. El mensaje se arma solo y se copia.
+      </p>
+      <form class="form" id="form-falla" autocomplete="on">
+        <label>Auto (marca, modelo, año)
+          <input type="text" id="f-auto" placeholder="Suzuki Swift 2014" required>
+        </label>
+        <label>Qué hace
+          <input type="text" id="f-falla" placeholder="chilla al frenar" required>
+        </label>
+        <label>Desde cuándo
+          <input type="text" id="f-desde" placeholder="hace dos semanas">
+        </label>
+        <label>Kilometraje aproximado
+          <input type="text" id="f-km" placeholder="130.000">
+        </label>
+        <p class="form__salida" id="salida" aria-live="polite"></p>
+        <div class="form__acciones">
+          <button class="boton" type="button" id="btn-copiar">Copiar el mensaje</button>
+        </div>
+      </form>
+      <p class="form__sinjs">
+        Sin JavaScript los cuatro campos siguen ahí para saber qué
+        contar. Lo único que se pierde es que el texto se arme solo.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ PARA EL DUEÑO ═══════════ -->
+<section class="dueno" aria-labelledby="t-dueno">
+  <div class="ancho">
+    <p class="rotulo rotulo--claro">Para el dueño</p>
+    <h2 class="titulo titulo--claro" id="t-dueno">Qué es esto y qué falta.</h2>
+    <div class="dueno__cols">
+      <div>
+        <h3>Qué es</h3>
+        <p>Una propuesta de sitio web hecha por nuestra cuenta. Autovald
+          no la encargó ni la ha revisado. Lo único que dimos por cierto
+          es lo que ustedes publican: la dirección del Cardonal y los 23
+          años de servicio.</p>
+      </div>
+      <div>
+        <h3>Qué es ejemplo</h3>
+        <p>La lista de servicios, el horario y —sobre todo— el teléfono,
+          que no está publicado en ninguna parte. Va marcado como falta,
+          no inventado. Los cinco sistemas del diagrama son de oficio
+          general, no diagnósticos de casos suyos.</p>
+      </div>
+      <div>
+        <h3>Qué cambiaría la página entera</h3>
+        <p>El teléfono, la lista real de servicios y tres fotos: la
+          entrada del pasaje, el taller con un auto arriba y el equipo.
+          Las de acá son del rubro. Con las suyas, esto deja de ser una
+          plantilla y pasa a ser Autovald.</p>
+      </div>
+    </div>
+    <p class="dueno__cierre">
+      <a class="flecha" href="mailto:cristalwebcl@gmail.com?subject=Sitio%20web%20para%20Autovald">Escribirnos por correo <span aria-hidden="true">→</span></a>
+      <a class="flecha" href="https://cristalwebcl.github.io/cristalweb/" rel="noopener">Ver otros trabajos <span aria-hidden="true">→</span></a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <p>Sitio de demostración preparado por CristalWeb. El negocio no lo ha
+     encargado ni ha revisado su contenido. Los servicios, el horario y
+     el teléfono van marcados como ejemplo o como falta. Nada de lo
+     escrito acá reemplaza un diagnóstico hecho con el auto presente.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

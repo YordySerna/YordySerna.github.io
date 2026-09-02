@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es-CL" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Clínica del Lago — odontología, Puerto Varas</title>
+<meta name="description" content="Odontología en Puerto Varas, centro comercial Doña Ema. El tratamiento con alineadores explicado: cuántas placas, cuántas horas al día y cuántos controles.">
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'self'; form-action 'self'; base-uri 'none'; frame-src 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<script src="js/rescate.js"></script>
+
+<link rel="preload" href="assets/fuentes/quattrocento-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fuentes.css">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<div class="propuesta">
+  <p class="propuesta__que">Propuesta de sitio web — preparada para <b>Clínica del Lago, Odontología</b> por CristalWeb</p>
+  <p class="propuesta__gancho">Una clínica que trabaja con alineadores compite con clínicas de Puerto Montt y de Santiago que sí tienen página. El paciente de ortodoncia compara antes de llamar — y acá no hay nada que comparar.</p>
+</div>
+
+<header class="cab" id="cab">
+  <a class="cab__marca" href="#portada">
+    <span class="onda" aria-hidden="true"></span>
+    <span class="cab__nombre">Clínica del Lago<span class="cab__sub">Odontología · Puerto Varas</span></span>
+  </a>
+  <nav class="cab__nav" aria-label="Secciones">
+    <a href="#mapa">El tratamiento</a>
+    <a href="#armonia">Armonización</a>
+    <a href="#especialidades">Especialidades</a>
+    <a href="#evaluacion">Primera evaluación</a>
+  </nav>
+  <a class="cab__cta boton boton--chico" href="#evaluacion">Pedir evaluación</a>
+</header>
+
+<main>
+
+<!-- ═══════════ PORTADA ═══════════ -->
+<section class="portada" id="portada" aria-labelledby="t-portada">
+  <div class="portada__foto" aria-hidden="true">
+    <img src="imagenes/port-01.jpg" width="2560" height="2053"
+         decoding="async" fetchpriority="high" alt="">
+  </div>
+
+  <!-- ═══════ ESCENA DE PORTADA · «la placa que se posa» ═══════
+       movimiento-web, ficha «Dental». Verbo: LLEGA. Escalón 1: la misma
+       herradura del mapa de placas, en grande. Baja con un rotateX y se
+       posa; después una línea de brillo la recorre cada 8 s. Transmite
+       «invisible y preciso», que es lo que vende un alineador. -->
+  <div class="escena escena--placa" aria-hidden="true">
+    <svg class="escena__svg" viewBox="0 0 200 170" focusable="false" role="presentation">
+      <defs>
+        <clipPath id="cp-herradura">
+          <path d="M20 162 C20 62 58 18 100 18 C142 18 180 62 180 162
+                   L148 162 C148 82 126 48 100 48 C74 48 52 82 52 162 Z"/>
+        </clipPath>
+        <!-- El brillo va en bronce claro y no en blanco: la página es
+             porcelana, y un blanco sobre porcelana no se ve. -->
+        <linearGradient id="g-brillo" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0"   stop-color="#D9A96F" stop-opacity="0"/>
+          <stop offset=".5"  stop-color="#D9A96F" stop-opacity=".75"/>
+          <stop offset="1"   stop-color="#D9A96F" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path class="escena__herradura"
+            d="M20 162 C20 62 58 18 100 18 C142 18 180 62 180 162
+               L148 162 C148 82 126 48 100 48 C74 48 52 82 52 162 Z"/>
+      <!-- Las divisiones de la arcada: sugieren dientes sin dibujar uno. -->
+      <!-- Recortadas por la misma herradura: si no, los cortes se salen
+           de la banda y el dibujo deja de leerse como una placa. -->
+      <g class="escena__cortes" clip-path="url(#cp-herradura)">
+        <path d="M35 120 L67 112"/>
+        <path d="M44 84 L74 88"/>
+        <path d="M72 50 L88 76"/>
+        <path d="M128 50 L112 76"/>
+        <path d="M156 84 L126 88"/>
+        <path d="M165 120 L133 112"/>
+      </g>
+      <g clip-path="url(#cp-herradura)">
+        <rect class="escena__brillo" x="-140" y="0" width="140" height="170" fill="url(#g-brillo)"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="portada__texto">
+    <p class="sobre">Centro comercial Doña Ema, local 16 · Puerto Varas</p>
+    <h1 class="portada__titulo" id="t-portada">
+      <span>Veintidós horas</span>
+      <span>al día. Ese es</span>
+      <span>el secreto.</span>
+    </h1>
+    <p class="portada__bajada">
+      El tratamiento con alineadores no falla por la marca de la placa:
+      falla por las horas que estuvo fuera de la boca. Acá está el
+      tratamiento completo explicado, con ese número adelante.
+    </p>
+    <div class="acciones">
+      <a class="boton" href="#mapa">Ver el tratamiento</a>
+      <a class="boton boton--linea" href="#evaluacion">Pedir evaluación</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ PIEZA FIRMA · EL MAPA DEL TRATAMIENTO ═══════════
+     La secuencia de placas dibujada en SVG propio. La 172 del registro
+     ya contó la ortodoncia con brackets de punta a punta: acá el ángulo
+     es el ALINEADOR y, sobre todo, las horas de uso. -->
+<section class="mapa" id="mapa" aria-labelledby="t-mapa">
+  <div class="ancho">
+    <p class="rotulo">La pieza que ninguna clínica de la zona publica</p>
+    <h2 class="titulo" id="t-mapa">El mapa del tratamiento invisible.</h2>
+    <p class="entradilla">
+      Cuántas placas son, cada cuánto se cambian, cuántos controles hay
+      y qué pasa si se pierde una. <b>Las cifras van como ejemplo</b>
+      hasta que la clínica las confirme; el orden de las etapas y el
+      dato de las horas de uso son de oficio.
+    </p>
+  </div>
+
+  <div class="ancho">
+    <svg class="placas" viewBox="0 0 900 150" role="img" aria-labelledby="t-svg">
+      <title id="t-svg">Secuencia de alineadores desde la primera placa hasta la última, con los controles marcados</title>
+      <line class="placas__eje" x1="30" y1="96" x2="870" y2="96" />
+      <!-- Doce placas: la arcada dibujada como herradura, no como diente -->
+      <g class="placas__g" transform="translate(30 46)"><path class="arc" d="M6 40 Q6 6 24 6 Q42 6 42 40" /><text x="24" y="66">1</text></g>
+      <g class="placas__g" transform="translate(100 46)"><path class="arc" d="M6 40 Q6 6 24 6 Q42 6 42 40" /><text x="24" y="66">2</text></g>
+      <g class="placas__g" transform="translate(170 46)"><path class="arc" d="M6 40 Q6 6 24 6 Q42 6 42 40" /><text x="24" y="66">3</text></g>
+      <g class="placas__g placas__g--ctrl" transform="translate(240 46)"><path class="arc" d="M6 40 Q6 6 24 6 Q42 6 42 40" /><text x="24" y="66">4</text><circle class="pt" cx="24" cy="-14" r="5" /></g>
+      <g class="placas__g" transform="translate(310 46)"><path class="arc" d="M6 40 Q6 6 24 6 Q42 6 42 40" /><text x="24" y="66">5</text></g>
+      <g class="placas__g" transform="translate(380 46)"><path class="arc" d="M6 40 Q6 6 24 6 Q42 6 42 40" /><text x="24" y="66">6</text></g>
+      <g class="placas__g placas__g--ctrl" transform="translate(450 46)"><path class="arc" d="M6 40 Q6 6 24 6 Q42 6 42 40" /><text x="24" y="66">7</text><circle class="pt" cx="24" cy="-14" r="5" /></g>
+      <g class="placas__g" transform="translate(520 46)"><path class="arc" d="M6 40 Q6 6 24 6 Q42 6 42 40" /><text x="24" y="66">8</text></g>
+      <g class="placas__g" transform="translate(590 46)"><path class="arc" d="M6 40 Q6 6 24 6 Q42 6 42 40" /><text x="24" y="66">9</text></g>
+      <g class="placas__g placas__g--ctrl" transform="translate(660 46)"><path class="arc" d="M6 40 Q6 6 24 6 Q42 6 42 40" /><text x="24" y="66">10</text><circle class="pt" cx="24" cy="-14" r="5" /></g>
+      <g class="placas__g" transform="translate(730 46)"><path class="arc" d="M6 40 Q6 6 24 6 Q42 6 42 40" /><text x="24" y="66">11</text></g>
+      <g class="placas__g placas__g--fin" transform="translate(800 46)"><path class="arc" d="M6 40 Q6 6 24 6 Q42 6 42 40" /><text x="24" y="66">12</text></g>
+      <text class="placas__rot" x="30" y="24">Primera placa</text>
+      <text class="placas__rot placas__rot--der" x="870" y="24">Última</text>
+    </svg>
+    <p class="placas__pie"><span class="pt-leyenda" aria-hidden="true"></span> Los puntos son los controles en clínica.</p>
+  </div>
+
+  <ol class="etapas ancho">
+    <li class="etapa">
+      <p class="etapa__n">01</p>
+      <h3>Escaneo y plan</h3>
+      <p>Se escanea la boca y se arma el recorrido completo antes de
+        empezar. Acá se ve, en simulación, dónde va a terminar cada
+        diente — y recién ahí se decide si el caso es de alineadores.</p>
+      <p class="etapa__d ej" data-ejemplo="ejemplo">1 a 2 semanas</p>
+    </li>
+    <li class="etapa">
+      <p class="etapa__n">02</p>
+      <h3>Las placas</h3>
+      <p>Cada placa mueve un poco y se cambia cada una o dos semanas.
+        No duelen: aprietan los primeros dos días de cada cambio, y eso
+        es señal de que está trabajando.</p>
+      <p class="etapa__d ej" data-ejemplo="ejemplo">10 a 14 días por placa</p>
+    </li>
+    <li class="etapa etapa--clave">
+      <p class="etapa__n">03</p>
+      <h3>Veintidós horas al día</h3>
+      <p>Es el número que decide el resultado. Se sacan para comer y
+        para lavarse los dientes; el resto del día y toda la noche van
+        puestas. Un tratamiento de placas usadas doce horas al día no
+        es un tratamiento más lento — es uno que no termina.</p>
+      <p class="etapa__d">22 h · dato de oficio, no ejemplo</p>
+    </li>
+    <li class="etapa">
+      <p class="etapa__n">04</p>
+      <h3>Los controles</h3>
+      <p>Cada tres o cuatro placas se revisa en clínica que los dientes
+        vayan donde deben. Si se atrasaron, se corrige ahí y no al
+        final.</p>
+      <p class="etapa__d ej" data-ejemplo="ejemplo">cada 6 a 8 semanas</p>
+    </li>
+    <li class="etapa">
+      <p class="etapa__n">05</p>
+      <h3>Si se pierde una placa</h3>
+      <p>No se salta a la siguiente. Se vuelve a la anterior y se avisa
+        el mismo día: reponerla toma tiempo y avanzar de más puede
+        soltar un diente.</p>
+      <p class="etapa__d">Avisar el mismo día</p>
+    </li>
+    <li class="etapa">
+      <p class="etapa__n">06</p>
+      <h3>La contención</h3>
+      <p>Termina el tratamiento y empieza la contención. Los dientes
+        vuelven si no se sujetan: esta etapa no es opcional y hay que
+        contarla desde el principio.</p>
+      <p class="etapa__d ej" data-ejemplo="ejemplo">permanente, con controles</p>
+    </li>
+  </ol>
+</section>
+
+
+<!-- ═══════════ TAJO ═══════════ -->
+<figure class="tajo" aria-labelledby="t-tajo">
+  <img src="imagenes/tajo-01.jpg" width="2200" height="1467" loading="lazy" decoding="async" alt="">
+  <figcaption class="tajo__txt">
+    <h2 id="t-tajo">La primera conversación es la que decide todo.</h2>
+    <p>Antes de hablar de placas hay que saber si el caso es de placas.
+      Eso se ve en la evaluación, no en el presupuesto.</p>
+  </figcaption>
+</figure>
+
+
+<!-- ═══════════ ARMONIZACIÓN ═══════════ -->
+<section class="armonia" id="armonia" aria-labelledby="t-arm">
+  <div class="ancho">
+    <p class="rotulo">Armonización facial</p>
+    <h2 class="titulo" id="t-arm">Qué es y qué no es.</h2>
+    <p class="entradilla">
+      Es el servicio del que más se habla y el que menos se explica.
+      Acá va en las dos direcciones, sin promesas.
+    </p>
+    <div class="arm">
+      <article class="arm__c">
+        <p class="arm__r">Qué es</p>
+        <ul>
+          <li>Un conjunto de procedimientos que buscan proporción entre los rasgos</li>
+          <li>Se planifica mirando la cara completa, no un rasgo suelto</li>
+          <li>Se evalúa primero: no todos los casos lo necesitan</li>
+          <li>Tiene resultados que se mantienen un tiempo y luego se revisan</li>
+        </ul>
+      </article>
+      <article class="arm__c arm__c--no">
+        <p class="arm__r">Qué no es</p>
+        <ul>
+          <li>No es una cirugía</li>
+          <li>No es un resultado garantizado ni igual para todos</li>
+          <li>No reemplaza el tratamiento de ortodoncia si el caso lo necesita</li>
+          <li>No se decide por una foto de referencia: se decide evaluando</li>
+        </ul>
+      </article>
+    </div>
+    <p class="nota">
+      Esta página no promete resultados clínicos ni describe
+      procedimientos: dice de qué se trata y remite a la evaluación. Lo
+      demás se conversa en la consulta.
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════ ESPECIALIDADES · con telón ═══════════ -->
+<section class="espec con-telon" id="especialidades" aria-labelledby="t-esp">
+  <div class="telon" aria-hidden="true">
+    <img src="imagenes/telon-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="">
+  </div>
+  <div class="ancho">
+    <p class="rotulo">Especialidades</p>
+    <h2 class="titulo" id="t-esp">Todas las especialidades, en un solo lugar.</h2>
+    <ul class="esp ej" data-ejemplo="por confirmar con la clínica">
+      <li><h3>Ortodoncia</h3><p>Con alineadores y con aparatos fijos, según el caso.</p></li>
+      <li><h3>Estética dental</h3><p>Carillas, coronas y blanqueamiento.</p></li>
+      <li><h3>Rehabilitación</h3><p>Devolver función a una boca que perdió piezas.</p></li>
+      <li><h3>Endodoncia</h3><p>Tratamiento de conducto cuando el nervio está comprometido.</p></li>
+      <li><h3>Periodoncia</h3><p>Encías: lo que sostiene todo lo demás.</p></li>
+      <li><h3>Armonización facial</h3><p>Con evaluación previa, como dice arriba.</p></li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ═══════════ CITA ═══════════ -->
+<figure class="cita" aria-label="Sobre el tratamiento">
+  <img src="imagenes/cita-01.jpg" width="2200" height="1467" loading="lazy" decoding="async" alt="">
+  <blockquote class="cita__txt">
+    <p>«El tratamiento no lo hace la placa. Lo hacen las veintidós horas
+       que estuvo puesta.»</p>
+  </blockquote>
+</figure>
+
+
+<!-- ═══════════ MOSAICO ═══════════ -->
+<section class="mos" aria-labelledby="t-mos">
+  <div class="ancho">
+    <p class="rotulo">La clínica</p>
+    <h2 class="titulo" id="t-mos">Cómo se trabaja.</h2>
+  </div>
+  <div class="mos__grilla">
+    <figure class="mos__p"><img src="imagenes/mos1-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Atención odontológica"></figure>
+    <figure class="mos__p"><img src="imagenes/mos2-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Conversación con la paciente"></figure>
+    <figure class="mos__p"><img src="imagenes/mos3-01.jpg" width="1200" height="871" loading="lazy" decoding="async" alt="Sonrisa después del tratamiento"></figure>
+    <figure class="mos__p"><img src="imagenes/mos4-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Detalle de la consulta"></figure>
+    <figure class="mos__p"><img src="imagenes/mos5-01.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Sala de espera de la clínica"></figure>
+    <figure class="mos__p"><img src="imagenes/mos6-01.jpg" width="1200" height="803" loading="lazy" decoding="async" alt="Interior de la clínica"></figure>
+  </div>
+</section>
+
+
+<!-- ═══════════ EVALUACIÓN ═══════════ -->
+<section class="evalua" id="evaluacion" aria-labelledby="t-eva">
+  <div class="ancho evalua__cols">
+    <div>
+      <p class="rotulo">Primera evaluación</p>
+      <h2 class="titulo" id="t-eva">En Doña Ema, local 16.</h2>
+      <p class="entradilla">
+        Está dentro del centro comercial, no en la calle. Ese dato
+        parece menor y es justamente el que hace que alguien dé vueltas
+        buscando.
+      </p>
+      <dl class="datos">
+        <div><dt>Dirección</dt><dd>Av. Paseo, centro comercial Doña Ema, local 16, Puerto Varas</dd></div>
+        <div><dt>Teléfono</dt><dd><a href="tel:+56966020873">+56 9 6602 0873</a></dd></div>
+        <div><dt>Dónde están hoy</dt><dd>Facebook e Instagram <span class="mono">@clinicadellagoodontologia</span></dd></div>
+        <div class="ej" data-ejemplo="ejemplo"><dt>Horario</dt><dd>Lunes a viernes, con hora reservada</dd></div>
+      </dl>
+      <p class="nota">
+        El teléfono es el que ustedes publican. Conviene confirmarlo
+        antes de que la página salga a internet.
+      </p>
+    </div>
+
+    <div class="pedir">
+      <h3 class="pedir__t">Pedir la evaluación</h3>
+      <form class="form" id="form-eva" autocomplete="on">
+        <label>Su nombre
+          <input type="text" id="f-nombre" required>
+        </label>
+        <label>Qué le interesa
+          <select id="f-tema">
+            <option selected>Ortodoncia con alineadores</option>
+            <option>Ortodoncia con aparatos fijos</option>
+            <option>Estética dental</option>
+            <option>Armonización facial</option>
+            <option>Todavía no sé, quiero evaluarme</option>
+          </select>
+        </label>
+        <label>¿Ha tenido tratamiento antes?
+          <select id="f-antes">
+            <option>No, sería el primero</option>
+            <option>Sí, hace años</option>
+            <option>Sí, y quedó a medias</option>
+          </select>
+        </label>
+        <label>Cuándo le acomoda
+          <input type="text" id="f-cuando" placeholder="mañanas, o después de las 18:00">
+        </label>
+        <p class="form__salida" id="salida" aria-live="polite"></p>
+        <div class="form__acciones">
+          <button class="boton" type="button" id="btn-wsp">Mandar por WhatsApp</button>
+          <button class="boton boton--linea" type="button" id="btn-copiar">Copiar el mensaje</button>
+        </div>
+      </form>
+      <p class="form__sinjs">
+        Sin JavaScript el teléfono de arriba sigue siendo un enlace
+        normal. Lo único que se pierde es que el texto se arme solo.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ PARA EL DUEÑO ═══════════ -->
+<section class="dueno" aria-labelledby="t-dueno">
+  <div class="ancho">
+    <p class="rotulo rotulo--claro">Para el dueño</p>
+    <h2 class="titulo titulo--claro" id="t-dueno">Qué es esto y qué falta.</h2>
+    <div class="dueno__cols">
+      <div>
+        <h3>Qué es</h3>
+        <p>Una propuesta de sitio web hecha por nuestra cuenta. Clínica
+          del Lago no la encargó ni la ha revisado. Dimos por cierto
+          sólo lo que ustedes publican: la dirección en Doña Ema local
+          16, el teléfono y que trabajan ortodoncia y armonización.</p>
+      </div>
+      <div>
+        <h3>Qué es ejemplo</h3>
+        <p>Las duraciones, la cantidad de placas, la frecuencia de
+          controles, el horario y la lista de especialidades. El dato de
+          las <b>22 horas de uso</b> es de oficio, no inventado, y va
+          marcado aparte.</p>
+      </div>
+      <div>
+        <h3>Qué cambiaría la página entera</h3>
+        <p>Sus números reales de tratamiento y una foto del box. Y si
+          tienen casos propios con autorización del paciente, el mapa de
+          placas deja de ser un esquema y pasa a ser su resultado.</p>
+      </div>
+    </div>
+    <p class="dueno__cierre">
+      <a class="flecha" href="mailto:cristalwebcl@gmail.com?subject=Sitio%20web%20para%20Cl%C3%ADnica%20del%20Lago">Escribirnos por correo <span aria-hidden="true">→</span></a>
+      <a class="flecha" href="https://cristalwebcl.github.io/cristalweb/" rel="noopener">Ver otros trabajos <span aria-hidden="true">→</span></a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <p>Sitio de demostración preparado por CristalWeb. El negocio no lo ha
+     encargado ni ha revisado su contenido. Las duraciones, cantidades y
+     el horario son ejemplos marcados como tales. Esta página no promete
+     resultados clínicos ni reemplaza una evaluación odontológica.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

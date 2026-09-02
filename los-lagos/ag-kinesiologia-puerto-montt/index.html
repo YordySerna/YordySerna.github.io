@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es-CL" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>A&amp;G Kinesiología Integral — Puerto Montt</title>
+<meta name="description" content="Kinesiología en Puerto Montt con Fonasa, particular y reembolso de isapre. Qué documento llevar, cuánto se paga el día de la sesión y cuánto vuelve.">
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'self'; form-action 'self'; base-uri 'none'; frame-src 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<script src="js/rescate.js"></script>
+
+<link rel="preload" href="assets/fuentes/halant-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fuentes.css">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<div class="propuesta">
+  <p class="propuesta__que">Propuesta de sitio web — preparada para <b>A&amp;G Kinesiología Integral</b> por CristalWeb</p>
+  <p class="propuesta__gancho">Atienden Fonasa, particular y reembolso — la información que decide si un paciente llama — y eso hoy vive en una biografía de Instagram de tres líneas. Escrito y ordenado, eso solo ya justifica la página.</p>
+</div>
+
+<header class="cab" id="cab">
+  <a class="cab__marca" href="#portada">
+    <span class="marca__ag" aria-hidden="true">A&amp;G</span>
+    <span class="cab__nombre">Kinesiología Integral<span class="cab__sub">Puerto Montt y alrededores</span></span>
+  </a>
+  <nav class="cab__nav" aria-label="Secciones">
+    <a href="#cuanto">Cuánto cuesta</a>
+    <a href="#trata">Qué se trata</a>
+    <a href="#sesion">Cómo es la sesión</a>
+    <a href="#hora">Pedir hora</a>
+  </nav>
+  <a class="cab__cta boton boton--chico" href="#hora">Pedir hora</a>
+</header>
+
+<main>
+
+<!-- ═══════════ PORTADA ═══════════ -->
+<section class="portada" id="portada" aria-labelledby="t-portada">
+  <div class="portada__foto" aria-hidden="true">
+    <img src="imagenes/port-01.jpg" width="2560" height="1693"
+         decoding="async" fetchpriority="high" alt="">
+  </div>
+
+  <!-- ═══════ ESCENA DE PORTADA · «la línea de movilidad» ═══════
+       movimiento-web, ficha «Kinesiología» + regla 6. Verbo: SE DIBUJA.
+       Escalón 1 más getTotalLength en main.js. Es un ESQUEMA de rango de
+       movimiento —lo dice el aria-label—, no una promesa de resultado:
+       en esta casa una página de salud no promete nada que no se pueda
+       sostener. El punto del final respira; es el único reposo. -->
+  <div class="escena escena--arco" aria-hidden="true">
+    <svg class="escena__svg" viewBox="0 0 300 215" focusable="false"
+         role="img" aria-label="Esquema de rango de movimiento de hombro, de 0 a 150 grados">
+      <g class="escena__ejes">
+        <line x1="165" y1="185" x2="290" y2="185"/>
+        <line x1="165" y1="185" x2="56.7" y2="122.5"/>
+      </g>
+      <path class="escena__arco" d="M290 185 A125 125 0 0 0 56.7 122.5"/>
+      <circle class="escena__pivote" cx="165" cy="185" r="4"/>
+      <circle class="escena__punto" cx="56.7" cy="122.5" r="5"/>
+      <text class="escena__gr" x="288" y="203" text-anchor="end">0°</text>
+      <text class="escena__gr" x="165" y="52"  text-anchor="middle">90°</text>
+      <text class="escena__gr" x="34"  y="110" text-anchor="middle">150°</text>
+    </svg>
+  </div>
+
+  <div class="portada__texto">
+    <p class="sobre">Fonasa · Particular · Reembolso de isapre</p>
+    <h1 class="portada__titulo" id="t-portada">
+      <span>Primero cuánto</span>
+      <span>cuesta. Después</span>
+      <span>todo lo demás.</span>
+    </h1>
+    <p class="portada__bajada">
+      La pregunta que frena la llamada nunca es clínica: es cuánto sale
+      y qué hay que llevar. Está contestada abajo, en tres pasos, antes
+      de cualquier otra cosa.
+    </p>
+    <div class="acciones">
+      <a class="boton" href="#cuanto">Ver cuánto cuesta</a>
+      <a class="boton boton--linea" href="#trata">Qué se trata acá</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ PIEZA FIRMA · ¿CUÁNTO ME CUESTA DE VERDAD? ═══════════
+     El diagrama de decisión está ESCRITO como tres bloques con sus
+     pasos. Sin JavaScript se leen los tres completos; el JS sólo
+     resalta el que el visitante elige. -->
+<section class="cuanto" id="cuanto" aria-labelledby="t-cuanto">
+  <div class="ancho">
+    <p class="rotulo">La pieza que ningún kinesiólogo de la zona publica</p>
+    <h2 class="titulo" id="t-cuanto">¿Cuánto me cuesta de verdad?</h2>
+    <p class="entradilla">
+      Tres previsiones, tres caminos distintos. Elija el suyo y vea qué
+      documento necesita, cuánto paga el día de la sesión y cuánto le
+      vuelve después. <b>Los montos van como ejemplo</b>; el flujo, los
+      documentos y el orden son reales y son lo que nadie escribe.
+    </p>
+
+    <div class="elige" id="elige" role="group" aria-label="Elegir previsión">
+      <button class="elige__b" type="button" data-prev="fonasa">Tengo Fonasa</button>
+      <button class="elige__b" type="button" data-prev="particular">Voy particular</button>
+      <button class="elige__b" type="button" data-prev="isapre">Tengo isapre</button>
+    </div>
+  </div>
+
+  <div class="vias ancho" id="vias">
+    <article class="via" data-prev="fonasa">
+      <h3 class="via__t">Con Fonasa</h3>
+      <ol class="via__pasos">
+        <li>
+          <p class="via__n">Paso 1</p>
+          <p class="via__q"><b>Qué necesita:</b> orden médica con el
+            diagnóstico y la cantidad de sesiones indicada.</p>
+          <p class="via__x">Sin orden no hay convenio: la sesión pasa a
+            particular. Es el error más común y el más caro.</p>
+        </li>
+        <li>
+          <p class="via__n">Paso 2</p>
+          <p class="via__q"><b>Qué hace antes:</b> saca el bono en
+            Fonasa —sucursal, app o caja del centro médico— por la
+            cantidad de sesiones que dice la orden.</p>
+          <p class="via__x">El bono se saca a nombre del profesional
+            tratante. Ese dato hay que pedirlo al agendar.</p>
+        </li>
+        <li>
+          <p class="via__n">Paso 3</p>
+          <p class="via__q"><b>Qué paga ese día:</b> sólo el copago del
+            bono, según su tramo.</p>
+          <p class="via__m ej" data-ejemplo="ejemplo">Tramo B: <b>$3.500</b> por sesión</p>
+        </li>
+        <li>
+          <p class="via__n">Después</p>
+          <p class="via__q"><b>Cuánto vuelve:</b> nada — el descuento ya
+            está hecho en el bono.</p>
+        </li>
+      </ol>
+    </article>
+
+    <article class="via" data-prev="particular">
+      <h3 class="via__t">Particular</h3>
+      <ol class="via__pasos">
+        <li>
+          <p class="via__n">Paso 1</p>
+          <p class="via__q"><b>Qué necesita:</b> nada. No hace falta
+            orden médica para una evaluación kinesiológica.</p>
+          <p class="via__x">Si ya tiene una orden o un informe, tráigalo
+            igual: ahorra tiempo en la primera sesión.</p>
+        </li>
+        <li>
+          <p class="via__n">Paso 2</p>
+          <p class="via__q"><b>Qué hace antes:</b> agenda y listo.</p>
+          <p class="via__x">Es el camino más rápido y el único que no
+            depende de trámites de terceros.</p>
+        </li>
+        <li>
+          <p class="via__n">Paso 3</p>
+          <p class="via__q"><b>Qué paga ese día:</b> el valor completo
+            de la sesión.</p>
+          <p class="via__m ej" data-ejemplo="ejemplo">Sesión: <b>$25.000</b></p>
+        </li>
+        <li>
+          <p class="via__n">Después</p>
+          <p class="via__q"><b>Cuánto vuelve:</b> nada, salvo que tenga
+            un seguro complementario. Se entrega boleta para ese caso.</p>
+        </li>
+      </ol>
+    </article>
+
+    <article class="via" data-prev="isapre">
+      <h3 class="via__t">Con isapre, por reembolso</h3>
+      <ol class="via__pasos">
+        <li>
+          <p class="via__n">Paso 1</p>
+          <p class="via__q"><b>Qué necesita:</b> orden médica. La isapre
+            la exige para reembolsar, aunque acá no se pida para
+            atender.</p>
+          <p class="via__x">Guárdela: se sube junto con la boleta.</p>
+        </li>
+        <li>
+          <p class="via__n">Paso 2</p>
+          <p class="via__q"><b>Qué hace antes:</b> nada especial. Se
+            agenda como particular.</p>
+          <p class="via__x">Reembolso significa que usted paga y su
+            isapre le devuelve, no que la isapre pague acá.</p>
+        </li>
+        <li>
+          <p class="via__n">Paso 3</p>
+          <p class="via__q"><b>Qué paga ese día:</b> el valor completo,
+            igual que particular. Se le entrega boleta.</p>
+          <p class="via__m ej" data-ejemplo="ejemplo">Sesión: <b>$25.000</b></p>
+        </li>
+        <li>
+          <p class="via__n">Después</p>
+          <p class="via__q"><b>Cuánto vuelve:</b> lo que su plan cubra.
+            Se sube la boleta y la orden por la app de la isapre.</p>
+          <p class="via__m ej" data-ejemplo="ejemplo">Suele volver entre <b>40% y 70%</b> según el plan</p>
+        </li>
+      </ol>
+    </article>
+  </div>
+
+  <p class="ancho nota">
+    El porcentaje de reembolso y el copago dependen de su plan y su
+    tramo: los números de arriba son referencia, no una promesa. Lo que
+    sí es exacto es el orden de los pasos y qué papel se necesita en
+    cada uno.
+  </p>
+</section>
+
+
+<!-- ═══════════ TAJO ═══════════ -->
+<figure class="tajo" aria-labelledby="t-tajo">
+  <img src="imagenes/tajo-01.jpg" width="2200" height="1467" loading="lazy" decoding="async" alt="">
+  <figcaption class="tajo__txt">
+    <h2 id="t-tajo">La primera sesión no es tratamiento. Es evaluación.</h2>
+    <p>Se mide qué se puede mover, cuánto duele y desde cuándo. Con eso
+      se arma el plan — no antes.</p>
+  </figcaption>
+</figure>
+
+
+<!-- ═══════════ QUÉ SE TRATA ═══════════ -->
+<section class="trata" id="trata" aria-labelledby="t-trata">
+  <div class="ancho">
+    <p class="rotulo">Qué se trata acá</p>
+    <h2 class="titulo" id="t-trata">Lo que llega más seguido a la camilla.</h2>
+    <p class="entradilla">
+      Esto no es un diagnóstico ni una promesa de resultado: es
+      <b>qué se evalúa</b> en la primera sesión de cada caso. El plan
+      concreto sale de esa evaluación, con el paciente adelante.
+    </p>
+
+    <ul class="casos">
+      <li class="caso">
+        <h3>Dolor lumbar</h3>
+        <p>Qué se evalúa: en qué movimiento aparece, si baja por la
+          pierna y cuánto aguanta sentado. De ahí sale si el trabajo
+          parte por movilidad o por fuerza.</p>
+      </li>
+      <li class="caso">
+        <h3>Hombro</h3>
+        <p>Qué se evalúa: hasta dónde levanta el brazo activo y pasivo,
+          y en qué rango duele. La diferencia entre esos dos cambia todo
+          el enfoque.</p>
+      </li>
+      <li class="caso">
+        <h3>Rodilla</h3>
+        <p>Qué se evalúa: si hay tope, si falla al bajar escalera y cómo
+          está la musculatura del muslo comparada con la otra pierna.</p>
+      </li>
+      <li class="caso">
+        <h3>Post-operatorio</h3>
+        <p>Qué se evalúa: el protocolo que dejó el traumatólogo y en qué
+          semana va. Acá el kinesiólogo trabaja sobre esa indicación, no
+          sobre la suya.</p>
+      </li>
+      <li class="caso">
+        <h3>Esguince de tobillo</h3>
+        <p>Qué se evalúa: cuánto apoya, si hay inestabilidad al girar y
+          cómo está el equilibrio en un pie.</p>
+      </li>
+      <li class="caso">
+        <h3>Cuello y cabeza</h3>
+        <p>Qué se evalúa: postura de trabajo, movilidad del cuello y qué
+          desencadena las molestias durante el día.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ═══════════ LA SESIÓN · con telón ═══════════ -->
+<section class="sesion con-telon" id="sesion" aria-labelledby="t-ses">
+  <div class="telon" aria-hidden="true">
+    <img src="imagenes/telon-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="">
+  </div>
+  <div class="ancho">
+    <p class="rotulo">Cómo es la sesión</p>
+    <h2 class="titulo" id="t-ses">Evaluar, trabajar, y dejarle tarea.</h2>
+    <div class="sesion__cols">
+      <p>
+        Una sesión de kinesiología no es sólo lo que pasa en la camilla.
+        La parte que decide el resultado es la que sigue en la casa: los
+        ejercicios que quedan de tarea y que nadie supervisa.
+      </p>
+      <p>
+        Por eso acá se anota qué hacer entre sesiones, cuántas veces y
+        con qué señal detenerse. Escrito, no dicho al pasar en la
+        puerta.
+      </p>
+    </div>
+    <dl class="datos">
+      <div><dt>Dónde atienden</dt><dd>Puerto Montt y alrededores</dd></div>
+      <div><dt>Previsiones</dt><dd>Fonasa, particular y reembolso de isapre</dd></div>
+      <div><dt>Correo</dt><dd><a href="mailto:agkinesiologia.integral@gmail.com">agkinesiologia.integral@gmail.com</a></dd></div>
+      <div><dt>Teléfono</dt><dd><a href="tel:+56973725439">+56 9 7372 5439</a></dd></div>
+      <div class="ej" data-ejemplo="ejemplo"><dt>Horario</dt><dd>Lunes a viernes, con hora reservada</dd></div>
+    </dl>
+  </div>
+</section>
+
+
+<!-- ═══════════ CITA ═══════════ -->
+<figure class="cita" aria-label="Sobre el tratamiento">
+  <img src="imagenes/cita-01.jpg" width="2200" height="1467" loading="lazy" decoding="async" alt="">
+  <blockquote class="cita__txt">
+    <p>«La sesión dura cuarenta minutos. El tratamiento dura toda la
+       semana.»</p>
+  </blockquote>
+</figure>
+
+
+<!-- ═══════════ MOSAICO ═══════════ -->
+<section class="mos" aria-labelledby="t-mos">
+  <div class="ancho">
+    <p class="rotulo">El trabajo</p>
+    <h2 class="titulo" id="t-mos">Camilla, colchoneta y elástico.</h2>
+  </div>
+  <div class="mos__grilla">
+    <figure class="mos__p"><img src="imagenes/mos1-01.jpg" width="1200" height="1800" loading="lazy" decoding="async" alt="Sesión de kinesiología sobre camilla"></figure>
+    <figure class="mos__p"><img src="imagenes/mos2-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Trabajo de movilidad asistida"></figure>
+    <figure class="mos__p"><img src="imagenes/mos3-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Manos del kinesiólogo trabajando la espalda"></figure>
+    <figure class="mos__p"><img src="imagenes/mos4-01.jpg" width="1200" height="675" loading="lazy" decoding="async" alt="Sala de rehabilitación con equipamiento"></figure>
+    <figure class="mos__p"><img src="imagenes/mos5-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Elongación de hombro"></figure>
+    <figure class="mos__p"><img src="imagenes/mos6-01.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Ejercicio de rehabilitación"></figure>
+  </div>
+</section>
+
+
+<!-- ═══════════ PEDIR HORA ═══════════ -->
+<section class="horas" id="hora" aria-labelledby="t-hora">
+  <div class="ancho horas__cols">
+    <div>
+      <p class="rotulo">Pedir hora</p>
+      <h2 class="titulo" id="t-hora">Con estos datos ya sabemos qué llevar.</h2>
+      <p class="entradilla">
+        Diciendo la previsión de entrada, la respuesta viene con el
+        documento que hay que traer y el valor de ese día. Sin ida y
+        vuelta.
+      </p>
+      <p class="nota">
+        El correo y el teléfono de arriba son los que ustedes publican.
+        Conviene confirmarlos antes de que la página salga a internet.
+      </p>
+    </div>
+
+    <div class="pedir">
+      <h3 class="pedir__t">Armar el mensaje</h3>
+      <form class="form" id="form-hora" autocomplete="on">
+        <label>Su nombre
+          <input type="text" id="f-nombre" required>
+        </label>
+        <label>Previsión
+          <select id="f-prev">
+            <option>Fonasa</option>
+            <option>Particular</option>
+            <option>Isapre (reembolso)</option>
+          </select>
+        </label>
+        <label>Qué le pasa
+          <input type="text" id="f-motivo" placeholder="dolor lumbar hace tres semanas" required>
+        </label>
+        <label>¿Tiene orden médica?
+          <select id="f-orden">
+            <option>Sí, la tengo</option>
+            <option>No tengo</option>
+            <option>No sé si la necesito</option>
+          </select>
+        </label>
+        <p class="form__salida" id="salida" aria-live="polite"></p>
+        <div class="form__acciones">
+          <button class="boton" type="button" id="btn-wsp">Mandar por WhatsApp</button>
+          <button class="boton boton--linea" type="button" id="btn-copiar">Copiar el mensaje</button>
+        </div>
+      </form>
+      <p class="form__sinjs">
+        Sin JavaScript el teléfono y el correo de arriba siguen siendo
+        enlaces normales. Lo único que se pierde es que el texto se arme
+        solo.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ PARA EL DUEÑO ═══════════ -->
+<section class="dueno" aria-labelledby="t-dueno">
+  <div class="ancho">
+    <p class="rotulo rotulo--claro">Para el dueño</p>
+    <h2 class="titulo titulo--claro" id="t-dueno">Qué es esto y qué falta.</h2>
+    <div class="dueno__cols">
+      <div>
+        <h3>Qué es</h3>
+        <p>Una propuesta de sitio web hecha por nuestra cuenta. A&amp;G
+          no la encargó ni la ha revisado. Dimos por cierto sólo lo que
+          ustedes publican: que atienden Fonasa, particular y reembolso,
+          el correo y el teléfono de su Instagram.</p>
+      </div>
+      <div>
+        <h3>Qué es ejemplo</h3>
+        <p>Todos los montos y porcentajes, y el horario. El
+          <b>orden de los pasos y los documentos</b> de cada previsión
+          es real, y es la parte que vale. Los seis casos describen qué
+          se evalúa: no prometen resultados ni dan indicaciones.</p>
+      </div>
+      <div>
+        <h3>Qué cambiaría la página entera</h3>
+        <p>Los valores reales por previsión y una foto del box de
+          atención. Con los montos puestos, esta página contesta sola la
+          llamada que hoy toma diez minutos.</p>
+      </div>
+    </div>
+    <p class="dueno__cierre">
+      <a class="flecha" href="mailto:cristalwebcl@gmail.com?subject=Sitio%20web%20para%20A%26G%20Kinesiolog%C3%ADa">Escribirnos por correo <span aria-hidden="true">→</span></a>
+      <a class="flecha" href="https://cristalwebcl.github.io/cristalweb/" rel="noopener">Ver otros trabajos <span aria-hidden="true">→</span></a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <p>Sitio de demostración preparado por CristalWeb. El negocio no lo ha
+     encargado ni ha revisado su contenido. Los montos, porcentajes de
+     reembolso y horarios son ejemplos marcados como tales. Nada de lo
+     escrito acá es un diagnóstico ni una indicación de tratamiento:
+     eso se hace con el paciente presente.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
